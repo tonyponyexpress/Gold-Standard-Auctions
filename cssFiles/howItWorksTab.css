@@ -2,6 +2,8 @@
 	border-style: solid;
 	border-width: medium;
 	text-align: center;
+	border-bottom: 0px;
+	border-right: 0px;
 }
 #sellButton{
 	border-style: solid;

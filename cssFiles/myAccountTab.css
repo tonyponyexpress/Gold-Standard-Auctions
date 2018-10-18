@@ -12,4 +12,6 @@
 	border-style: solid;
 	border-width: medium;
 	text-align: center;
+	border-bottom: 0px;
+	border-left: 0px;
 }

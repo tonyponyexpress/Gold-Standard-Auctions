@@ -7,6 +7,9 @@
 	border-style: solid;
 	border-width: medium;
 	text-align: center;
+	border-left: 0px;
+	border-bottom: 0px;
+	border-right: 0px;
 }
 #myAccountButton{
 	border-style: solid;
