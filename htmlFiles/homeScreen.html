@@ -4,10 +4,8 @@
     <title>Get Rid of it</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="../cssFiles/homeScreen.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -94,13 +92,13 @@
           <p> Here we are going to have a long inspiring paragraph<br> about the creation of this project, at this point<br>
             I'm just continuing to type to fill in the page I will<br> insert your sign up button below this long and meaningless<br>
             quote :) <br>
+            <form action="../BackEnd/CreateUsers.php" method="post">
             First Name:<input type="text" name="newFirst"><br><br>
             Last Name:<input type="text" name="newLast"><br><br>
-            Email:<input type="text" name="newEmail"><br><br>
+            Email:<input type="email" name="newEmail"><br><br>
             Username:<input type="text" name="newUsername"><br><br>
-            Password:<input type="text" name="newPassword"><br><br>
-            Re-enter Password:<input type="text" name="newPassword2"><br><br>
-            <form action="sellTab.html">
+            Password:<input type="password" name="newPassword"><br><br>
+            Re-enter Password:<input type="password" name="newPassword2"><br><br>
               <input type="submit" value="Sign Up" />
             </form>
         </div>
@@ -129,6 +127,9 @@
       </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
 </html>
