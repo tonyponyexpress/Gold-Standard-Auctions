@@ -10,12 +10,14 @@
   $password = $_POST["password"];
 
   $query = "SELECT * FROM Project_Users WHERE username = '$username';";
+  $query2 = "SELECT * FROM Project_Users WHERE email = '$username';";
   $query3 = "SELECT * FROM Project_Users WHERE password = '$password';";
 
   $result = $mysqli->query($query);
+  $result2 = $mysqli->query($query2);
   $result3 = $mysqli->query($query3);
 
-  if (($row = $result->fetch_assoc()  && $row = $result3->fetch_assoc()){
+  if (($row = $result->fetch_assoc() || $row = $result2->fetch_assoc()) && $row = $result3->fetch_assoc()){
     header('Location: ../htmlFiles/sellTab');
   }
   else{
