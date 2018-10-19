@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- CSS -->
-    <link rel="stylesheet" href="cssFiles/homeScreen.css">
+    <link rel="stylesheet" href="../cssFiles/homeScreen.css">
 </head>
 <body>
 
@@ -22,23 +22,21 @@
         </div>
         <div class="col-md-1"> </div>
         <div class="col-md-2" style="text-align: center;">
-          <form>
+          <form action="backEnd/Login.php" method="post">
             <br>
             Username:<br>
             <input type="text" name="username"><br><br>
-          </form>
         </div>
         <div class="col-md-2" style="text-align: center;">
-          <form>
             <br>
             Password:<br>
-            <input type="text" name="password"><br><br>
-          </form>
+            <input type="password" name="password"><br><br>
+
         </div>
 
         <div class="col-md-1">
           <br><br>
-          <form action="sellTab">
+
             <input type="submit" value="Log In" />
           </form>
           <br><br>
@@ -108,7 +106,7 @@
       </div>
     </div>
 
-    <div class= "container-fluid" style="background-color: rgba(0,87,110,0.8)">
+    <div class= "container-fluid" id="footer" style="background-color: rgba(0,87,110,0.8)">
       <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-3">
