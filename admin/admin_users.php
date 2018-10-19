@@ -1,15 +1,3 @@
-<?php
-   //  $mysqli = new mysqli("mysql.eecs.ku.edu", "t828n219", "se4ahqu3", "t828n219");
-    $mysqli = new mysqli("mysql.eecs.ku.edu", "e155p319", "eecs448", "e155p319");
-
-    /* check connection */
-    if ($mysqli->connect_error) {
-        printf("Connect failed: %s\n", $mysqli->connect_error);
-        exit();
-    }
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +23,7 @@
             <ul class="sidebar-menu">
                 <li class="active"> <a href="admin_dashboard.html">Dashboard</a> </li>
                 <li> <a href="admin_users.php"> Users </a> </li>
-                <li> <a href="#"> Problems </a> </li>
+                <li> <a href="admin_problems"> Problems </a> </li>
             </ul>
 
         </nav>
@@ -53,12 +41,12 @@
                  }
              ?>
 
-             <table>
+             <table class="table table-striped" >
                  <tr>
-                     <th> Name </th>
-                     <th> Information </th>
-                     <th> Items </th>
-                     <th> Delete </th>
+                     <th scope="col"> Name </th>
+                     <th scope="col"> # of items </th>
+                     <th scope="col"> Items </th>
+                     <th scope="col"> Delete </th>
                  </tr>
 
 
@@ -71,16 +59,17 @@
                          $FirstName = $users_row['FirstName'];
                          $LastName = $users_row['LastName'];
                          $number_items = $users_row['number_items'];
+                         $username = $users_row['username'];
                          ?>
 
                          <tr>
                              <th>
-                                 <div id="table_name"> <?php echo $FirstName; ?>  </div>
-                                 <div id="table_id"> <?php echo $ID; ?>  </div>
+                                 <div id="table_name"> <?php echo $FirstName; echo " "; echo $LastName ?>  </div>
+                                 <div id="table_id"> ID: <?php echo $ID; ?>  </div>
                              </th>
                              <th> <?php echo $number_items; ?> </th>
-                             <th> Items </th>
-                             <th> X </th>
+                             <th> <a href="admin_users_profile.php?Username=<?php echo $username?>"> Items </a> </th>
+                             <th> <a href="admin_users.php"> X </a> </th>
                          </tr>
                      <?php
                      }

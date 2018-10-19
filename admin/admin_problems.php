@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="../cssFiles/homeScreen.css">
     <link rel="stylesheet" href="adminCSS/admin.css">
+    <link rel="stylesheet" href="adminCSS/admin_users.css">
 </head>
 
 <body>
@@ -29,7 +30,59 @@
 
         <!-- Page Content  -->
         <div id="content">
-             <h2>Admin dashboard</h2>
+             <h2>Problems</h2>
+
+             <?php
+                 $mysqli = new mysqli("mysql.eecs.ku.edu", "t828n219", "se4ahqu3", "t828n219");
+                 /* check connection */
+                 if ($mysqli->connect_error) {
+                     printf("Connect failed: %s\n", $mysqli->connect_error);
+                     exit();
+                 }
+             ?>
+
+             <table class="table table-striped" >
+                 <tr>
+                     <th scope="col"> ID </th>
+                     <th scope="col"> Title </th>
+                     <th scope="col"> Description </th>
+                     <th scope="col"> Username </th>
+                 </tr>
+
+
+             <?php
+                 $problems = "SELECT * FROM Project_Problems";
+                 if ($result = $mysqli->query($problems)) {
+                     // Get all users
+                     while ($problems_row = $result->fetch_assoc()) {
+                         $problem_id = $problems_row['problem_id'];
+                         $title = $problems_row['title'];
+                         $description = $problems_row['description'];
+                         $username = $problems_row['username'];
+                         ?>
+
+                         <tr>
+                             <th> <?php echo $problem_id; ?> </th>
+                             <th> <?php echo $title; ?> </th>
+                             <th> <?php echo $description; ?> </th>
+                             <th> <?php echo $username; ?> </th>
+
+                         </tr>
+                     <?php
+                     }
+                     /* free result set */
+                     $result->free();
+                 }
+                 ?>
+             </table>
+
+             <?php
+             /* close connection */
+             $mysqli->close();
+             ?>
+
+
+
         </div>
      </div>
 
