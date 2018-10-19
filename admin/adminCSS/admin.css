@@ -27,6 +27,8 @@ a:focus {
 
 .sidebar-menu {
     list-style: none;
+    padding-left: 0px;
+    text-align: center;
 }
 
 #sidebar a:hover {
@@ -35,7 +37,8 @@ a:focus {
 }
 
 #sidebar ul li a {
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-size: 1.1em;
     display: block;
 }
@@ -46,4 +49,8 @@ a:focus {
     width: 100%;
     padding: 20px;
     min-height: 100vh;
+}
+
+h2{
+    font-size: 30px;
 }
