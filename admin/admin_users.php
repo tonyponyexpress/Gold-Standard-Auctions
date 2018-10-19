@@ -45,8 +45,7 @@
                  <tr>
                      <th scope="col"> Name </th>
                      <th scope="col"> # of items </th>
-                     <th scope="col"> Items </th>
-                     <th scope="col"> Delete </th>
+                     <th scope="col"> Profile </th>
                  </tr>
 
 
@@ -68,8 +67,7 @@
                                  <div id="table_id"> ID: <?php echo $ID; ?>  </div>
                              </th>
                              <th> <?php echo $number_items; ?> </th>
-                             <th> <a href="admin_users_profile.php?Username=<?php echo $username?>"> Items </a> </th>
-                             <th> <a href="admin_users.php"> X </a> </th>
+                             <th> <a href="admin_users_profile.php?Username=<?php echo $username?>"> X </a> </th>
                          </tr>
                      <?php
                      }

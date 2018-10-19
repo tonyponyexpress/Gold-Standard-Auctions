@@ -65,7 +65,7 @@
                              <th> <?php echo $problem_id; ?> </th>
                              <th> <?php echo $title; ?> </th>
                              <th> <?php echo $description; ?> </th>
-                             <th> <?php echo $username; ?> </th>
+                             <th> <a href="admin_users_profile.php?Username=<?php echo $username?>"> <?php echo $username; ?>  </a> </th>
 
                          </tr>
                      <?php
