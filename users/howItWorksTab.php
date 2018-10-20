@@ -50,18 +50,18 @@ if ( ! isset( $_SESSION['user_id'] ) ) {
       </div>
     </div>
 
-    <div class= "container-fluid" style="background-color: rgba(0,87,110,0.8)">
+    <div class= "container-fluid" id="footer" style="background-color: rgba(0,87,110,0.8)">
       <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-3">
           <br>
-          <a href="https://www.google.com">FAQ</a><br>
-          <a href="https://www.google.com">Contact Us</a><br>
+          <a href="faq">FAQ</a><br>
+          <a href="contactUs">Contact Us</a><br>
         </div>
         <div class="col-md-3">
           <br>
-          <a href="https://www.google.com">Report an Issue</a><br>
-          <a href="https://www.google.com">Return Policy</a><br>
+          <a href="reportAnIssue">Report an Issue</a><br>
+          <a href="returnPolicy">Return Policy</a><br>
         </div>
         <div class="col-md-4" style="text-align: center">
           <br>
