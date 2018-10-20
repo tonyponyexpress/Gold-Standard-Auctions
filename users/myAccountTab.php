@@ -1,3 +1,11 @@
+<?php
+session_start();
+// Redirect to home page if user hasn't logged in
+if ( ! isset( $_SESSION['user_id'] ) ) {
+    header("Location: homeScreen.html");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +29,7 @@
       </div>
       <div class="col-md-6" style="text-align: center;">
         <br>
-        <form action="homeScreen">
+        <form action="backEnd/Logout.php" method="post">
           <input type="submit" value="Log Out" style="font-size: 20px;">
         </form>
         <br><br>
