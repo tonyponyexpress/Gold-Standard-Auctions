@@ -21,21 +21,21 @@ if ( ! isset( $_SESSION['user_id'] ) ) {
 <body>
 
     <div class= "container-fluid" style="background-color: rgba(0,87,110,0.8)">
-    <div class="row">
-      <div class="col-md-6" style="text-align: center">
-        <br>
-        <img src="../assets/fakeLogo.jpg" alt="Logo">
-        <br><br>
-      </div>
-      <div class="col-md-6" style="text-align: center;">
-        <br>
-        <form action="backEnd/Logout.php" method="post">
-          <input type="submit" value="Log Out" style="font-size: 20px;">
-        </form>
-        <br><br>
+      <div class="row">
+        <div class="col-md-6" style="text-align: center">
+          <br>
+          <img src="../assets/fakeLogo.jpg" alt="Logo">
+          <br><br>
+        </div>
+        <div class="col-md-6" style="text-align: center;">
+          <br>
+          <form action="backEnd/Logout.php" method="post">
+            <input type="submit" value="Log Out" style="font-size: 20px;">
+          </form>
+          <br><br>
+        </div>
       </div>
     </div>
-  </div>
 
   <div class="row">
     <div class="col-md-3" onclick="location.href='howItWorksTab';" id="howItWorksButton" style="cursor: pointer;">
@@ -47,55 +47,65 @@ if ( ! isset( $_SESSION['user_id'] ) ) {
     <div class="col-md-3" id="myAccountButton">
       <h1>My Account</h1>
     </div>
-</div>
+  </div>
 
     <br>
-                <div class="row">
-                  <div class="col-md-6" style="text-align: center">
-                    <div style="border: 5px solid blue;">
-                      <h1>Current</h1>
-                    </div>
-                      <p>
-                        Pending Offer
-                        <br>
-                        Current Offers
-                      </p>
-                  </div>
-                </div>
 
-                <div class="row">
-                  <div class="col-md-6" style="text-align: center">
-                    <div style="border: 5px solid blue;">
-                      <h1>Past</h1>
-                    </div>
-                      <p>
-                        Sold
-                      </p>
-                  </div>
-                </div>
+  <div class="row">
+    <div class="col-md-6" style="text-align: center">
+      <div style="border: 5px solid blue;">
+        <h1>Current</h1>
+      </div>
+        <p>
+          <table class="table table-striped" >
+            <tr>
+            <th scope="col"> Item </th>
+            <th scope="col"> Current Offer </th>
+            </tr>
+          </table>
+        </p>
+    </div>
+  </div>
 
 
-                <div class= "container-fluid" id="footer" style="background-color: rgba(0,87,110,0.8)">
-                  <div class="row">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-3">
-                      <br>
-                      <a href="faq">FAQ</a><br>
-                      <a href="contactUs">Contact Us</a><br>
-                    </div>
-                    <div class="col-md-3">
-                      <br>
-                      <a href="reportAnIssue">Report an Issue</a><br>
-                      <a href="returnPolicy">Return Policy</a><br>
-                    </div>
-                    <div class="col-md-4" style="text-align: center">
-                      <br>
-                      <img src="../assets/fakeLogo.jpg" alt="Logo">
-                      <br>
-                      <br>
-                    </div>
-                  </div>
-                </div>
+  <div class="row">
+    <div class="col-md-6" style="text-align: center">
+      <div style="border: 5px solid blue;">
+        <h1>Past</h1>
+      </div>
+        <p>
+          <table class="table table-striped" >
+            <tr>
+            <th scope="col"> Item </th>
+            <th scope="col"> Sold Price </th>
+            <th scope="col"> Profit to Date </th>
+            </tr>
+          </table>
+        </p>
+    </div>
+  </div>
+
+  <div class= "container-fluid" id="footer" style="background-color: rgba(0,87,110,0.8)">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-3">
+        <br>
+        <a href="faq">FAQ</a><br>
+        <a href="contactUs">Contact Us</a><br>
+      </div>
+      <div class="col-md-3">
+        <br>
+        <a href="reportAnIssue">Report an Issue</a><br>
+        <a href="returnPolicy">Return Policy</a><br>
+      </div>
+      <div class="col-md-4" style="text-align: center">
+        <br>
+        <img src="../assets/fakeLogo.jpg" alt="Logo">
+        <br>
+        <br>
+      </div>
+    </div>
+  </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
