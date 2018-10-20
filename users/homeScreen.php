@@ -15,7 +15,7 @@
     <!-- Header -->
     <?php
         session_start();
-        include('templates/header_login.html');
+        include('templates/header_login.php');
     ?>
 
     <div class="container-fluid" style="background-color: #F2A5CB">
@@ -84,7 +84,7 @@
     <!-- Footer -->
     <?php
         session_start();
-        include('templates/footer.html');
+        include('templates/footer.php');
     ?>
 
 

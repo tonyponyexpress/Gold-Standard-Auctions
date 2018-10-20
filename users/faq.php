@@ -16,11 +16,11 @@
         session_start();
         // Login header
         if ( ! isset( $_SESSION['user_id'] ) ) {
-            include('templates/header_login.html');
+            include('templates/header_login.php');
         }
         // User header
         else {
-            include('templates/header_user.html');
+            include('templates/header_user.php');
         }
     ?>
 
@@ -31,7 +31,7 @@
     <!-- Footer -->
     <?php
         session_start();
-        include('templates/footer.html');
+        include('templates/footer.php');
     ?>
 
     <!-- Optional JavaScript -->
