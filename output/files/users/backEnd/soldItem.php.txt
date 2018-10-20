@@ -1,4 +1,14 @@
 <?php
+/**
+*User soldItem
+*how to store an item and tell if it is sold
+*
+*
+*
+*@author Tritens
+*@package users
+*
+*/
     session_start();
     $mysqli = new mysqli("mysql.eecs.ku.edu", "t828n219", "se4ahqu3", "t828n219");
 

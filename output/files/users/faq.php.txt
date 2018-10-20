@@ -13,6 +13,16 @@
 
 
     <?php
+      /**
+      *User faq
+      *Lists the faq that customers may have
+      *
+      *
+      *
+      *@author Tritens
+      *@package users
+      *
+      */
         session_start();
         // Login header
         if ( ! isset( $_SESSION['user_id'] ) ) {

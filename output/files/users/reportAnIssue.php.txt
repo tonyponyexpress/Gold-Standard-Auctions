@@ -13,6 +13,16 @@
 <body>
 
     <?php
+    /**
+    *User reportAnIssue
+    *directs the user how to report an issue if any
+    *
+    *
+    *
+    *@author Tritens
+    *@package users
+    *
+    */
         session_start();
         // Login header
         if ( ! isset( $_SESSION['user_id'] ) ) {

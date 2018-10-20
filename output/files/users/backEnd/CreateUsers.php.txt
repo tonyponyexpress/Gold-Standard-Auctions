@@ -1,5 +1,14 @@
 <?php
-
+/**
+*User CreateUsers
+*This file is in charge of creating users and storing them in a databse
+*
+*
+*
+*@author Tritens
+*@package users
+*
+*/
 $mysqli = new mysqli("mysql.eecs.ku.edu", "t828n219", "se4ahqu3", "t828n219");
 
 /* check connection */

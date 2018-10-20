@@ -43,6 +43,16 @@
 
     <!-- Footer -->
     <?php
+    /**
+    *User contactUs
+    *Lists the contact information of the possible managers/owners
+    *
+    *
+    *
+    *@author Tritens
+    *@package users
+    *
+    */
         session_start();
         include('templates/footer.php');
     ?>

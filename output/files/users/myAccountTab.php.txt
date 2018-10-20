@@ -22,6 +22,16 @@ if ( ! isset( $_SESSION['user_id'] ) ) {
 
     <!-- Header -->
     <?php
+    /**
+    *User myAccountTab
+    *Shows the user's account information
+    *
+    *
+    *
+    *@author Tritens
+    *@package users
+    *
+    */
         session_start();
         include('templates/header_user.php');
     ?>

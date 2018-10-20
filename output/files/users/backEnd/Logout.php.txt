@@ -1,4 +1,14 @@
 <?php
+/**
+*User Logout
+*redirects to homepage if user logs out
+*
+*
+*
+*@author Tritens
+*@package users
+*
+*/
 // Always start this first
 session_start();
 
