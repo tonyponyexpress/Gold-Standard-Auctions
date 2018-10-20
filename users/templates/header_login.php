@@ -1,3 +1,15 @@
+<?php
+/**
+    *User header_login
+    *Handles the header for user log in
+    *
+    *
+    *
+    *@author Tritens
+    *@package users
+    *
+    */
+?>
 <div class= "container-fluid" style="background-color: rgba(0,87,110,0.8)">
   <div class="row">
     <div class="col-md-6" style="text-align: center">
