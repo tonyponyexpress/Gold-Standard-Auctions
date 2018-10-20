@@ -44,7 +44,7 @@
     <!-- Footer -->
     <?php
         session_start();
-        include('templates/footer.html');
+        include('templates/footer.php');
     ?>
 
 

@@ -2,7 +2,7 @@
 session_start();
 // Redirect to home page if user hasn't logged in
 if ( ! isset( $_SESSION['user_id'] ) ) {
-    header("Location: homeScreen.html");
+    header("Location: homeScreen.php");
 }
 ?>
 
@@ -24,7 +24,7 @@ if ( ! isset( $_SESSION['user_id'] ) ) {
     <!-- Header -->
     <?php
         session_start();
-        include('templates/header_user.html');
+        include('templates/header_user.php');
     ?>
 
     <div class="row">
@@ -42,7 +42,7 @@ if ( ! isset( $_SESSION['user_id'] ) ) {
     <!-- Footer -->
     <?php
         session_start();
-        include('templates/footer.html');
+        include('templates/footer.php');
     ?>
 
 

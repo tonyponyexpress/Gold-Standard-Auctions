@@ -15,7 +15,7 @@
     <!-- Header -->
     <?php
         session_start();
-        include('templates/header_login.html');
+        include('templates/header_login.php');
     ?>
 
     <div class="container-fluid" style="background-color: #F2A5CB">
@@ -48,7 +48,7 @@
             <p>"Follow your passion, stay true to yourself, never follow someone else’s path unless you’re in the woods and you’re lost and you see a path then by all means you should follow that"</p>
             <footer>Tony Nguyen</footer>
           </blockquote>
-          <img src="../HeadShots/Tony.png" alt="Tony's headshot" style="width:60px;height:60px;">
+          <img src="../HeadShots/Tony.jpg" alt="Tony's headshot" style="width:60px;height:60px;">
           <br>
           <br>
           <br>
@@ -84,7 +84,7 @@
     <!-- Footer -->
     <?php
         session_start();
-        include('templates/footer.html');
+        include('templates/footer.php');
     ?>
 
 
