@@ -80,17 +80,12 @@ if ( ! isset( $_SESSION['user_id'] ) ) {
       </div>
   </form>
 
-<?php
-  echo $_SESSION['user_id'];
-  ?>
-
-
   <div class= "container-fluid" id="footer" style="background-color: rgba(0,87,110,0.8)">
     <div class="row">
       <div class="col-md-2"></div>
       <div class="col-md-3">
         <br>
-        <a href="faq">FAQ</a><br>
+        <a href="faq.php">FAQ</a><br>
         <a href="contactUs">Contact Us</a><br>
       </div>
       <div class="col-md-3">

@@ -75,9 +75,6 @@ if ( ! isset( $_SESSION['user_id'] ) ) {
                 </div>
 
 
-
-
-
                 <div class= "container-fluid" id="footer" style="background-color: rgba(0,87,110,0.8)">
                   <div class="row">
                     <div class="col-md-2"></div>
