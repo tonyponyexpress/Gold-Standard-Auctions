@@ -80,6 +80,10 @@ if ( ! isset( $_SESSION['user_id'] ) ) {
       </div>
   </form>
 
+<?php
+  echo $_SESSION['user_id'];
+  ?>
+
 
     <div class= "container-fluid" style="background-color: rgba(0,87,110,0.8)">
       <div class="row">
