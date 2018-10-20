@@ -67,7 +67,7 @@
           <p> Here we are going to have a long inspiring paragraph<br> about the creation of this project, at this point<br>
             I'm just continuing to type to fill in the page I will<br> insert your sign up button below this long and meaningless<br>
             quote :) <br>
-            <form action="../BackEnd/CreateUsers.php" method="post">
+            <form action="backEnd/CreateUsers.php" method="post">
             First Name:<input type="text" name="newFirst"><br><br>
             Last Name:<input type="text" name="newLast"><br><br>
             Email:<input type="email" name="newEmail"><br><br>

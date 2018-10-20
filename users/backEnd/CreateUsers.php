@@ -44,7 +44,7 @@ $result2 = $mysqli->query($query2);
     }
     else if($user_result = $mysqli->query($add_user)){
       //echo "New user created successfully.<br>";
-      header('Location: ../htmlFiles/sellTab.html');
+      header('Location: ../sellTab.php');
     }
     else{
       echo "Error: " . $mysqli->error;
