@@ -1,5 +1,14 @@
 <?php
 /**
+    * Admin problems
+    *
+    * Shows the problems submitted by the users.
+    *
+    * @author Tritens
+    * @package admin
+    */
+
+/**
     * Redirects to home page if user hasn't logged in
     *
     * Checks if the admin_id session variable has been set. If true it shows the page, else it redirects to the login page

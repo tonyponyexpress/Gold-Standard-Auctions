@@ -1,3 +1,13 @@
+<?php
+/**
+    * Sidebar
+    *
+    * Sidebar for the admin panel
+    *
+    * @author Tritens
+    * @package admin
+    */
+?>
 <nav id="sidebar">
     <div class="sidebar-header">
         <h3>Admin</h3>

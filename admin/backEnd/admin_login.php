@@ -1,4 +1,16 @@
+
+
 <?php
+
+/**
+    * admin_login.php
+    *
+    * Allows only admins to log in. If admin redirect to admin panel, else stay in the page
+    *
+    * @author Tritens
+    * @package admin
+    */
+
     session_start();
 
     error_reporting(E_ALL);

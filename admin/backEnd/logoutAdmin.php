@@ -1,4 +1,14 @@
 <?php
+/**
+    * logoutAdmin
+    *
+    * Logs out the user and redirects to admin.php (login screen)
+    *
+    * @author Tritens
+    * @package admin
+    */
+
+
 // Always start this first
 session_start();
 

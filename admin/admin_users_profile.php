@@ -1,5 +1,17 @@
 <?php
 /**
+    * Admin users profile
+    *
+    * Shows the items and problems of a specific user
+    *
+    * @author Tritens
+    * @package admin
+    */
+
+
+
+
+/**
     * Redirects to home page if user hasn't logged in
     *
     * Checks if the admin_id session variable has been set. If true it shows the page, else it redirects to the login page

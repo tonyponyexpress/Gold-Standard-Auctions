@@ -1,3 +1,15 @@
+<?php
+/**
+    * Admin
+    *
+    * Login page for the admin. Only allows to login admins
+    *
+    * @author Tritens
+    * @package admin
+    */
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

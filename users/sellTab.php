@@ -1,4 +1,13 @@
 <?php
+/**
+    * Sell title
+    *
+    * Description goes here
+    * @author Tritens
+    * @package user
+    */
+
+
 session_start();
 // Redirect to home page if user hasn't logged in
 if ( ! isset( $_SESSION['user_id'] ) ) {
