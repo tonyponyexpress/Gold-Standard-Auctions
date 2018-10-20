@@ -1,4 +1,14 @@
 <?php
+/**
+*User sellTab
+*Basic introductory page for selling items
+*
+*
+*
+*@author Tritens
+*@package users
+*
+*/
 session_start();
 // Redirect to home page if user hasn't logged in
 if ( ! isset( $_SESSION['user_id'] ) ) {

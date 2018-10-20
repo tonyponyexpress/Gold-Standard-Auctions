@@ -23,6 +23,16 @@ if ( ! isset( $_SESSION['user_id'] ) ) {
 
     <!-- Header -->
     <?php
+    /**
+    *User howItWorks
+    *Shows users how the selling function works
+    *
+    *
+    *
+    *@author Tritens
+    *@package users
+    *
+    */
         session_start();
         include('templates/header_user.php');
     ?>
