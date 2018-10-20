@@ -13,6 +13,16 @@
 <body>
 
     <?php
+    /**
+    *User returnPolicy
+    *Gives a description of the company's return policy
+    *
+    *
+    *
+    *@author Tritens
+    *@package users
+    *
+    */
         session_start();
         // Login header
         if ( ! isset( $_SESSION['user_id'] ) ) {
