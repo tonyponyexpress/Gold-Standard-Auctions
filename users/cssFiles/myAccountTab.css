@@ -2,6 +2,7 @@
 	border-style: solid;
 	border-width: medium;
 	text-align: center;
+	border-right: 0px;
 }
 #sellButton{
 	border-style: solid;
