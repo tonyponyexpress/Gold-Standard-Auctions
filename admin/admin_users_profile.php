@@ -1,3 +1,11 @@
+<?php
+session_start();
+// Redirect to home page if user hasn't logged in
+if ( ! isset( $_SESSION['admin_id'] ) ) {
+    header("Location: admin_login.html");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,9 +29,10 @@
             </div>
 
             <ul class="sidebar-menu">
-                <li class="active"> <a href="admin_dashboard.html">Dashboard</a> </li>
+                <li class="active"> <a href="admin_dashboard.php">Dashboard</a> </li>
                 <li> <a href="admin_users.php"> Users </a> </li>
-                <li> <a href="#"> Problems </a> </li>
+                <li> <a href="admin_problems.php"> Problems </a> </li>
+                <li> <form action="backEnd/logoutAdmin.php" method="post"> <input type="submit" value="Log Out"> </form> </li>
             </ul>
 
         </nav>
