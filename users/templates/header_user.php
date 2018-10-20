@@ -1,3 +1,16 @@
+<?php
+/**
+    *User header_user
+    *handles the header for user logout
+    *
+    *
+    *
+    *@author Tritens
+    *@package users
+    *
+    */
+
+?>
 <div class= "container-fluid" style="background-color: rgba(0,87,110,0.8)">
   <div class="row">
     <div class="col-md-6" style="text-align: center">
