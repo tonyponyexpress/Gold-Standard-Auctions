@@ -11,87 +11,28 @@
 </head>
 <body>
 
-<?php
-    session_start();
-    // Login header
-    if ( ! isset( $_SESSION['user_id'] ) ) {
-    ?>
-    <div class= "container-fluid" style="background-color: rgba(0,87,110,0.8)">
-      <div class="row">
-        <div class="col-md-6" style="text-align: center">
-          <br>
-          <img src="../assets/fakeLogo.jpg" alt="Logo">
-          <br>
-          <br>
-        </div>
-        <div class="col-md-1"> </div>
-        <div class="col-md-2" style="text-align: center;">
-          <form>
-            <br>
-            Username:<br>
-            <input type="text" name="username"><br><br>
-          </form>
-        </div>
-        <div class="col-md-2" style="text-align: center;">
-          <form>
-            <br>
-            Password:<br>
-            <input type="text" name="password"><br><br>
-          </form>
-        </div>
-        <div class="col-md-1"> <br><br><input type="submit" value="Log In"><br><br></div>
-      </div>
-    </div>
 
     <?php
-    }
-    else {
-    // User header
+        session_start();
+        // Login header
+        if ( ! isset( $_SESSION['user_id'] ) ) {
+            include('templates/header_login.html');
+        }
+        // User header
+        else {
+            include('templates/header_user.html');
+        }
     ?>
-        <div class= "container-fluid" style="background-color: rgba(0,87,110,0.8)">
-          <div class="row">
-            <div class="col-md-6" style="text-align: center">
-              <br>
-              <img src="../assets/fakeLogo.jpg" alt="Logo">
-              <br><br>
-            </div>
-            <div class="col-md-6" style="text-align: center;">
-              <br>
-              <form action="backEnd/Logout.php" method="post">
-                <input type="submit" value="Log Out" style="font-size: 20px;">
-              </form>
-              <br><br>
-            </div>
-          </div>
-        </div>
-    <?php
-    }
-?>
 
 
     <h1>This will be the FAQ page, since we have none right now it is blank</h1>
-    <div class= "container-fluid" style="background-color: rgba(0,87,110,0.8)">
-      <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-3">
-          <br>
-          <a href="https://www.google.com">FAQ</a><br>
-          <a href="https://www.google.com">Contact Us</a><br>
-        </div>
-        <div class="col-md-3">
-          <br>
-          <a href="https://www.google.com">Report an Issue</a><br>
-          <a href="https://www.google.com">Return Policy</a><br>
-        </div>
-        <div class="col-md-4" style="text-align: center">
-          <br>
-          <img src="../assets/fakeLogo.jpg" alt="Logo">
-          <br>
-          <br>
-        </div>
-      </div>
-    </div>
 
+
+    <!-- Footer -->
+    <?php
+        session_start();
+        include('templates/footer.html');
+    ?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

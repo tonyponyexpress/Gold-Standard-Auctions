@@ -6,5 +6,5 @@ session_start();
 // out. This also happens automatically when the browser is closed
 session_destroy();
 
-header('Location: ../homeScreen.html');
+header('Location: ../homeScreen.php');
 ?>

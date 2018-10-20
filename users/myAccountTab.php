@@ -20,22 +20,11 @@ if ( ! isset( $_SESSION['user_id'] ) ) {
 </head>
 <body>
 
-    <div class= "container-fluid" style="background-color: rgba(0,87,110,0.8)">
-      <div class="row">
-        <div class="col-md-6" style="text-align: center">
-          <br>
-          <img src="../assets/fakeLogo.jpg" alt="Logo">
-          <br><br>
-        </div>
-        <div class="col-md-6" style="text-align: center;">
-          <br>
-          <form action="backEnd/Logout.php" method="post">
-            <input type="submit" value="Log Out" style="font-size: 20px;">
-          </form>
-          <br><br>
-        </div>
-      </div>
-    </div>
+    <!-- Header -->
+    <?php
+        session_start();
+        include('templates/header_user.html');
+    ?>
 
   <div class="row">
     <div class="col-md-3" onclick="location.href='howItWorksTab';" id="howItWorksButton" style="cursor: pointer;">
@@ -85,27 +74,12 @@ if ( ! isset( $_SESSION['user_id'] ) ) {
     </div>
   </div>
 
-  <div class= "container-fluid" id="footer" style="background-color: rgba(0,87,110,0.8)">
-    <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-3">
-        <br>
-        <a href="faq">FAQ</a><br>
-        <a href="contactUs">Contact Us</a><br>
-      </div>
-      <div class="col-md-3">
-        <br>
-        <a href="reportAnIssue">Report an Issue</a><br>
-        <a href="returnPolicy">Return Policy</a><br>
-      </div>
-      <div class="col-md-4" style="text-align: center">
-        <br>
-        <img src="../assets/fakeLogo.jpg" alt="Logo">
-        <br>
-        <br>
-      </div>
-    </div>
-  </div>
+
+  <!-- Footer -->
+  <?php
+      session_start();
+      include('templates/footer.html');
+  ?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
