@@ -44,7 +44,7 @@
           <br>
           <br>
           <blockquote>
-            <p>"Follow your passion, stay true to yourself, never follow someone else’s path unless you’re in the woods and you’re lost and you see a path then by all means you should follow that"</p>
+            <p>"Follow your passion, stay true to yourself, never follow someone else’s path unless you’re in the woods and you’re lost and you see a path then by all means you should follow that "</p>
             <footer>Emilia Paz</footer>
           </blockquote>
           <img src="../HeadShots/Emilia.jpg" alt="Emilia's headshot" style="width:60px;height:60px;">
