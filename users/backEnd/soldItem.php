@@ -10,13 +10,10 @@
 *
 */
     session_start();
-    $mysqli = new mysqli("mysql.eecs.ku.edu", "t828n219", "se4ahqu3", "t828n219");
 
-    /* check connection */
-    if ($mysqli->connect_errno) {
-        printf("Connect failed: %s\n", $mysqli->connect_errno);
-        exit();
-    }
+    // Access database
+    include ('../../cms/sql_credentials.php');
+    global $mysqli;
 
     $item = $_POST["item"];
     $description = $_POST["description"];
