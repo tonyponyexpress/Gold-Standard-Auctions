@@ -72,21 +72,24 @@
           <br>
         </div>
         <div class="col-md-2"> </div>
-        <div class="col-md-4" style="text-align: center">
+        <div class="col-md-3" style="text-align: center">
           <h1>Mission Statement</h1>
           <p> Here we are going to have a long inspiring paragraph<br> about the creation of this project, at this point<br>
             I'm just continuing to type to fill in the page I will<br> insert your sign up button below this long and meaningless<br>
             quote :) <br>
-            <form action="backEnd/CreateUsers.php" method="post">
-            First Name:<input type="text" name="newFirst"><br><br>
-            Last Name:<input type="text" name="newLast"><br><br>
-            Email:<input type="email" name="newEmail"><br><br>
-            Username:<input type="text" name="newUsername"><br><br>
-            Password:<input type="password" name="newPassword"><br><br>
-            Re-enter Password:<input type="password" name="newPassword2"><br><br>
-              <input type="submit" value="Sign Up" />
-            </form>
+            <div class= "centerMissionStatement" style="text-align: right">
+              <form action="backEnd/CreateUsers.php" method="post">
+              First Name:<input type="text" name="newFirst"><br><br>
+              Last Name:<input type="text" name="newLast"><br><br>
+              Email:<input type="email" name="newEmail"><br><br>
+              Username:<input type="text" name="newUsername"><br><br>
+              Password:<input type="password" name="newPassword"><br><br>
+              Re-enter Password:<input type="password" name="newPassword2"><br><br>
+                <input type="submit" value="Sign Up" />
+              </form>
+          </div>
         </div>
+        <div class="col-md-1"> </div>
       </div>
     </div>
 
