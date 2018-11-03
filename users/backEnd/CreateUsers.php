@@ -15,6 +15,11 @@
 include ('../../cms/sql_credentials.php');
 global $mysqli;
 
+if (defined("CRYPT_BLOWFISH") && CRYPT_BLOWFISH) {
+    echo "CRYPT_BLOWFISH is enabled!";
+}else {
+echo "CRYPT_BLOWFISH is not available";
+}
 // Variables
 $username = $_POST["newUsername"];
 $password = $_POST["newPassword"];
@@ -25,6 +30,8 @@ $email = $_POST["newEmail"];
 $query = "SELECT * FROM Project_Users WHERE username = '$username';";
 $query2 = "SELECT * FROM Project_Users WHERE email = '$email';";
 
+$hashed = crypt($password, $salt); //hash the created user's password
+
 $result = $mysqli->query($query);
 $result2 = $mysqli->query($query2);
 
@@ -32,7 +39,7 @@ $result2 = $mysqli->query($query2);
     echo "Username/Email already exists";
   }
   else{
-    $add_user = "INSERT INTO Project_Users (FirstName, LastName, username, email, password) VALUES ('$firstName','$lastName','$username','$email','$password');";
+    $add_user = "INSERT INTO Project_Users (FirstName, LastName, username, email, password) VALUES ('$firstName','$lastName','$username','$email','$hashed');";
     if ($username == ''){
       echo "Error: cannot have blank username";
     }
