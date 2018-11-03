@@ -28,52 +28,63 @@
         include('templates/header_login.php');
     ?>
 
-    <div class="container-fluid" style="background-color: #F2A5CB;">
+    <div class="container-fluid">
       <div class="row">
-        <div class="col-md-2"></div>
-        <div class= "col-md-4" style= "text-align: center; margin-top: 50px">
-                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                      <div class="carousel-inner">
-                          <div class="carousel-item active">
-                            <blockquote>
-                              <p>"Follow your passion, stay true to yourself, never follow someone else’s path unless you’re in the woods and you’re lost and you see a path then by all means you should follow that"</p>
-                              <footer>Ian Farris</footer>
-                            </blockquote>
-                            <img src="../HeadShots/Ian.jpg" alt="Ian's headshot" style="width:60px;height:60px;">
-                          </div>
-                          <div class="carousel-item">
-                            <blockquote>
-                              <p>"Follow your passion, stay true to yourself, never follow someone else’s path unless you’re in the woods and you’re lost and you see a path then by all means you should follow that "</p>
-                              <footer>Emilia Paz</footer>
-                            </blockquote>
-                            <img src="../HeadShots/Emilia.jpg" alt="Emilia's headshot" style="width:60px;height:60px;">
-                          </div>
-                          <div class="carousel-item">
-                            <blockquote>
-                              <p>"Follow your passion, stay true to yourself, never follow someone else’s path unless you’re in the woods and you’re lost and you see a path then by all means you should follow that"</p>
-                              <footer>Tony Nguyen</footer>
-                            </blockquote>
-                            <img src="../HeadShots/Tony.jpg" alt="Tony's headshot" style="width:60px;height:60px;">
-                          </div>
-                          <div class="carousel-item">
-                            <blockquote>
-                              <p>"Follow your passion, stay true to yourself, never follow someone else’s path unless you’re in the woods and you’re lost and you see a path then by all means you should follow that"</p>
-                              <footer>Rob Nickel</footer>
-                            </blockquote>
-                            <img src="../HeadShots/Rob.jpg" alt="Rob's headshot" style="width:60px;height:60px;">
-                          </div>
-                      </div>
-                      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                      </a>
-                      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                        </a>
-                    </div>
+        <div class="col-md-2" style="text-align: center;">
+          <div class="pad" style="margin-top: 50px; margin-bottom: 100px;"><img src="../assets/guarantee.jpg" alt="Guarantee"> </div>
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <blockquote>
+                    <p>"Follow your passion, stay true to yourself, never follow someone else’s path unless you’re in the woods and you’re lost and you see a path then by all means you should follow that"</p>
+                    <footer>Ian Farris</footer>
+                  </blockquote>
+                  <img src="../HeadShots/Ian.jpg" alt="Ian's headshot" style="width:60px;height:60px;">
+                </div>
+                <div class="carousel-item">
+                  <blockquote>
+                    <p>"Follow your passion, stay true to yourself, never follow someone else’s path unless you’re in the woods and you’re lost and you see a path then by all means you should follow that "</p>
+                    <footer>Emilia Paz</footer>
+                  </blockquote>
+                  <img src="../HeadShots/Emilia.jpg" alt="Emilia's headshot" style="width:60px;height:60px;">
+                </div>
+                <div class="carousel-item">
+                  <blockquote>
+                    <p>"Follow your passion, stay true to yourself, never follow someone else’s path unless you’re in the woods and you’re lost and you see a path then by all means you should follow that"</p>
+                    <footer>Tony Nguyen</footer>
+                  </blockquote>
+                  <img src="../HeadShots/Tony.jpg" alt="Tony's headshot" style="width:60px;height:60px;">
+                </div>
+                <div class="carousel-item">
+                  <blockquote>
+                    <p>"Follow your passion, stay true to yourself, never follow someone else’s path unless you’re in the woods and you’re lost and you see a path then by all means you should follow that"</p>
+                    <footer>Rob Nickel</footer>
+                  </blockquote>
+                  <img src="../HeadShots/Rob.jpg" alt="Rob's headshot" style="width:60px;height:60px;">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+              </a>
+          </div>
         </div>
-        <div class="col-md-2"></div>
+
+        <div class= "col-md-6" style= "text-align: center; margin-top: 50px">
+          <div class="container-fluid">
+            <div class="row" style="text-align: center; border-style: solid; border-width: 5px; border-color:#F64C72;">
+
+                This is where 3 pics will go to describe the process
+
+            </div>
+          </div>
+          this will be pics that say things like satisfaction guaranteed, etc
+        </div>
+
         <div class="col-md-3" style="text-align: center">
           <h1>Mission Statement</h1>
           <p> Here we are going to have a long inspiring paragraph<br> about the creation of this project, at this point<br>
