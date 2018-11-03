@@ -30,7 +30,7 @@ $email = $_POST["newEmail"];
 $query = "SELECT * FROM Project_Users WHERE username = '$username';";
 $query2 = "SELECT * FROM Project_Users WHERE email = '$email';";
 
-$hashed = crypt($password, $salt); //hash the created user's password
+$hashed = crypt($password, $salt); //hash the created user's password that will be stored in the database
 
 $result = $mysqli->query($query);
 $result2 = $mysqli->query($query2);

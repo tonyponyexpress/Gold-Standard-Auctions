@@ -53,8 +53,11 @@
     *@package users
     *
     */
-        session_start();
-        include('templates/footer.php');
+        // session_start();
+        // include('templates/footer.php');
+        include('usersClass.php');
+        $temp = new users();
+        $temp->tmpl_footer();
     ?>
 
 
