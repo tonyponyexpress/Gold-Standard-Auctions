@@ -71,12 +71,6 @@
              </form>
 
 
-             <?php
-
-             ?>
-
-
-
 
              <?php
              /* close connection */
