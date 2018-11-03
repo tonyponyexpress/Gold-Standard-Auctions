@@ -17,6 +17,7 @@ if ( ! isset( $_SESSION['user_id'] ) ) {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="cssFiles/myAccountTab.css">
     <link rel="stylesheet" href="cssFiles/homeScreen.css">
+    <script src="script.js"></script>
 </head>
 <body>
 
@@ -50,7 +51,7 @@ if ( ! isset( $_SESSION['user_id'] ) ) {
 
     <br>
 
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-md-6" style="text-align: center">
       <div style="border: 5px solid blue;">
         <h1>Current</h1>
@@ -82,7 +83,71 @@ if ( ! isset( $_SESSION['user_id'] ) ) {
           </table>
         </p>
     </div>
+  </div> -->
+
+
+  <div class="row">
+    <div class="col-md-8">
+      <h2>Offers</h2>
+    </div>
+
+    <div class="col-md-4">
+        <h2> Message Board </h2>
+        <div id="message-board">
+
+            <table class="table" >
+            <?php
+                // Access database
+                include ('../cms/sql_credentials.php');
+                global $mysqli;
+
+                // Get username
+                session_start();
+                $username =  $_SESSION['user_id'];
+
+                $messages = "SELECT * FROM Project_Messages WHERE username='$username' ";
+
+                if ($result = $mysqli->query($messages)) {
+                    // Get all users
+                    while ($message_row = $result->fetch_assoc()) {
+                        $ID = $message_row['message_id'];
+                        $message = $message_row['message'];
+                        $admin = $message_row['admin'];
+
+                        if ($admin == 1){
+                            ?>
+                            <tr>
+                                <th id="message-admin"> admin: <?php echo $message; ?> </th>
+                            </tr>
+                            <?php
+                        }
+                        else{
+                            ?>
+                            <tr>
+                                <th id="message-user"> user: <?php echo $message; ?> </th>
+                            </tr>
+                            <?php
+                        }
+                    }
+                    /* free result set */
+                    $result->free();
+                }
+                ?>
+            </table>
+
+        </div>
+    </br>
+        <div id="message-submission">
+            <form action="backEnd/sendMessage.php" method="post">
+                <textarea id="message-box" type="text" name="message" placeholder="Message" required=""> </textarea>
+                <button class="btn btn-sml btn-block btnsubmit" type="submit">Submit message</button>
+            </form>
+            <!-- <a class="btn btn-secondary btn-block" href="sendMessage.php" role="button">Submit message</a> -->
+        </div>
+
+    </div>
   </div>
+
 
 
   <!-- Footer -->

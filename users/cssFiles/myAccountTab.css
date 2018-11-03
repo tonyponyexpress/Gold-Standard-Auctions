@@ -16,3 +16,35 @@
 	border-bottom: 0px;
 	border-left: 0px;
 }
+
+.btnsubmit{
+    background-color: #553D67;
+    color: #FFFFFF;
+}
+
+.btnsubmit:hover{
+    background-color: #694c7e;
+    color: #FFFFFF;
+}
+
+
+/* ----------------------------- Message Board ----------------------------- */
+#message-board{
+    height:70%;
+    overflow:auto;
+    background-color:white;
+    scrollbar-base-color:gold;
+}
+
+#message-box{
+    width: 100%;
+}
+
+#message-admin{
+    background-color: #e5e7e9;
+}
+
+#message-user{
+    text-align: right;
+    background-color: #99738E;
+}
