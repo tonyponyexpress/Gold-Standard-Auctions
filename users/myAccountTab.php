@@ -1,9 +1,12 @@
 <?php
-session_start();
-// Redirect to home page if user hasn't logged in
-if ( ! isset( $_SESSION['user_id'] ) ) {
-    header("Location: homeScreen.php");
-}
+// session_start();
+// // Redirect to home page if user hasn't logged in
+// if ( ! isset( $_SESSION['user_id'] ) ) {
+//     header("Location: homeScreen.php");
+// }
+include('usersClass.php');
+$temp = new users();
+$temp->header_homeScreen();
 ?>
 
 <!DOCTYPE html>
@@ -33,8 +36,11 @@ if ( ! isset( $_SESSION['user_id'] ) ) {
     *@package users
     *
     */
-        session_start();
-        include('templates/header_user.php');
+        // session_start();
+        // include('templates/header_user.php');
+        include('usersClass.php');
+        $temp = new users();
+        $temp->header_user();
     ?>
 
   <div class="row">
@@ -166,8 +172,11 @@ if ( ! isset( $_SESSION['user_id'] ) ) {
 
   <!-- Footer -->
   <?php
-      session_start();
-      include('templates/footer.php');
+      // session_start();
+      // include('templates/footer.php');
+      include('usersClass.php');
+      $temp = new users();
+      $temp->tmpl_footer();
   ?>
 
     <!-- Optional JavaScript -->
