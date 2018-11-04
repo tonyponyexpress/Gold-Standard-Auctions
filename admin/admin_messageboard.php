@@ -14,11 +14,9 @@
     * Checks if the admin_id session variable has been set. If true it shows the page, else it redirects to the login page
     *
     */
-    session_start();
-    // Redirect to home page if user hasn't logged in
-    if ( ! isset( $_SESSION['admin_id'] ) ) {
-        header("Location: admin_login.html");
-    }
+    include('adminClass.php');
+    $temp = new admin();
+    $temp->header_admin_login();
 ?>
 
 <!DOCTYPE html>
@@ -45,8 +43,8 @@
             * Loads sidebar.php file. If a change is made in sidebar.php, it automatically changes in all the admin files.
             *
             */
-            session_start();
-            include('templates/sidebar.php');
+            $temp = new admin();
+            $temp->tmpl_sidebar();
         ?>
 
         <!-- Page Content  -->

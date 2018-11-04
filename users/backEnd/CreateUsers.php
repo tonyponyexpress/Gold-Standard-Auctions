@@ -27,6 +27,7 @@ $password2 = $_POST["newPassword2"];
 $firstName = $_POST["newFirst"];
 $lastName = $_POST["newLast"];
 $email = $_POST["newEmail"];
+
 $query = "SELECT * FROM Project_Users WHERE username = '$username';";
 $query2 = "SELECT * FROM Project_Users WHERE email = '$email';";
 
