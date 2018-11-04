@@ -82,10 +82,6 @@ $temp->header_homeScreen();
 
   <!-- Footer -->
   <?php
-<<<<<<< HEAD
-      include('usersClass.php');
-=======
->>>>>>> refs/remotes/origin/project4
       $temp = new users();
       $temp->tmpl_footer();
   ?>
