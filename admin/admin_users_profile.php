@@ -43,7 +43,7 @@
         <!-- Sidebar  -->
         <?php
             session_start();
-            include('templates/sidebar.php');    
+            include('templates/sidebar.php');
         ?>
 
         <!-- Page Content  -->
@@ -58,7 +58,7 @@
                     global $mysqli;
                     // Items table
                     $temp = new database();
-                    $temp->showItemsUser();
+                    $temp->showItemsUser("get");
                  ?>
 
 

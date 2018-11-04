@@ -65,7 +65,15 @@ $temp->header_homeScreen();
                 </div>
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                   <div class="card-body">
-
+                      <?php
+                         // Access database
+                         include ('../cms/sql_credentials.php');
+                         global $mysqli;
+                         include('../cms/databaseClass.php');
+                         // Pending offer items table
+                         $temp = new database();
+                         $temp->showItemsUser("pending");
+                      ?>
                   </div>
                 </div>
               </div>
@@ -80,7 +88,11 @@ $temp->header_homeScreen();
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                   <div class="card-body">
-                      
+                      <?php
+                         // Offer items table
+                         $temp = new database();
+                         $temp->showItemsUser("offer");
+                      ?>
                   </div>
                 </div>
               </div>
@@ -95,7 +107,11 @@ $temp->header_homeScreen();
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                   <div class="card-body">
-
+                      <?php
+                         // Offer items table
+                         $temp = new database();
+                         $temp->showItemsUser("accepted");
+                      ?>
                   </div>
                 </div>
               </div>

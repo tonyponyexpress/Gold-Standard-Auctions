@@ -46,10 +46,17 @@
 
 
 
-        public function showItemsUser(){
+        public function showItemsUser($type){
            // Access database
            include ('sql_credentials.php');
            global $mysqli;
+
+           if ($type == "get"){
+               $username = $_GET['Username'];
+           }
+           else {
+               $username =  $_SESSION['user_id'];
+           }
 
             ?>
             <table class="table table-striped" >
@@ -61,8 +68,22 @@
                 </tr>
 
                 <?php
-                $username = $_GET['Username'];
-                $items = "SELECT * FROM Project_Items WHERE username='$username'";
+
+                if ($type == "pending"){
+                    $items = "SELECT * FROM Project_Items WHERE username='$username' AND status='$type'";
+                }
+                else if ($type == "offer"){
+                    $items = "SELECT * FROM Project_Items WHERE username='$username' AND status='$type'";
+                }
+                else if ($type == "accepted"){
+                    $items = "SELECT * FROM Project_Items WHERE username='$username' AND status='$type'";
+                }
+                else{
+                    $items = "SELECT * FROM Project_Items WHERE username='$username'";
+                }
+
+
+
                 if ($result = $mysqli->query($items)) {
                     // Get all items of the specific user
                     while ($users_row = $result->fetch_assoc()) {
