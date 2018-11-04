@@ -72,7 +72,7 @@ $temp->header_homeScreen();
                 </div>
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                   <div class="card-body">
-                      
+
                   </div>
                 </div>
               </div>
@@ -87,7 +87,7 @@ $temp->header_homeScreen();
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                   <div class="card-body">
-
+                      
                   </div>
                 </div>
               </div>

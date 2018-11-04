@@ -10,7 +10,7 @@
 *
 */
     session_start();
-    
+
     // Access database
     include ('../../cms/sql_credentials.php');
     global $mysqli;
@@ -25,7 +25,7 @@
     if (mysqli_num_rows($login)) {
         // set session
         $_SESSION['user_id'] = $username;
-        header('Location: ../sellTab');
+        header('Location: ../sellTab.php');
     }
     else {
       echo "error: invalid username or password.";
