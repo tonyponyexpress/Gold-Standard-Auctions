@@ -10,34 +10,21 @@
     <link rel="stylesheet" href="cssFiles/homeScreen.css">
 </head>
 <body>
-
-    <div class= "container-fluid" style="background-color: rgba(0,87,110,0.8)">
-      <div class="row">
-        <div class="col-md-6" style="text-align: center">
-          <br>
-          <img src="../assets/fakeLogo.jpg" alt="Logo">
-          <br>
-          <br>
-        </div>
-        <div class="col-md-1"> </div>
-        <div class="col-md-2" style="text-align: center;">
-          <form>
-            <br>
-            Username:<br>
-            <input type="text" name="username"><br><br>
-          </form>
-        </div>
-        <div class="col-md-2" style="text-align: center;">
-          <form>
-            <br>
-            Password:<br>
-            <input type="text" name="password"><br><br>
-          </form>
-        </div>
-        <div class="col-md-1"> <br><br><input type="submit" value="Log In"><br><br></div>
-      </div>
-    </div>
-
+  <?php
+    /**
+    *User faq
+    *Lists the faq that customers may have
+    *
+    *
+    *
+    *@author Tritens
+    *@package users
+    *
+    */
+      include('usersClass.php');
+      $temp = new users();
+      $temp->header_login_user();
+  ?>
     <h1>This will be the Contact Us page, Contact info will be uploaded later</h1>
 
 
@@ -53,9 +40,6 @@
     *@package users
     *
     */
-        // session_start();
-        // include('templates/footer.php');
-        include('usersClass.php');
         $temp = new users();
         $temp->tmpl_footer();
     ?>

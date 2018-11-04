@@ -23,15 +23,6 @@
     *@package users
     *
     */
-        // session_start();
-        // // Login header
-        // if ( ! isset( $_SESSION['user_id'] ) ) {
-        //     include('templates/header_login.php');
-        // }
-        // // User header
-        // else {
-        //     include('templates/header_user.php');
-        // }
         include('usersClass.php');
         $temp = new users();
         $temp->header_login_user();
@@ -44,9 +35,6 @@
 
     <!-- Footer -->
     <?php
-        // session_start();
-        // include('templates/footer.php');
-        include('usersClass.php');
         $temp = new users();
         $temp->tmpl_footer();
     ?>
