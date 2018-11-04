@@ -43,7 +43,7 @@
         <!-- Sidebar  -->
         <?php
             session_start();
-            include('templates/sidebar.php');
+            include('templates/sidebar.php');    
         ?>
 
         <!-- Page Content  -->
@@ -54,39 +54,15 @@
                  <?php
                     // Access database
                     include ('../cms/sql_credentials.php');
+                    include('../cms/databaseClass.php');
                     global $mysqli;
+                    // Items table
+                    $temp = new database();
+                    $temp->showItemsUser();
                  ?>
 
-                 <table class="table table-striped" >
-                     <tr>
-                         <th scope="col"> ID </th>
-                         <th scope="col"> Item </th>
-                         <th scope="col"> Description </th>
-                     </tr>
 
 
-                 <?php
-                     $username = $_GET['Username'];
-                     $items = "SELECT * FROM Project_Items WHERE username='$username'";
-                     if ($result = $mysqli->query($items)) {
-                         // Get all items of the specific user
-                         while ($users_row = $result->fetch_assoc()) {
-                             $item_id = $users_row['item_id'];
-                             $name = $users_row['name'];
-                             $description = $users_row['description'];
-                             ?>
-                             <tr>
-                                 <th> <?php echo $item_id; ?> </th>
-                                 <th> <?php echo $name; ?> </th>
-                                 <th> <?php echo $description; ?> </th>
-                             </tr>
-                         <?php
-                         }
-                         /* free result set */
-                         $result->free();
-                     }
-                     ?>
-                 </table>
             </div>
 
             <div class="user_info">

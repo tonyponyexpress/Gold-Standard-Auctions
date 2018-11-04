@@ -50,102 +50,116 @@ $temp->header_homeScreen();
 
     <br>
 
-  <!-- <div class="row">
-    <div class="col-md-6" style="text-align: center">
-      <div style="border: 5px solid blue;">
-        <h1>Current</h1>
-      </div>
-        <p>
-          <table class="table table-striped" >
-            <tr>
-            <th scope="col"> Item </th>
-            <th scope="col"> Current Offer </th>
-            </tr>
-          </table>
-        </p>
-    </div>
-  </div>
 
+    <div class="row">
+        <div class="col-md-8">
+            <div class="accordion" id="accordionExample">
+              <div class="card">
 
-  <div class="row">
-    <div class="col-md-6" style="text-align: center">
-      <div style="border: 5px solid blue;">
-        <h1>Past</h1>
-      </div>
-        <p>
-          <table class="table table-striped" >
-            <tr>
-            <th scope="col"> Item </th>
-            <th scope="col"> Sold Price </th>
-            <th scope="col"> Profit to Date </th>
-            </tr>
-          </table>
-        </p>
-    </div>
-  </div> -->
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Pending Offers
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                      
+                  </div>
+                </div>
+              </div>
 
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Offers
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
 
-  <div class="row">
-    <div class="col-md-8">
-      <h2>Offers</h2>
-    </div>
+                  </div>
+                </div>
+              </div>
 
-    <div class="col-md-4">
-        <h2> Message Board </h2>
-        <div id="message-board">
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Accepted Offers
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
 
-            <table class="table" >
-            <?php
-                // Access database
-                include ('../cms/sql_credentials.php');
-                global $mysqli;
+                  </div>
+                </div>
+              </div>
 
-                // Get username
-                session_start();
-                $username =  $_SESSION['user_id'];
+            </div>
 
-                $messages = "SELECT * FROM Project_Messages WHERE username='$username' ";
+        </div>
 
-                if ($result = $mysqli->query($messages)) {
-                    // Get all users
-                    while ($message_row = $result->fetch_assoc()) {
-                        $ID = $message_row['message_id'];
-                        $message = $message_row['message'];
-                        $admin = $message_row['admin'];
+        <div class="col-md-4">
+            <h2> Message Board </h2>
+            <div id="message-board">
 
-                        if ($admin == 1){
-                            ?>
-                            <tr>
-                                <th id="message-admin"> admin: <?php echo $message; ?> </th>
-                            </tr>
-                            <?php
+                <table class="table" >
+                <?php
+                    // Access database
+                    include ('../cms/sql_credentials.php');
+                    global $mysqli;
+
+                    // Get username
+                    session_start();
+                    $username =  $_SESSION['user_id'];
+
+                    $messages = "SELECT * FROM Project_Messages WHERE username='$username' ";
+
+                    if ($result = $mysqli->query($messages)) {
+                        // Get all users
+                        while ($message_row = $result->fetch_assoc()) {
+                            $ID = $message_row['message_id'];
+                            $message = $message_row['message'];
+                            $admin = $message_row['admin'];
+
+                            if ($admin == 1){
+                                ?>
+                                <tr>
+                                    <th id="message-admin"> admin: <?php echo $message; ?> </th>
+                                </tr>
+                                <?php
+                            }
+                            else{
+                                ?>
+                                <tr>
+                                    <th id="message-user"> user: <?php echo $message; ?> </th>
+                                </tr>
+                                <?php
+                            }
                         }
-                        else{
-                            ?>
-                            <tr>
-                                <th id="message-user"> user: <?php echo $message; ?> </th>
-                            </tr>
-                            <?php
-                        }
+                        /* free result set */
+                        $result->free();
                     }
-                    /* free result set */
-                    $result->free();
-                }
-                ?>
-            </table>
+                    ?>
+                </table>
+
+            </div>
+            </br>
+            <div id="message-submission">
+                <form action="backEnd/sendMessage.php" method="post">
+                    <textarea id="message-box" type="text" name="message" placeholder="Message" required=""> </textarea>
+                    <button class="btn btn-sml btn-block btnsubmit" type="submit">Submit message</button>
+                </form>
+                <!-- <a class="btn btn-secondary btn-block" href="sendMessage.php" role="button">Submit message</a> -->
+            </div>
 
         </div>
-    </br>
-        <div id="message-submission">
-            <form action="backEnd/sendMessage.php" method="post">
-                <textarea id="message-box" type="text" name="message" placeholder="Message" required=""> </textarea>
-                <button class="btn btn-sml btn-block btnsubmit" type="submit">Submit message</button>
-            </form>
-            <!-- <a class="btn btn-secondary btn-block" href="sendMessage.php" role="button">Submit message</a> -->
-        </div>
-
     </div>
-  </div>
 
 
 

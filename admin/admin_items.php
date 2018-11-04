@@ -2,7 +2,7 @@
 /**
     * Admin users
     *
-    * Shows all the users and their basic information (name, number of items, link to profile)
+    * Shows all the items
     *
     * @author Tritens
     * @package admin
@@ -51,16 +51,16 @@
 
         <!-- Page Content  -->
         <div id="content">
-             <h2>Users</h2>
+             <h2>Items</h2>
 
              <?php
                 // Access database
                 include ('../cms/sql_credentials.php');
                 include('../cms/databaseClass.php');
                 global $mysqli;
-                // Items for user table
+                // Items table
                 $temp = new database();
-                $temp->showUsers();
+                $temp->showItems();
              ?>
 
              <?php
