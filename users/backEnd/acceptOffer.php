@@ -11,20 +11,17 @@
 */
 
     // Access database
-    include ('sql_credentials.php');
+    include ('../../cms/sql_credentials.php');
     global $mysqli;
-    $item_id = $_GET['accept'];
+    $item_id = $_POST['accept'];
 
-    echo $item_id;
-    $item = "UPDATE Project_Items SET status='accepted' WHERE item_id='$item_id';";
-
-    if ($mysqli->query($item) === TRUE) {
-        echo "New record created successfully";
+    $entry = "UPDATE Project_Items SET status='accepted' WHERE item_id='$item_id';";
+    if ($mysqli->query($entry) === TRUE) {
+        echo "Offer accepted successfully";
     }
     else {
         echo "Error";
     }
-    echo "last";
 
     // close connection
     $mysqli->close();

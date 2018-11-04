@@ -136,7 +136,7 @@
                                 else if ($type == "offer"){
                                     ?>
                                     <th scope="col">
-                                        <form action="../users/backEnd/acceptOffer.php" method="get">
+                                        <form action="../users/backEnd/acceptOffer.php" method="post">
                                              <button name="accept" type="submit" value="<?php echo $item_id?>">accept</button>
                                         </form>
                                     </th>
