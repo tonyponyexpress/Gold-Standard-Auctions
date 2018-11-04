@@ -30,7 +30,8 @@
 
 /* ----------------------------- Message Board ----------------------------- */
 #message-board{
-    height:70%;
+    max-height: 400px;
+    max-height: 550px;
     overflow:auto;
     background-color:white;
     scrollbar-base-color:gold;

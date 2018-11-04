@@ -15,6 +15,7 @@
     global $mysqli;
     $item_id = $_GET['accept'];
 
+    echo $item_id;
     $item = "UPDATE Project_Items SET status='accepted' WHERE item_id='$item_id';";
 
     if ($mysqli->query($item) === TRUE) {
