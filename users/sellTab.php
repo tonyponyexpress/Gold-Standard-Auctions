@@ -8,11 +8,7 @@
     */
 
 
-// session_start();
 // // Redirect to home page if user hasn't logged in
-// if ( ! isset( $_SESSION['user_id'] ) ) {
-//     header("Location: homeScreen.php");
-// }
 include('usersClass.php');
 $temp = new users();
 $temp->header_homeScreen();
@@ -37,7 +33,6 @@ $temp->header_homeScreen();
 
     <!-- Header -->
     <?php
-        include('usersClass.php');
         $temp = new users();
         $temp->header_user();
     ?>
@@ -87,7 +82,10 @@ $temp->header_homeScreen();
 
   <!-- Footer -->
   <?php
+<<<<<<< HEAD
       include('usersClass.php');
+=======
+>>>>>>> refs/remotes/origin/project4
       $temp = new users();
       $temp->tmpl_footer();
   ?>
