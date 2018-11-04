@@ -15,6 +15,8 @@
                     <th scope="col"> Description </th>
                     <th scope="col"> Username </th>
                     <th scope="col"> Offer </th>
+                    <th scope="col"> Status </th>
+                    <th scope="col"> Create offer </th>
                 </tr>
 
                 <?php
@@ -27,6 +29,7 @@
                         $description = $users_row['description'];
                         $username = $users_row['username'];
                         $offer = $users_row['offer'];
+                        $status = $users_row['status'];
                         ?>
                         <tr>
                             <th> <?php echo $item_id; ?> </th>
@@ -34,6 +37,19 @@
                             <th> <?php echo $description; ?> </th>
                             <th> <?php echo $username; ?> </th>
                             <th> <?php echo $offer; ?> </th>
+                            <th> <?php echo $status; ?> </th>
+                            <?php
+                                if ($status != "accepted"){
+                                    ?>
+                                        <th> <a href="../admin/admin_createOffer.php?itemOffer=<?php echo $item_id?>"> X </a> </th>
+                                    <?php
+                                }
+                                else{
+                                    ?>
+                                        <th> </th>
+                                    <?php
+                                }
+                            ?>
                         </tr>
                     <?php
                     }
@@ -65,6 +81,19 @@
                     <th scope="col"> Item </th>
                     <th scope="col"> Description </th>
                     <th scope="col"> Offer </th>
+                    <?php
+                        if ($type == "get"){
+                            ?>
+                            <th scope="col"> Status </th>
+                            <?php
+                        }
+                        else if ($type == "offer"){
+                            ?>
+                            <th scope="col"> Accept offer </th>
+                            <?php
+                        }
+
+                    ?>
                 </tr>
 
                 <?php
@@ -91,12 +120,30 @@
                         $name = $users_row['name'];
                         $description = $users_row['description'];
                         $offer = $users_row['offer'];
+                        $status = $users_row['status'];
                         ?>
                         <tr>
                             <th> <?php echo $item_id; ?> </th>
                             <th> <?php echo $name; ?> </th>
                             <th> <?php echo $description; ?> </th>
                             <th> <?php echo $offer; ?> </th>
+                            <?php
+                                if ($type == "get"){
+                                    ?>
+                                    <th> <?php echo $status; ?> </th>
+                                    <?php
+                                }
+                                else if ($type == "offer"){
+                                    ?>
+                                    <th scope="col">
+                                        <form action="../users/backEnd/acceptOffer.php" method="get">
+                                             <button name="accept" type="submit" value="<?php echo $item_id?>">accept</button>
+                                        </form>
+                                    </th>
+                                    <?php
+                                }
+
+                            ?>
                         </tr>
                     <?php
                     }

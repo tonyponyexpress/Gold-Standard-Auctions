@@ -15,7 +15,7 @@
     include ('../../cms/sql_credentials.php');
     global $mysqli;
 
-    $item = $_POST["item"];
+    $item = $_POST["item"]
     $description = $_POST["description"];
     $picture = $_POST["picture"];
     $username =  $_SESSION['user_id'];
