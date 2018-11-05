@@ -35,36 +35,42 @@
     <div class = "row"></div>
     <div class="col-xs-12" style="height:100px;"></div> <!--creates blank space -->
 
-    <div class = "container-fluid">
-      <div class = "row">
-        <div class ="col-md-3"></div>
-        <div class ="col-md-6">
-          <div class = "center" style = "text-align: left;">
-            <p> Please select your reason for contacting us:
-            <select>
-              <option value = "Issue with creating an account"> Issue with creating an account</option>
-              <option value = "Problem logging in to existing account"> Problem logging in to existing account</option>
-              <option value = "Questions about the Get Rid of It process"> Questions about the Get Rid of It process</option>
-            </select>
+    <form class="form-contact" action="backEnd/contactcc.php" method="post">
+      <div class = "container-fluid">
+        <div class = "row">
+          <div class ="col-md-3"></div>
+          <div class ="col-md-6">
+            <div class = "center" style = "text-align: left;">
+
+              <p> Please select your reason for contacting us:
+              <select name = "contactReason">
+                <option value = "Issue with creating an account"> Issue with creating an account</option>
+                <option value = "Problem logging in to existing account"> Problem logging in to existing account</option>
+                <option value = "Questions about the Get Rid of It process"> Questions about the Get Rid of It process</option>
+              </select>
+
+            </p>
+            <div class="col-xs-12" style="height:25px;"></div>
+            <textarea rows="5" cols="100" placeholder = "Please input the description of your issue here."></textarea>
+            <div class="col-xs-12" style="height:25px;"></div>
+            <p> please provide an email address we can reach you at:
+            <input type = "text" name = "contactEmail"> </input>
           </p>
+          </div>
+
           <div class="col-xs-12" style="height:25px;"></div>
-          <textarea rows="5" cols="100" placeholder = "Please input the description of your issue here."></textarea>
-          <div class="col-xs-12" style="height:25px;"></div>
-          <p> please provide an email address we can reach you at:
-          <input type = "text" name = "contactEmail"> </input>
-        </p>
+          <div class = "col-md-3"></div>
         </div>
-        <div class="col-xs-12" style="height:25px;"></div>
-        <div class = "col-md-3"></div>
+      </div>
+      <div class = "row">
+        <div class = "col-md-12">
+          <div class = "center" style = "text-align: center">
+            <input type = "submit" value = "Submit">
+          </div>
       </div>
     </div>
-    <div class = "row">
-      <div class = "col-md-12">
-        <div class = "center" style = "text-align: center">
-          <input type = "submit" value = "Submit">
-        </div>
-    </div>
-  </div>
+  </form>
+
     <!-- Footer -->
     <?php
     /**
