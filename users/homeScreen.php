@@ -76,13 +76,18 @@
 
         <div class= "col-md-6" style= "text-align: center; margin-top: 50px">
           <div class="container-fluid">
-            <div class="row" style="text-align: center; border-style: solid; border-width: 5px; border-color:#F64C72;">
-
-                This is where 3 pics will go to describe the process
-
+            <div class="row" style="text-align: center; border-style: solid; border-width: 5px; border-color:#F64C72; margin-bottom: 300px">
+              <h1 class="display-1">1</h1><img src="../assets/submitButton.jpeg" alt="submit item" style="width:100px;height:100px;">
+              <img src="../assets/arrow.jpeg" alt="get paid" style="width:100px;height:70px;">
+              <h1 class="display-1">2</h1><img src="../assets/shipfree.jpeg" alt="ship free" style="width:100px;height:100px;">
+              <img src="../assets/arrow.jpeg" alt="get paid" style="width:100px;height:70px;">
+              <h1 class="display-1">3</h1><img src="../assets/getpaid.jpeg" alt="get paid" style="width:100px;height:100px;">
             </div>
           </div>
-          this will be pics that say things like satisfaction guaranteed, etc
+          <img src="../assets/satisfaction.jpeg" alt="satisfaction" style="width:180px;height:150px; margin-right: 20px; margin-left: 20px;">
+          <img src="../assets/reviews.png" alt="reviews" style="width:180px;height:150px; margin-right: 20px; margin-left: 20px;">
+          <img src="../assets/paidthemost.jpeg" alt="paid the most" style="width:180px;height:150px; margin-right: 20px; margin-left: 20px;">
+          <img src="../assets/bestprice.jpeg" alt="best price" style="width:180px;height:150px; margin-right: 20px; margin-left: 20px;">
         </div>
 
         <div class="col-md-3" style="text-align: center">
