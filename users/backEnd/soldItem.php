@@ -28,7 +28,19 @@
         $post = "INSERT INTO  Project_Items(name, description, username, image) VALUES ('$item','$description','$username','$file');";
         if ($post_result = $mysqli->query($post)) {
             echo "New record created successfully";
-            header('Location: ../sellTab.php');
+            // header('Location: ../sellTab.php');
+            $query = "SELECT * FROM Project_Items";
+                $result = mysqli_query($mysqli, $query);
+                while($row = mysqli_fetch_array($result))
+                {
+                     echo '
+                          <tr>
+                               <td>
+                                    <img src="data:image/jpeg;base64,'.base64_encode($row['image'] ).'" height="200" width="200" class="img-thumnail" />
+                               </td>
+                          </tr>
+                     ';
+                }
         }
         else {
             echo "Error";

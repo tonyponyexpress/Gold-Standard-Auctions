@@ -80,6 +80,7 @@
                     <th scope="col"> ID </th>
                     <th scope="col"> Item </th>
                     <th scope="col"> Description </th>
+                    <th scope="col"> Image </th>
                     <th scope="col"> Offer </th>
                     <?php
                         if ($type == "get"){
@@ -119,6 +120,7 @@
                         $item_id = $users_row['item_id'];
                         $name = $users_row['name'];
                         $description = $users_row['description'];
+                        $image = $users_row['image'];
                         $offer = $users_row['offer'];
                         $status = $users_row['status'];
                         ?>
@@ -126,6 +128,11 @@
                             <th> <?php echo $item_id; ?> </th>
                             <th> <?php echo $name; ?> </th>
                             <th> <?php echo $description; ?> </th>
+                            <?php
+                                echo '
+                                <th> <img src="data:image/jpeg;base64,'.base64_encode($users_row['image'] ).'" height="75" width="75" class="img-thumnail" />  </th>
+                                ';
+                            ?>
                             <th> <?php echo $offer; ?> </th>
                             <?php
                                 if ($type == "get"){
