@@ -72,7 +72,7 @@ $temp->header_homeScreen();
 
       <div class="form-group row">
         <div class="col-sm-12">
-          <input type="submit" class="btn btn-primary" name="submit" label="Submit" value="Submit"></input>
+          <input type="submit" class="btn btn-primary" name="submit" id="submit" label="Submit" value="Submit"></input>
         </div>
       </div>
   </form>
@@ -91,3 +91,28 @@ $temp->header_homeScreen();
 
 </body>
 </html>
+
+
+<script>
+ // Only accepts gif, png, jpg, jpeg files
+ $(document).ready(function(){
+      $('#submit').click(function(){
+           var image_name = $('#image').val();
+           if(image_name == '')
+           {
+                alert("Please Select Image");
+                return false;
+           }
+           else
+           {
+                var extension = $('#image').val().split('.').pop().toLowerCase();
+                if(jQuery.inArray(extension, ['gif','png','jpg','jpeg']) == -1)
+                {
+                     alert('Invalid Image File');
+                     $('#image').val('');
+                     return false;
+                }
+           }
+      });
+ });
+ </script>
