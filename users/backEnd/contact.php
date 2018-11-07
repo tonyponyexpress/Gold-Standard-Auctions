@@ -18,8 +18,7 @@ global $mysqli;
 $title = $_POST["contactReason"];
 $description = $_POST["description"];
 $email = $_POST["contactEmail"];
-
-
+$description = str_replace("'", "''", $description);
 $add_contact = "INSERT INTO Project_Problems (title, description, email) VALUES ('$title', '$description', '$email');";
 if($user_result = $mysqli->query($add_contact)){
   //echo "New user created successfully.<br>";
