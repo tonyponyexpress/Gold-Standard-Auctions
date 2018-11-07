@@ -11,7 +11,7 @@
     */
 
 ?>
-<div class= "container-fluid" id="footer" style="background-color: rgba(0,87,110)">
+<div class= "container-fluid" id="footer" style="background-color: #2F2FA2; ">
   <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-3">

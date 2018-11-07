@@ -10,7 +10,7 @@
     *
     */
 ?>
-<div class= "container-fluid" style="background-color: rgba(0,87,110,0.8)">
+<div class= "container-fluid" style="background-color: #2F2FA2">
   <div class="row">
     <div class="col-md-6" style="text-align: center">
       <br>
@@ -23,12 +23,12 @@
     <!-- login -->
     <div class="col-md-2" style="text-align: center;">
       <form action="backEnd/Login.php" method="post">
-        <br> Username:<br>
+        <br><font color="white"> Username:</font><br>
         <input type="text" name="username"><br><br>
     </div>
 
     <div class="col-md-2" style="text-align: center;">
-        <br> Password:<br>
+        <br><font color="white"> Password:</font><br>
         <input type="password" name="password"><br><br>
     </div>
 

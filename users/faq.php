@@ -11,8 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
     .accordion {
-        background-color: #eee;
-        color: #444;
+        background-color: #2F2FA2;
+        color: white;
         cursor: pointer;
         padding: 18px;
         width: 100%;
@@ -21,10 +21,11 @@
         outline: none;
         font-size: 15px;
         transition: 0.4s;
+        border-bottom: 6px solid #F64C72;
     }
 
     .active, .accordion:hover {
-        background-color: #ccc;
+        background-color: #1a75ff;
     }
 
     .panel {
@@ -55,9 +56,10 @@
     ?>
 
 
-    <div class="container-fluid" >
+    <div class="container-fluid">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-3"></div>
+        <div class="col-md-6" style= "margin-top: 50px">
           <div class= "center" style= "text-align: center;"><font color="#553D67"><h2>Frequently Asked Questions</h2></font></div>
 
           <button class="accordion">How will my items be evaluated?</button>
@@ -97,6 +99,11 @@
             return the form of payment which you recieved and we will mail back your item, shipping on us!</p>
           </div>
 
+          <button class="accordion">What to do if I don't see my question answered here?</button>
+          <div class="panel">
+            <p>Follow the Contact Us link at the bottom of the page to submit your own questions!</p>
+          </div>
+
           <script>
           var acc = document.getElementsByClassName("accordion");
           var i;
@@ -114,6 +121,7 @@
           }
           </script>
         </div>
+        <div class="col-md-3"></div>
       </div>
     </div>
 
