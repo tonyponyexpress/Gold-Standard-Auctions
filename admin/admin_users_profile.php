@@ -63,45 +63,9 @@
 
             </div>
 
-            <div class="user_info">
-
-                 <h2>Problems</h2>
-
-                 <table class="table table-striped" >
-                     <tr>
-                         <th scope="col"> ID </th>
-                         <th scope="col"> Problem </th>
-                         <th scope="col"> Description </th>
-                     </tr>
-
-                 <?php
-                     $username = $_GET['Username'];
-                     $problems = "SELECT * FROM Project_Problems WHERE username='$username'";
-                     if ($result = $mysqli->query($problems)) {
-                         // Get all items of the specific user
-                         while ($problems_row = $result->fetch_assoc()) {
-                             $problem_id = $problems_row['problem_id'];
-                             $title = $problems_row['title'];
-                             $description = $problems_row['description'];
-                             ?>
-                             <tr>
-                                 <th> <?php echo $problem_id; ?> </th>
-                                 <th> <?php echo $title; ?> </th>
-                                 <th> <?php echo $description; ?> </th>
-                             </tr>
-                         <?php
-                         }
-                         /* free result set */
-                         $result->free();
-                     }
-                     ?>
-                 </table>
-
-             </div>
-
              <?php
-             /* close connection */
-             $mysqli->close();
+                 // close connection 
+                 $mysqli->close();
              ?>
 
 

@@ -134,7 +134,7 @@ $temp->header_homeScreen();
                     session_start();
                     $username =  $_SESSION['user_id'];
 
-                    $messages = "SELECT * FROM Project_Messages WHERE username='$username' ";
+                    $messages = "SELECT * FROM Project_Messages WHERE username='$username' ORDER BY message_id ";
 
                     if ($result = $mysqli->query($messages)) {
                         // Get all users

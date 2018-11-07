@@ -20,7 +20,7 @@
                 </tr>
 
                 <?php
-                $items = "SELECT * FROM Project_Items";
+                $items = "SELECT * FROM Project_Items ORDER BY item_id";
                 if ($result = $mysqli->query($items)) {
                     // Get all items of the specific user
                     while ($users_row = $result->fetch_assoc()) {
@@ -67,6 +67,8 @@
            include ('sql_credentials.php');
            global $mysqli;
 
+
+           // Type of table: get (admin panel), or session(user panel)
            if ($type == "get"){
                $username = $_GET['Username'];
            }
@@ -83,11 +85,13 @@
                     <th scope="col"> Image </th>
                     <th scope="col"> Offer </th>
                     <?php
+                        // Status column only for admin panel table. User panel has different tables according to the status
                         if ($type == "get"){
                             ?>
                             <th scope="col"> Status </th>
                             <?php
                         }
+                        // Accept offer button only for table with items with an offer
                         else if ($type == "offer"){
                             ?>
                             <th scope="col"> Accept offer </th>
@@ -98,21 +102,14 @@
                 </tr>
 
                 <?php
-
-                if ($type == "pending"){
-                    $items = "SELECT * FROM Project_Items WHERE username='$username' AND status='$type'";
+                // Selects all the items of the user for the admin panel
+                if ($type=="get"){
+                    $items = "SELECT * FROM Project_Items WHERE username='$username' ORDER BY item_id ";
                 }
-                else if ($type == "offer"){
-                    $items = "SELECT * FROM Project_Items WHERE username='$username' AND status='$type'";
+                // Selects all the items of the user according to the status for the user panel
+                else {
+                    $items = "SELECT * FROM Project_Items WHERE username='$username' AND status='$type' ORDER BY item_id";
                 }
-                else if ($type == "accepted"){
-                    $items = "SELECT * FROM Project_Items WHERE username='$username' AND status='$type'";
-                }
-                else{
-                    $items = "SELECT * FROM Project_Items WHERE username='$username'";
-                }
-
-
 
                 if ($result = $mysqli->query($items)) {
                     // Get all items of the specific user
