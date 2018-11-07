@@ -13,9 +13,11 @@
     // Access database
     include ('../../cms/sql_credentials.php');
     global $mysqli;
+
     $item = $_POST["item"];
     $description = $_POST["description"];
     $username =  $_SESSION['user_id'];
+    $description = str_replace("'", "''", $description);
 
     // Picture
     $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
@@ -24,8 +26,9 @@
     if (!empty($item) && !empty($description) ){
         // Create post
         $post = "INSERT INTO  Project_Items(name, description, username, image) VALUES ('$item','$description','$username','$file');";
-        if ($mysqli->query($post) === TRUE) {
+        if ($post_result = $mysqli->query($post)) {
             echo "New record created successfully";
+            header('Location: ../sellTab.php');
         }
         else {
             echo "Error";

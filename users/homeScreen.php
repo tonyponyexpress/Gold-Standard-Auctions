@@ -76,7 +76,7 @@
 
         <div class= "col-md-6" style= "text-align: center; margin-top: 50px">
           <div class="container-fluid">
-            <div class="row" style="text-align: center; border-style: solid; border-width: 5px; border-color:#F64C72; margin-bottom: 300px">
+            <div class="row" style="text-align: center; border-style: solid; border-width: 5px; border-color:#F64C72; margin-bottom: 300px; padding-left: 12%; padding-right: 12%; padding-top: 3%; padding-bottom: 2%;">
               <h1 class="display-1">1</h1><img src="../assets/submitButton.jpeg" alt="submit item" style="width:100px;height:100px;">
               <img src="../assets/arrow.jpeg" alt="get paid" style="width:100px;height:70px;">
               <h1 class="display-1">2</h1><img src="../assets/shipfree.jpeg" alt="ship free" style="width:100px;height:100px;">
@@ -84,13 +84,13 @@
               <h1 class="display-1">3</h1><img src="../assets/getpaid.jpeg" alt="get paid" style="width:100px;height:100px;">
             </div>
           </div>
-          <img src="../assets/satisfaction.jpeg" alt="satisfaction" style="width:180px;height:150px; margin-right: 20px; margin-left: 20px;">
+          <img src="../assets/satisfaction.jpeg" alt="satisfaction" style="width:200px;height:150px; margin-right: 20px; margin-left: 20px;">
           <img src="../assets/reviews.png" alt="reviews" style="width:180px;height:150px; margin-right: 20px; margin-left: 20px;">
           <img src="../assets/paidthemost.jpeg" alt="paid the most" style="width:180px;height:150px; margin-right: 20px; margin-left: 20px;">
           <img src="../assets/bestprice.jpeg" alt="best price" style="width:180px;height:150px; margin-right: 20px; margin-left: 20px;">
         </div>
 
-        <div class="col-md-3" style="text-align: center">
+        <div class="col-md-3" style="text-align: center; margin-top: 50px">
           <h1>Mission Statement</h1>
           <p> Here we are going to have a long inspiring paragraph<br> about the creation of this project, at this point<br>
             I'm just continuing to type to fill in the page I will<br> insert your sign up button below this long and meaningless<br>
