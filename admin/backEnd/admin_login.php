@@ -24,8 +24,9 @@
 
     $admin_user = $_POST["username"];
     $admin_password = $_POST["password"];
+    $hashed = hash('sha512', $admin_password); //hashing the admin password to check if this hashed password matches on in database
 
-    $result = mysqli_query($mysqli, "SELECT * FROM Project_Admins WHERE username='$admin_user' AND password='$admin_password';");
+    $result = mysqli_query($mysqli, "SELECT * FROM Project_Admins WHERE username='$admin_user' AND password='$hashed';");
 
     // Login credentials are valid
     if (mysqli_num_rows($result)){
