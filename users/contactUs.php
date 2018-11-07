@@ -35,7 +35,7 @@
     <div class = "row"></div>
     <div class="col-xs-12" style="height:100px;"></div> <!--creates blank space -->
 
-    <form class="form-contact" action="backEnd/contactcc.php" method="post">
+    <form class="form-contact" action="backEnd/contact.php" method="post">
       <div class = "container-fluid">
         <div class = "row">
           <div class ="col-md-3"></div>
@@ -51,7 +51,7 @@
 
             </p>
             <div class="col-xs-12" style="height:25px;"></div>
-            <textarea rows="5" cols="100" placeholder = "Please input the description of your issue here."></textarea>
+            <textarea rows="5" name = "description" cols="100" placeholder = "Please input the description of your issue here."></textarea>
             <div class="col-xs-12" style="height:25px;"></div>
             <p> please provide an email address we can reach you at:
             <input type = "text" name = "contactEmail"> </input>
