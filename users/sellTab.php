@@ -6,13 +6,10 @@
     * @author Tritens
     * @package user
     */
-
-
 // // Redirect to home page if user hasn't logged in
 include('usersClass.php');
 $temp = new users();
 $temp->header_homeScreen();
-
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +48,7 @@ $temp->header_homeScreen();
     </div>
 
 
-  <form class="form-sell" action="backEnd/soldItem.php" method="post">
+  <form class="form-sell" action="backEnd/soldItem.php" method="post" enctype="multipart/form-data">
       <div class="form-signing form-group row">
         <label for="item" class="col-sm-2 col-form-label">Item</label>
         <div class="col-sm-10">
@@ -69,7 +66,7 @@ $temp->header_homeScreen();
       <div class="form-group row">
         <label for="description" class="col-sm-2 col-form-label">Picture</label>
         <div class="col-sm-10">
-          <input type="file" class="form-control" name="picture" placeholder="Browse">
+          <input type="file" class="form-control" name="image" id="image" placeholder="Browse">
         </div>
       </div>
 
