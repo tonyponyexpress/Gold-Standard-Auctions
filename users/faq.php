@@ -58,36 +58,43 @@
     <div class="container-fluid" >
       <div class="row">
         <div class="col-md-6">
-          <div class= "center" style= "text-align: center;"><h2>Frequently Asked Questions</h2></div>
+          <div class= "center" style= "text-align: center;"><font color="#553D67"><h2>Frequently Asked Questions</h2></font></div>
 
-          <button class="accordion">Question 1</button>
+          <button class="accordion">How will my items be evaluated?</button>
           <div class="panel">
-            <p>Answer 1</p>
+            <p>Our team of experts will take an in depth look at your item, considering its condition, age, and current value.<br>
+            After coming to a price, our experts will do research to make sure their offer is fair. Once a fair price has been<br>
+            determined, our team will make you an offer which will appear under the "current offer" heading on your account page.</p>
           </div>
 
-          <button class="accordion">Question 2</button>
+          <button class="accordion">How soon can I expect an offer?</button>
           <div class="panel">
-            <p>Answer 2</p>
+            <p>You can expect an offer on your item within 1 business day.</p>
           </div>
 
-          <button class="accordion">Question 3</button>
+          <button class="accordion">How will I send my items to you?</button>
           <div class="panel">
-            <p>Answer 3</p>
+            <p>After excepting our offer, we will ship you a prepaid envelope in which to place your items. Simply place<br>
+            your item(s) in the provided envelope and mail it back to us. Once your item has been recieved you will be paid<br>
+            for your item via your chosen method.</p>
           </div>
 
-          <button class="accordion">Question 4</button>
+          <button class="accordion">Can I sell multiple items at once?</button>
           <div class="panel">
-            <p>Answer 4</p>
+            <p>Of course! Just make sure to specify in your description which items you intend to sell, and make sure that<br>
+            all items which you wish to sell are visible in the pictures you upload.</p>
           </div>
 
-          <button class="accordion">Question 5</button>
+          <button class="accordion">How will I be compensated for my items?</button>
           <div class="panel">
-            <p>Answer 5</p>
+            <p>You may choose from a variety of options including check, wire transfer, paypal, and money order. Just let our<br>
+            team know upon checkout which option works best for you!</p>
           </div>
 
-          <button class="accordion">Question 6</button>
+          <button class="accordion">What to do if I would like my item back?</button>
           <div class="panel">
-            <p>Answer 6</p>
+            <p>We will hold you item with us for 5 business days. If during that time you wish to reclaim your item, simply <br>
+            return the form of payment which you recieved and we will mail back your item, shipping on us!</p>
           </div>
 
           <script>
