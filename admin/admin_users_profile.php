@@ -38,33 +38,37 @@
 
 <!-- Content -->
     <div class="wrapper">
-        <!-- Sidebar  -->
+
         <?php
-          $temp = new admin();
-          $temp->tmpl_sidebar();
+            // Sidebar
+            $temp = new admin();
+            $temp->tmpl_sidebar();
+
+            // Access database
+            include ('../cms/sql_credentials.php');
+            include('../cms/databaseClass.php');
+            global $mysqli;
+            $username = $_GET['Username'];
+
+
         ?>
 
         <!-- Page Content  -->
         <div id="content">
             <div class="user_info">
-                 <h2>Items</h2>
+                 <h2> <?php echo $username ?> profile</h2>
 
                  <?php
-                    // Access database
-                    include ('../cms/sql_credentials.php');
-                    include('../cms/databaseClass.php');
-                    global $mysqli;
-                    // Items table
-                    $temp = new database();
-                    $temp->showItemsUser("get");
+                     // Items table
+                     $temp = new database();
+                     $temp->showItemsUser("get");
                  ?>
 
-
-
+                 
             </div>
 
              <?php
-                 // close connection 
+                 // close connection
                  $mysqli->close();
              ?>
 

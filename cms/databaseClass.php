@@ -61,7 +61,6 @@
         }
 
 
-
         public function showItemsUser($type){
            // Access database
            include ('sql_credentials.php');
@@ -158,6 +157,7 @@
         <?php
         }
 
+
         public function showUsers(){
            // Access database
            include ('../cms/sql_credentials.php');
@@ -172,7 +172,7 @@
                 </tr>
 
             <?php
-                $users = "SELECT * FROM Project_Users";
+                $users = "SELECT * FROM Project_Users ORDER BY user_id";
                 if ($result = $mysqli->query($users)) {
                     // Get all users
                     while ($users_row = $result->fetch_assoc()) {
@@ -201,9 +201,6 @@
 
         <?php
         }
-
-
-
     }
 
 ?>
