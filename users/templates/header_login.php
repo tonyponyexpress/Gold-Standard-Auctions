@@ -10,33 +10,29 @@
     *
     */
 ?>
-<div class= "container-fluid" style="background-color: #2F2FA2">
-  <div class="row">
-    <div class="col-md-6" style="text-align: center">
-      <br>
-      <a href="homeScreen.php"> <img src="../assets/fakeLogo.jpg" alt="Logo"> </a>
-      <br>
-      <br>
-    </div>
-    <div class="col-md-1"> </div>
 
-    <!-- login -->
-    <div class="col-md-2" style="text-align: center;">
-      <form action="backEnd/Login.php" method="post">
-        <br><font color="white"> Username:</font><br>
-        <input type="text" name="username"><br><br>
-    </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" role="navigation">
+    <div class="container">
+        <a href="homeScreen.php"> <img src="../assets/fakeLogo.jpg" alt="Logo"> </a>
 
-    <div class="col-md-2" style="text-align: center;">
-        <br><font color="white"> Password:</font><br>
-        <input type="password" name="password"><br><br>
-    </div>
+        <li class="dropdown order-1">
+            <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-secondary dropdown-toggle">Login <span class="caret"></span></button>
+            <ul class="dropdown-menu dropdown-menu-right mt-2">
+               <li class="px-3 py-2">
+                   <form action="backEnd/Login.php" method="post">
+                        <div class="form-group">
+                            <input type="text" name="username" placeholder="Email" class="form-control form-control-sm" required="" >
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" placeholder="Password" class="form-control form-control-sm" required="">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Log in" class="btn btn-primary btn-block">
+                        </div>
+                    </form>
+                </li>
+            </ul>
+        </li>
 
-    <div class="col-md-1">
-      <br><br>
-        <input type="submit" value="Log In" />
-      </form>
-      <br><br>
     </div>
-  </div>
-</div>
+</nav>
