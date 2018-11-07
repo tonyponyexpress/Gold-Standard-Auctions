@@ -21,7 +21,6 @@
     </div>
     <div class="col-md-3">
       <br>
-      <a href="reportAnIssue.php">Report an Issue</a><br>
       <a href="returnPolicy.php">Return Policy</a><br>
     </div>
     <div class="col-md-4" style="text-align: center">
