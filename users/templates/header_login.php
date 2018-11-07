@@ -27,12 +27,11 @@
                             <input type="password" name="password" placeholder="Password" class="form-control form-control-sm" required="">
                         </div>
                         <div class="form-group">
-                            <input type="submit" value="Log in" class="btn btn-primary btn-block">
+                            <input type="submit" value="Log in" class="btn btn-secondary btn-block" >
                         </div>
                     </form>
                 </li>
             </ul>
         </li>
-
     </div>
 </nav>

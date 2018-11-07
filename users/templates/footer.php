@@ -11,7 +11,7 @@
     */
 
 ?>
-<div class= "container-fluid" id="footer">
+<div id="footer">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-custom">
 	    <div class="container">
 	        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
@@ -26,29 +26,4 @@
 	        </div>
 	    </div>
     </nav>
-
-
-
-  <!-- <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-3">
-      <br>
-      <a href="faq.php">FAQ</a><br>
-      <a href="contactUs.php">Contact Us</a><br>
-    </div>
-    <div class="col-md-3">
-      <br>
-      <a href="returnPolicy.php">Return Policy</a><br>
-    </div>
-    <div class="col-md-4" style="text-align: center">
-      <br>
-      <img src="../assets/fakeLogo.jpg" alt="Logo">
-      <br>
-      <br>
-    </div>
-  </div> -->
 </div>
-
-
-
-<!-- Footer -->

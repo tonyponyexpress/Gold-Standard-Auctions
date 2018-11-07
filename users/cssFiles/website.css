@@ -4,6 +4,7 @@ html {
 }
 
 body{
+    padding-top: 80px;
     padding-bottom: 80px;
 }
 
@@ -18,3 +19,17 @@ body{
 .navbar {
 	background-color: #2F2FA2 !important;
 }
+
+/* ============================== Header log in  ==============================*/
+.navbar li {
+    list-style-type:none
+}
+
+/* ============================== Header user panel  ==============================*/
+.navbar li {
+    list-style-type:none
+}
+
+/*#logout-button {
+    background-color: red;
+}*/
