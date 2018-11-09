@@ -94,7 +94,7 @@
         <div class="col-md-3" style="text-align: center; margin-top: 50px">
           <h1>Mission Statement</h1>
           <p> GetRidofIt is known for creating a simple buying concept<br> which offers the highest dollar cash payout for any<br>
-             collectible items, furthermore, serving our customers in a<br> manner that will generate a referral business that money can't buy.
+             collectible items, furthermore, serving our customers in a<br> a manner that will generate a referral business that money can't buy.
             <div class= "centerMissionStatement" style="text-align: right">
               <form action="backEnd/CreateUsers.php" method="post">
               First Name:<input type="text" name="newFirst"><br><br>
