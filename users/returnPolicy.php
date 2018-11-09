@@ -34,7 +34,12 @@
       <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6" style= "margin-top: 50px">
-          <div class= "center" style= "text-align: center;"><font color="#553D67"><h2>Return Policy</h2></font></div>
+          <div class= "center" style= "text-align: center;"><font color="#553D67"><h2>Return Policy</h2></font>
+            <p>
+              We will hold you item with us for 5 business days. If during that time you wish to reclaim your item, simply<br>
+              return the form of payment which you recieved and we will mail back your item, shipping on us!
+            </p>
+          </div>
 
 
         </div>
