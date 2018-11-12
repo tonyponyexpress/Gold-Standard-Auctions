@@ -18,8 +18,8 @@ $temp->header_homeScreen();
     <link rel="stylesheet" href="cssFiles/website.css">
     <script src="script.js"></script>
 </head>
-<body>
 
+<body>
     <!-- Header -->
     <?php
     /**

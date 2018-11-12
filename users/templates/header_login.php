@@ -21,7 +21,7 @@
                <li class="px-3 py-2">
                    <form action="backEnd/Login.php" method="post">
                         <div class="form-group">
-                            <input type="text" name="username" placeholder="Email" class="form-control form-control-sm" required="" >
+                            <input type="text" name="username" placeholder="Username" class="form-control form-control-sm" required="" >
                         </div>
                         <div class="form-group">
                             <input type="password" name="password" placeholder="Password" class="form-control form-control-sm" required="">

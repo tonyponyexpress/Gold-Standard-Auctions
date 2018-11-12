@@ -31,7 +31,7 @@ class users{
         header("Location: homeScreen.php");
     }
   }
-
+  
 }
 
 ?>
