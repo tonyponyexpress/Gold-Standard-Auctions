@@ -8,6 +8,7 @@
            global $mysqli;
 
             ?>
+          <form action="admin_delete_items.php" method="post">
             <table class="table table-striped" >
                 <tr>
                     <th scope="col"> ID </th>
@@ -17,6 +18,7 @@
                     <th scope="col"> Offer </th>
                     <th scope="col"> Status </th>
                     <th scope="col"> Create offer </th>
+                    <th scope="col"> Delete </th>
                 </tr>
 
                 <?php
@@ -50,6 +52,7 @@
                                     <?php
                                 }
                             ?>
+                            <th><?php $Admin_ID = $users_row['item_id']; echo"<input type=checkbox name=$Admin_ID>"; ?> </th>
                         </tr>
                     <?php
                     }
@@ -57,6 +60,8 @@
                     $result->free();
                 } ?>
             </table>
+            <input type="submit" value="Delete selected item(s)">
+          </form>
         <?php
         }
 
@@ -163,7 +168,7 @@
            include ('../cms/sql_credentials.php');
            global $mysqli;
            ?>
-           <form action="admin_delete.php" method="post">
+           <form action="admin_delete_user.php" method="post">
             <table class="table table-striped" >
                 <tr>
                     <th scope="col"> Name </th>
