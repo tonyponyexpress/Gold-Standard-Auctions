@@ -49,8 +49,49 @@
 
         <!-- Page Content  -->
         <div id="content">
-             <h2>Problems</h2>
+             <h2>Issues</h2>
 
+             <?php
+                // Access database
+                include ('../cms/sql_credentials.php');
+                global $mysqli;
+             ?>
+
+             <table class="table table-striped" >
+                 <tr>
+                     <th scope="col"> ID </th>
+                     <th scope="col"> Title </th>
+                     <th scope="col"> Description </th>
+                     <th scope="col"> E-mail </th>
+                     <th scope="col"> Delete </th
+                 </tr>
+
+
+             <?php
+                 $problems = "SELECT * FROM Project_Problems";
+                 if ($result = $mysqli->query($problems)) {
+                     // Get all users
+                     while ($message_row = $result->fetch_assoc()) {
+                         $ID = $message_row['problem_id'];
+                         $title = $message_row['title'];
+                         $description = $message_row['description'];
+                         $email = $message_row['email'];
+                         ?>
+
+                         <tr>
+                             <th> <?php echo $ID; ?> </th>
+                             <th> <?php echo $title; ?> </th>
+                             <th> <?php echo $description ?> </th>
+                             <th> <?php echo $email  ?>   </th>
+                             <th> <a href="admin_delete_issue.php?id=<?php echo $ID?>"> X </th>
+                         </tr>
+                     <?php
+                     }
+                     /* free result set */
+                     $result->free();
+                 }
+                 ?>
+             </table>
 
              <?php
              /* close connection */
