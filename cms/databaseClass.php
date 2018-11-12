@@ -163,12 +163,13 @@
            include ('../cms/sql_credentials.php');
            global $mysqli;
            ?>
-
+           <form action="admin_delete.php" method="post">
             <table class="table table-striped" >
                 <tr>
                     <th scope="col"> Name </th>
                     <th scope="col"> # of items </th>
                     <th scope="col"> Profile </th>
+                    <th scope="col"> Delete </th>
                 </tr>
 
             <?php
@@ -182,7 +183,6 @@
                         $number_items = $users_row['number_items'];
                         $username = $users_row['username'];
                         ?>
-
                         <tr>
                             <th>
                                 <div id="table_name"> <?php echo $FirstName; echo " "; echo $LastName ?>  </div>
@@ -190,6 +190,7 @@
                             </th>
                             <th> <?php echo $number_items; ?> </th>
                             <th> <a href="admin_users_profile.php?Username=<?php echo $username?>"> X </a> </th>
+                            <th> <?php $Admin_ID = $users_row['user_id']; echo"<input type=checkbox name=$Admin_ID>"; ?> </th>
                         </tr>
 
                     <?php
@@ -198,7 +199,8 @@
                     $result->free();
                 } ?>
             </table>
-
+            <input type="submit" value="Delete selected user(s)">
+          </form>
         <?php
         }
     }
