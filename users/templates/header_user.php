@@ -17,7 +17,7 @@
         <div class="container">
             <a href="sellTab.php"> <img src="../assets/fakeLogo.jpg" alt="Logo"> </a>
             <form action="backEnd/Logout.php" method="post">
-              <input type="submit" value="Log Out"  class="btn btn-outline-secondary" id="logout-button">
+              <input type="submit" value="Log Out"  class="btn btn-light" id="logout-button">
             </form>
         </div>
     </nav>

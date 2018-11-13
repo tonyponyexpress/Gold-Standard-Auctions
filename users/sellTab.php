@@ -72,7 +72,7 @@ $temp->header_homeScreen();
 
       <div class="form-group row">
         <div class="col-sm-12">
-          <input type="submit" class="btn btn-primary" name="submit" id="submit" label="Submit" value="Submit"></input>
+          <input type="submit" class="btn" name="submit" id="submit" label="Submit" value="Submit"></input>
         </div>
       </div>
   </form>

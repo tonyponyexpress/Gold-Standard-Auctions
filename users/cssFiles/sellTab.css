@@ -25,3 +25,13 @@
       background-color: #fff;
       border: 1px solid rgba(0,0,0,0.1);
 }
+
+#submit{
+    background-color: #2F2FA2;
+    color: white;
+}
+
+#submit:hover{
+    background-color: #F64C72;
+    color: white;
+}
