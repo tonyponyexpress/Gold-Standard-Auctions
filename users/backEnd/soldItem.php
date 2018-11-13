@@ -32,7 +32,6 @@
             while ($users_row = $result->fetch_assoc()) {
                 $n_items = $users_row['number_items'];
                 $n_items = $n_items + 1;
-                echo $n_items;
                 $counter = "UPDATE Project_Users SET number_items='$n_items' WHERE username='$username';";
                 if ($counter_result = $mysqli->query($counter)) {
                     echo "Item count updated succesfully";
