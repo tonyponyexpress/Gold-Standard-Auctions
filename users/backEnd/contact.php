@@ -34,6 +34,7 @@ if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
 }
 
+$stmt->close();
 $mysqli->close();
 
 ?>
