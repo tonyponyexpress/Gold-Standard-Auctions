@@ -31,7 +31,7 @@
         header('Location: ../sellTab.php');
     }
     else {
-      echo "error: invalid username or password.";
+      header('Location: ../homeScreenInvalidLogin.php');
       echo "$hashed";
     }
 

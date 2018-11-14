@@ -47,9 +47,9 @@ $temp->header_homeScreen();
       </div>
     </div>
 
-    <div class="container-fluid" style="background-color: #F2A5CB">
+    <div class="container-fluid">
       <div class="row">
-        <div class="col-md-6" style="text-align: center;">
+        <div class="col-md-6" style="text-align: center; margin-top: 50px;">
           <h1><u>1) Submit Your Item</u></h1>
           <p>
             The first step in the submission process is uploading a<br>
