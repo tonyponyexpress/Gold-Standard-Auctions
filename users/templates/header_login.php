@@ -16,7 +16,7 @@
         <a href="homeScreen.php"> <img src="../assets/fakeLogo.jpg" alt="Logo"> </a>
 
         <li class="dropdown order-1">
-            <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-light dropdown-toggle">Login <span class="caret"></span></button>
+            <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-light dropdown-toggle">Login </button>
             <ul class="dropdown-menu dropdown-menu-right mt-2">
                <li class="px-3 py-2">
                    <form action="backEnd/Login.php" method="post">
