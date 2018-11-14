@@ -104,13 +104,7 @@ $temp->header_homeScreen();
                 <div class="settings_box_content">
                     <div class="accordion">
                         <?php
-                            // Access database
-                            include ('../cms/sql_credentials.php');
-                            global $mysqli;
-                            // Start user session
-                            session_start();
                             // Variables
-                            $username =  $_SESSION['user_id'];
                             $result = mysqli_query($mysqli, "SELECT email FROM Project_Users WHERE username='$username'");
                             while ($users_row = $result->fetch_assoc()) {
                                 $email = $users_row['email'];
@@ -127,42 +121,45 @@ $temp->header_homeScreen();
                             </div>
 
                             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                <form class="form-sell" action="backEnd/changeEmail.php" method="post">
-                                    <div class="form-group row">
-                                      <label for="item" class="col-sm-2 col-form-label">Old email</label>
-                                      <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="oldEmail1" name="oldEmail1" value="<?php echo $email ?>"   readonly>
-                                      </div>
-                                    </div>
+                                <div class="card-body">
+                                    <div class="card-body">
+                                        <form class="form-sell" action="backEnd/changeEmail.php" method="post">
+                                            <div class="form-group row">
+                                              <label for="item" class="col-sm-2 col-form-label">Old email</label>
+                                              <div class="col-sm-10">
+                                                <input type="email" class="form-control" id="oldEmail1" name="oldEmail1" value="<?php echo $email ?>"   readonly>
+                                              </div>
+                                            </div>
 
-                                    <div class="form-group row">
-                                      <label for="item" class="col-sm-2 col-form-label">Repeat old email</label>
-                                      <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="oldEmail2" name="oldEmail">
-                                      </div>
-                                    </div>
+                                            <div class="form-group row">
+                                              <label for="item" class="col-sm-2 col-form-label">Repeat old email</label>
+                                              <div class="col-sm-10">
+                                                <input type="email" class="form-control" id="oldEmail2" name="oldEmail">
+                                              </div>
+                                            </div>
 
-                                    <div class="form-group row">
-                                      <label for="description" class="col-sm-2 col-form-label">New email</label>
-                                      <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="newEmail1" name="newEmail1">
-                                      </div>
-                                    </div>
+                                            <div class="form-group row">
+                                              <label for="description" class="col-sm-2 col-form-label">New email</label>
+                                              <div class="col-sm-10">
+                                                <input type="email" class="form-control" id="newEmail1" name="newEmail1">
+                                              </div>
+                                            </div>
 
-                                    <div class="form-group row">
-                                      <label for="description" class="col-sm-2 col-form-label">Repeat new email</label>
-                                      <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="newEmail2" name="newEmail2">
-                                      </div>
-                                    </div>
+                                            <div class="form-group row">
+                                              <label for="description" class="col-sm-2 col-form-label">Repeat new email</label>
+                                              <div class="col-sm-10">
+                                                <input type="email" class="form-control" id="newEmail2" name="newEmail2">
+                                              </div>
+                                            </div>
 
-                                    <div class="form-group row">
-                                      <div class="col-sm-12">
-                                        <input type="submit" class="btn" name="submitChangeEmail" label="Submit" id="submitChangeEmail" value="Submit"></input>
-                                      </div>
+                                            <div class="form-group row">
+                                              <div class="col-sm-12">
+                                                <input type="submit" class="btn btn-submitSettings" name="submitChangeEmail" label="Submit" id="submitChangeEmail" value="Submit"></input>
+                                              </div>
+                                            </div>
+                                        </form>
                                     </div>
-                                </form>
-                            </div>
+                                </div>
                           </div>
 
                           <div class="card">
@@ -201,7 +198,7 @@ $temp->header_homeScreen();
 
                                           <div class="form-group row">
                                             <div class="col-sm-12">
-                                              <input type="submit" class="btn" name="submitChangePassword" label="Submit" id="submitChangePassword" value="Submit"></input>
+                                              <input type="submit" class="btn btn-submitSettings" name="submitChangePassword" label="Submit" id="submitChangePassword" value="Submit"></input>
                                             </div>
                                           </div>
                                       </form>
@@ -209,10 +206,8 @@ $temp->header_homeScreen();
                               </div>
                             </div>
                           </div>
-
-
-                        </div>
-                </div>
+                      </div> <!-- card !-->
+                </div> <!-- accordion !-->
             </div>
 
             <!-- <div class="col-md-1"> -->
