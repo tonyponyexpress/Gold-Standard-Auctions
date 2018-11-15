@@ -88,7 +88,7 @@
           <br><br>
           <h1><b>What we buy</b></h1>
           <p> Get Rid of it serves as a great outlet to turn any of your old or unused items including jewelry, coins, electronics, gaming systems, phones, laptops, furniture,
-            cars, precious metals, or any other unwanted items into cash today. Submit your item to us and let our experts give you a cash quote today. No more waiting
+            cars, precious metals, or any other unwanted items into cash today. Submit your item to us and let our experts give you a cash quote today. No more dealing with the hassle of waiting
             on other sites to see if your items sell. If you need fast cash today then Get Rid of It is the place to be!</p>
         </div>
 
