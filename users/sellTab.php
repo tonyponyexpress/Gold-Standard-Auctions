@@ -52,27 +52,27 @@ $temp->header_homeScreen();
       <div class="form-signing form-group row">
         <label for="item" class="col-sm-2 col-form-label">Item</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" name="item" placeholder="Item">
+          <input type="text" class="form-control" name="item" id="item" placeholder="Item">
         </div>
       </div>
 
       <div class="form-group row">
         <label for="description" class="col-sm-2 col-form-label">Description</label>
         <div class="col-sm-10">
-          <textarea type="text" class="form-control" name="description" placeholder="Description"> </textarea>
+          <textarea type="text" class="form-control" name="description" id="descriptionItem" placeholder="Description"> </textarea>
         </div>
       </div>
 
       <div class="form-group row">
         <label for="description" class="col-sm-2 col-form-label">Picture</label>
         <div class="col-sm-10">
-          <input type="file" class="form-control" name="image" id="image" placeholder="Browse">
+          <input type="file" class="form-control" name="image" id="imageItem" placeholder="Browse">
         </div>
       </div>
 
       <div class="form-group row">
         <div class="col-sm-12">
-          <input type="submit" class="btn btn-primary" name="submit" id="submit" label="Submit" value="Submit"></input>
+          <input type="submit" class="btn" name="submit" id="submitItem" label="Submit" value="Submit"></input>
         </div>
       </div>
   </form>
@@ -88,31 +88,6 @@ $temp->header_homeScreen();
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+    <script src="js/effects.js"></script>
 </body>
 </html>
-
-
-<script>
- // Only accepts gif, png, jpg, jpeg files
- $(document).ready(function(){
-      $('#submit').click(function(){
-           var image_name = $('#image').val();
-           if(image_name == '')
-           {
-                alert("Please Select Image");
-                return false;
-           }
-           else
-           {
-                var extension = $('#image').val().split('.').pop().toLowerCase();
-                if(jQuery.inArray(extension, ['gif','png','jpg','jpeg']) == -1)
-                {
-                     alert('Invalid Image File');
-                     $('#image').val('');
-                     return false;
-                }
-           }
-      });
- });
- </script>

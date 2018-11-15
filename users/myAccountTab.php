@@ -18,8 +18,8 @@ $temp->header_homeScreen();
     <link rel="stylesheet" href="cssFiles/website.css">
     <script src="script.js"></script>
 </head>
-<body>
 
+<body>
     <!-- Header -->
     <?php
     /**
@@ -53,22 +53,38 @@ $temp->header_homeScreen();
 
     <div class="row">
         <div class="col-md-8">
+            <h2> Items </h2>
+            <h5> Total profit: $
+                <?php
+                    // Access database
+                    include ('../cms/sql_credentials.php');
+                    global $mysqli;
+                    // Start session
+                    session_start();
+                    // Variables
+                    $username =  $_SESSION['user_id'];
+                    // Query
+                    $user = "SELECT total_profit FROM Project_Users WHERE username='$username' ";
+                    if ($result = $mysqli->query($user)) {
+                        while ($users_row = $result->fetch_assoc()) {
+                            $total_profit = $users_row['total_profit'];
+                            echo $total_profit;
+                        }
+                    }
+                ?>
+            </h5>
+
             <div class="accordion" id="accordionExample">
               <div class="card">
 
                 <div class="card-header" id="headingOne">
-                  <h5 class="mb-0">
                     <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                       Pending Offers
                     </button>
-                  </h5>
                 </div>
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                   <div class="card-body">
                       <?php
-                         // Access database
-                         include ('../cms/sql_credentials.php');
-                         global $mysqli;
                          include('../cms/databaseClass.php');
                          // Pending offer items table
                          $temp = new database();
@@ -80,11 +96,9 @@ $temp->header_homeScreen();
 
               <div class="card">
                 <div class="card-header" id="headingTwo">
-                  <h5 class="mb-0">
                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                       Offers
                     </button>
-                  </h5>
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                   <div class="card-body">
@@ -99,11 +113,9 @@ $temp->header_homeScreen();
 
               <div class="card">
                 <div class="card-header" id="headingThree">
-                  <h5 class="mb-0">
                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                       Accepted Offers
                     </button>
-                  </h5>
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                   <div class="card-body">

@@ -32,6 +32,7 @@
     }
     else {
       echo "error: invalid username or password.";
+      header('Location: ../homeScreenInvalidLogin.php');
     }
 
 

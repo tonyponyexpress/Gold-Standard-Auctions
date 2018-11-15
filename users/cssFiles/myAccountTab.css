@@ -53,3 +53,11 @@
 
 
 /* ----------------------------- Offers ----------------------------- */
+.accordion button{
+    color: #2F2FA2;
+    font-weight: bold;
+}
+
+.accordion button:hover{
+    color: #F64C72;
+}

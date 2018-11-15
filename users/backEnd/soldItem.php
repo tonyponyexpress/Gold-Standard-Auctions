@@ -24,15 +24,30 @@
 
     // Check if message is not empty
     if (!empty($item) && !empty($description) ){
-        // Create post
+        // Create item
         $post = "INSERT INTO  Project_Items(name, description, username, image) VALUES ('$item','$description','$username','$file');";
         if ($post_result = $mysqli->query($post)) {
-            echo "New record created successfully";
+            // Increase item counter for user
+            $result = mysqli_query($mysqli, "SELECT * FROM Project_Users WHERE username='$username'");
+            while ($users_row = $result->fetch_assoc()) {
+                $n_items = $users_row['number_items'];
+                $n_items = $n_items + 1;
+                $counter = "UPDATE Project_Users SET number_items='$n_items' WHERE username='$username';";
+                if ($counter_result = $mysqli->query($counter)) {
+                    echo "Item count updated succesfully";
+                }
+                else {
+                    echo "Error";
+                }
+            }
+            echo "New item submitted successfully";
             header('Location: ../sellTab.php');
         }
         else {
             echo "Error";
         }
+
+
     }
     else
     {

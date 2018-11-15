@@ -1,0 +1,31 @@
+.settings_box_content{
+    background-color:  #e5e7e9 ;
+}
+
+.settings_box_title{
+    height: 35px;
+    background-color: #F64C72;
+}
+
+.settings_box_title h4{
+    text-align: center;
+    font-size: 28px;
+}
+
+.btn-link {
+    color:  #2F2FA2;
+}
+
+.btn-link:hover {
+    color:  #F64C72;
+}
+
+.btn-submitSettings{
+    background-color: #2F2FA2;
+    color: white;
+}
+
+.btn-submitSettings:hover{
+    background-color: #242582;
+    color: white;
+}

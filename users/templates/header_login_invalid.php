@@ -14,9 +14,13 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" role="navigation">
     <div class="container">
         <a href="homeScreen.php"> <img src="../assets/fakeLogo.jpg" alt="Logo"> </a>
-
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p style="color:white;font-size:16px"> <b>    Invalid Username or Password, Please Try Again   </b>  </p>
         <li class="dropdown order-1">
-            <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-light dropdown-toggle">Login </button>
+            <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-light dropdown-toggle">Login <span class="caret"></span></button>
             <ul class="dropdown-menu dropdown-menu-right mt-2">
                <li class="px-3 py-2">
                    <form action="backEnd/Login.php" method="post">
@@ -25,6 +29,9 @@
                         </div>
                         <div class="form-group">
                             <input type="password" name="password" placeholder="Password" class="form-control form-control-sm" required="">
+                        </div>
+                        <div>
+                                <p style="color:darkRed"> Invalid Login </p>
                         </div>
                         <div class="form-group">
                             <input type="submit" value="Log in" class="btn btn-secondary btn-block" >
