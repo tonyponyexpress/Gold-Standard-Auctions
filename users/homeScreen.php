@@ -37,21 +37,21 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                   <blockquote>
-                    <p>"Follow your passion, stay true to yourself, never follow someone else’s path unless you’re in the woods and you’re lost and you see a path then by all means you should follow that"</p>
+                    <p>"Very simple and helpful company. Provided me with free shipping material, high offer, and a quick process. Even though what I had was a used iPhone they still took the time to evaluate what I had and gave me a good offer and process to sell it."</p>
                     <footer>Ian Farris</footer>
                   </blockquote>
                   <img src="../HeadShots/Ian.jpg" alt="Ian's headshot" style="width:60px;height:60px;">
                 </div>
                 <div class="carousel-item">
                   <blockquote>
-                    <p>"Follow your passion, stay true to yourself, never follow someone else’s path unless you’re in the woods and you’re lost and you see a path then by all means you should follow that "</p>
+                    <p>"You can get some very impressive offers here. I would definitely recommend if you are not trying to hassle with selling things on Craigslist.  "</p>
                     <footer>Emilia Paz</footer>
                   </blockquote>
                   <img src="../HeadShots/Emilia.jpg" alt="Emilia's headshot" style="width:60px;height:60px;">
                 </div>
                 <div class="carousel-item">
                   <blockquote>
-                    <p>"Follow your passion, stay true to yourself, never follow someone else’s path unless you’re in the woods and you’re lost and you see a path then by all means you should follow that"</p>
+                    <p>"Great place quick service. Went to sell two rings cleaned and yearly inspected. While selling there we decided to sell a few odds and ends from around the house. The site offered high prices and was very easy to use. This company makes selling stuff a real pleasure. I love this company and the hospitality they give their customers."</p>
                     <footer>Tony Nguyen</footer>
                   </blockquote>
                   <img src="../HeadShots/Tony.jpg" alt="Tony's headshot" style="width:60px;height:60px;">
