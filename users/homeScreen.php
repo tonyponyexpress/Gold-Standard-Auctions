@@ -78,13 +78,13 @@
         <div class= "col-md-6" style= "text-align: center; margin-top: 50px">
           <div class="container-fluid">
             <div class="row" style="text-align: center; padding-left: 12%; padding-right: 12%; padding-top: 3%; padding-bottom: 10%;">
-                <img src="../assets/frontGraphic.png" alt="satisfaction" style="width:1000px;height:300px; margin-right: 20px; margin-left: 20px;">
+                <img src="../assets/frontGraphic.png" alt="satisfaction" style="width:100%; height:80%; margin-right: 20px; margin-left: 20px;">
             </div>
           </div>
-          <img src="../assets/satisfaction.jpeg" alt="satisfaction" style="width:200px;height:150px; margin-right: 20px; margin-left: 20px;">
-          <img src="../assets/reviews.png" alt="reviews" style="width:180px;height:150px; margin-right: 20px; margin-left: 20px;">
-          <img src="../assets/paidthemost.jpeg" alt="paid the most" style="width:180px;height:150px; margin-right: 20px; margin-left: 20px;">
-          <img src="../assets/bestprice.jpeg" alt="best price" style="width:180px;height:150px; margin-right: 20px; margin-left: 20px;">
+          <img src="../assets/satisfaction.jpeg" alt="satisfaction" style="width:21%px;height:15%; margin-right: 20px; margin-left: 20px;">
+          <img src="../assets/reviews.png" alt="reviews" style="width:18%;height:15%; margin-right: 20px; margin-left: 20px;">
+          <img src="../assets/paidthemost.jpeg" alt="paid the most" style="width:18%;height:15%; margin-right: 20px; margin-left: 20px;">
+          <img src="../assets/bestprice.jpeg" alt="best price" style="width:15%;height:15%; margin-right: 20px; margin-left: 20px;">
           <br><br>
           <h1><b>What we buy</b></h1>
           <p> Get Rid of it serves as a great outlet to turn any of your old or unused items including jewelry, coins, electronics, gaming systems, phones, laptops, furniture,
