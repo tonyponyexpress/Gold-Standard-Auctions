@@ -58,7 +58,7 @@
                 </div>
                 <div class="carousel-item">
                   <blockquote>
-                    <p>"Follow your passion, stay true to yourself, never follow someone else’s path unless you’re in the woods and you’re lost and you see a path then by all means you should follow that"</p>
+                    <p>"Always have stuff I can get rid of on here! Great pricing and friendly knowledgeable customer service! NEVER had issues doing business with them!!!"</p>
                     <footer>Rob Nickel</footer>
                   </blockquote>
                   <img src="../HeadShots/Rob.jpg" alt="Rob's headshot" style="width:60px;height:60px;">
