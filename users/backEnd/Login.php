@@ -32,7 +32,6 @@
     }
     else {
       echo "error: invalid username or password.";
-      echo "$hashed";
     }
 
 

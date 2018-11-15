@@ -81,6 +81,7 @@
            }
 
             ?>
+          <form action="user_delete_item.php" method="post">
             <table class="table table-striped" >
                 <tr>
                     <th scope="col"> ID </th>
@@ -99,7 +100,13 @@
                         else if ($type == "offer"){
                             ?>
                             <th scope="col"> Accept offer </th>
+                            <th scope="col"> Delete </th>
                             <?php
+                        }
+                        else if ($type == "pending"){
+                          ?>
+                          <th scope="col"> Delete </th>
+                          <?php
                         }
 
                     ?>
@@ -139,6 +146,7 @@
                                 if ($type == "get"){
                                     ?>
                                     <th> <?php echo $status; ?> </th>
+                                  </tr>
                                     <?php
                                 }
                                 else if ($type == "offer"){
@@ -148,17 +156,31 @@
                                              <button name="accept" type="submit" value="<?php echo $item_id?>">accept</button>
                                         </form>
                                     </th>
+                                    <th><?php $User_ID = $users_row['item_id']; echo"<input type=checkbox name=$User_ID>"; ?> </th>
+                                  </tr>
+                                  <!-- <input type="submit" value="Delete selected item(s)"> -->
                                     <?php
                                 }
-
+                                else if ($type == "pending"){
+                                    ?>
+                                    <th><?php $User_ID = $users_row['item_id']; echo"<input type=checkbox name=$User_ID>"; ?> </th>
+                                  </tr>
+                                  <input type="submit" value="Delete selected item(s)">
+                                    <?php
+                                }
+                                else{
+                                  ?>
+                                  </tr>
+                                  <?php
+                                }
                             ?>
-                        </tr>
                     <?php
                     }
                     /* free result set */
                     $result->free();
                 } ?>
             </table>
+          </form>
         <?php
         }
 
