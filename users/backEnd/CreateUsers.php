@@ -54,6 +54,9 @@ $result2 = $mysqli->query($query2);
     else if ($lastName == ''){
       echo "Error: cannot have blank last name";
     }
+    else if (strlen($password) < 8){
+      echo "Error: password must be 8 characters or longer";
+    }
     else if($user_result = $mysqli->query($add_user)){
       //echo "New user created successfully.<br>";
       header('Location: ../sellTab.php');
