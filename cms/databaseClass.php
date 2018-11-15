@@ -90,25 +90,25 @@
                     <th scope="col"> Image </th>
                     <th scope="col"> Offer </th>
                     <?php
-                        // Status column only for admin panel table. User panel has different tables according to the status
+                        // Admin panel: Status column only for admin panel table. User panel has different tables according to the status
                         if ($type == "get"){
                             ?>
                             <th scope="col"> Status </th>
                             <?php
                         }
-                        // Accept offer button only for table with items with an offer
+                        // Pending Offers Items:
+                        else if ($type == "pending"){
+                          ?>
+                          <th scope="col"> Delete </th>
+                          <?php
+                        }
+                        // Offers:
                         else if ($type == "offer"){
                             ?>
                             <th scope="col"> Accept offer </th>
                             <th scope="col"> Delete </th>
                             <?php
                         }
-                        else if ($type == "pending"){
-                          ?>
-                          <th scope="col"> Delete </th>
-                          <?php
-                        }
-
                     ?>
                 </tr>
 
@@ -146,7 +146,6 @@
                                 if ($type == "get"){
                                     ?>
                                     <th> <?php echo $status; ?> </th>
-                                  </tr>
                                     <?php
                                 }
                                 else if ($type == "offer"){
@@ -157,23 +156,20 @@
                                         </form>
                                     </th>
                                     <th><?php $User_ID = $users_row['item_id']; echo"<input type=checkbox name=$User_ID>"; ?> </th>
-                                  </tr>
-                                  <!-- <input type="submit" value="Delete selected item(s)"> -->
                                     <?php
                                 }
                                 else if ($type == "pending"){
                                     ?>
                                     <th><?php $User_ID = $users_row['item_id']; echo"<input type=checkbox name=$User_ID>"; ?> </th>
-                                  </tr>
-                                  <input type="submit" value="Delete selected item(s)">
                                     <?php
                                 }
-                                else{
-                                  ?>
-                                  </tr>
-                                  <?php
-                                }
-                            ?>
+                        ?>
+                        </tr>
+                        <?php
+                    }
+                    if ($type == "offer" || $type == "pending"  ){
+                        ?>
+                         <input type="submit" value="Delete selected item(s)">
                     <?php
                     }
                     /* free result set */
