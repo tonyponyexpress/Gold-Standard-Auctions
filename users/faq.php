@@ -58,8 +58,8 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-3"></div>
-        <div class="col-md-6" style= "margin-top: 50px">
-          <div class= "center" style= "text-align: center;"><font color="#553D67"><h2>Frequently Asked Questions</h2></font></div>
+        <div class="col-md-6" style= "margin-top: 25px">
+          <div class= "center" style= "text-align: center; margin-bottom: 25px;"><font color="#2F2FA2"><h2>Frequently Asked Questions</h2></font></div>
 
           <button class="accordion">How will my items be evaluated?</button>
           <div class="panel">

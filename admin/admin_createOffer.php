@@ -98,7 +98,7 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Offer</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" name="offer" placeholder="offer"> </input>
+                            <input type="number" step="0.01" class="form-control" name="offer" placeholder="offer"> </input>
                         </div>
                     </div>
 

@@ -35,7 +35,7 @@
                 // Update total profit
                 $total = "UPDATE Project_Users SET total_profit='$profit' WHERE username='$username';";
                 if ($total_result = $mysqli->query($total)) {
-                    header('Location: ../myAccountTab.php');
+                    // header('Location: ../myAccountTab.php');
                     echo "Offer accepted succesfully";
                 }
                 else {
