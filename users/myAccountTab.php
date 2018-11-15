@@ -170,7 +170,7 @@ $temp->header_homeScreen();
                                 <?php
                             }
                         }
-                        /* free result set */
+                        // free result set 
                         $result->free();
                     }
                     ?>
@@ -183,7 +183,6 @@ $temp->header_homeScreen();
                     <textarea id="message-box" type="text" name="message" placeholder="Message" required=""> </textarea>
                     <button class="btn btn-sml btn-block btnsubmit" type="submit">Submit message</button>
                 </form>
-                <!-- <a class="btn btn-secondary btn-block" href="sendMessage.php" role="button">Submit message</a> -->
             </div>
 
         </div>
