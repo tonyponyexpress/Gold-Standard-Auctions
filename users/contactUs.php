@@ -27,8 +27,8 @@
   ?>
     <div class = "row">
       <div class ="col-md-12">
-        <div class = "center" style = "text-align: center;">
-          <h1>Welcome to the Contact us page</h1>
+        <div class = "center" style = "text-align: center; margin-top: 25px;">
+          <font color="#2F2FA2"><h1>Welcome to the Contact us page</h1></font>
         </div>
       </div>
     </div>
