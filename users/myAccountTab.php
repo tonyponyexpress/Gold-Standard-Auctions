@@ -35,7 +35,7 @@ $temp->header_homeScreen();
         $temp = new users();
         $temp->header_user();
     ?>
-
+<div class="container-fluid">
   <div class="row">
     <div class="col-md-3" onclick="location.href='howItWorksTab';" id="howItWorksButton" style="cursor: pointer;">
       <h1>How it Works</h1>
@@ -187,7 +187,7 @@ $temp->header_homeScreen();
 
         </div>
     </div>
-
+</div>
 
 
   <!-- Footer -->
