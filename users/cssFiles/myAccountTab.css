@@ -41,29 +41,35 @@
 }
 
 #message-admin{
-    background-color: #e5e7e9;
+    background-color: rgba(0,0,0,.03);
 }
 
 #message-user{
     text-align: right;
-    background-color: #99738E;
+    background-color: #d8c3d2;
 }
 
 
 
 
-/* ----------------------------- Offers ----------------------------- */
+/* ----------------------------- Item Offers ----------------------------- */
 .accordion button{
     color: #2F2FA2;
     font-weight: bold;
 }
 
 .accordion button:hover{
-    color: #242582;
+    color: #F64C72;
+    font-weight: bold;
 }
 
 
-/* ----------------------------- Items ----------------------------- */
+
+
+#submitDelete, #acceptOffer {
+    color: #99738E;
+}
+
 #submitDelete{
-    
+    margin-bottom: 0.8%;
 }

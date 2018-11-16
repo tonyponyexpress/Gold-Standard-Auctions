@@ -151,9 +151,8 @@
                                 else if ($type == "offer"){
                                     ?>
                                     <th scope="col">
-                                        <!-- <form action="backEnd/acceptOffer.php" method="post"> -->
-                                             <button class="btn btn-sml" name="accept" type="submit" value="<?php echo $item_id?>">accept</button>
-                                        <!-- </form> -->
+                                             <button class="btn btn-sml" id="acceptOffer" name="accept" type="submit" value="<?php echo $item_id?>">accept</button>
+
                                     </th>
                                     <th><?php $User_ID = $users_row['item_id']; echo"<input type=checkbox name=$User_ID>"; ?> </th>
                                     <?php
@@ -167,15 +166,20 @@
                         </tr>
                         <?php
                     }
-                    if ($type == "offer" || $type == "pending"  ){
-                        ?>
-                         <button class="btn btn-sml btnsubmit" id="submitDelete" name="delete" value="deleteItems" type="submit"> Delete selected item(s) </button>
-                    <?php
-                    }
+
                     /* free result set */
                     $result->free();
                 } ?>
             </table>
+
+            <?php
+            if ($type == "offer" || $type == "pending"  ){
+                ?>
+                 <button class="btn btn-sml float-right" id="submitDelete" name="delete" value="deleteItems" type="submit"> Delete selected item(s) </button>
+            <?php
+            }
+            ?>
+
           </form>
         <?php
         }
