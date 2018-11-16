@@ -28,7 +28,7 @@
   <div class="container-fluid">
     <div class = "row">
       <div class ="col-md-12">
-        <div class = "center" style = "text-align: center; margin-top: 25px;">
+        <div class = "center" style = "text-align: center; margin-top: 2%;">
           <font color="#2F2FA2"><h1>Welcome to the Contact us page</h1></font>
         </div>
       </div>

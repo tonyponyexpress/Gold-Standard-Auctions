@@ -34,7 +34,7 @@
       <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
-          <div class= "center" style= "text-align: center; margin-top: 25px; margin-bottom: 25px;"><font color="#2F2FA2"><h1>Return Policy</h1></font>
+          <div class= "center" style= "text-align: center; margin-top: 2%;"><font color="#2F2FA2"><h1>Return Policy</h1></font>
           </div>
           <div class= "center" style= "text-align: center;">
             <p>
