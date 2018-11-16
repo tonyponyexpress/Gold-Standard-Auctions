@@ -81,7 +81,7 @@
            }
 
             ?>
-          <form action="user_delete_item.php" method="post">
+          <form action="backEnd/user_delete_item.php" method="post">
             <table class="table table-striped" >
                 <tr>
                     <th scope="col"> ID </th>

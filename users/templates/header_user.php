@@ -32,18 +32,23 @@
             <li class="dropdown order-1">
                 <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-light dropdown-toggle"> Hello <?php echo $username ?>  </button>
                 <ul class="dropdown-menu dropdown-menu-right mt-2">
-                   <li class="px-3 py-2">
-                       <form action="backEnd/Logout.php" method="post">
-                         <input type="submit" value="Log Out"  class="btn btn-light">
-                       </form>
+                    <li class="px-3 py-2">
+                        <form action="sellTab.php" method="post">
+                            <input type="submit" value="Home"  class="btn btn-light">
+                        </form>
                     </li>
                     <li class="px-3 py-2">
-                        <!-- <p> <a href="../settings.php"> Settings </a> </p> -->
-
                         <form action="settings.php" method="post">
-                          <input type="submit" value="Settings"  class="btn btn-light">
+                            <input type="submit" value="Settings"  class="btn btn-light">
                         </form>
-                     </li>
+                    </li>
+
+                    <li class="px-3 py-2">
+                        <form action="backEnd/Logout.php" method="post">
+                            <input type="submit" value="Log Out"  class="btn btn-light">
+                        </form>
+                    </li>
+
                 </ul>
             </li>
 

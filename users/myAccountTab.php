@@ -170,7 +170,7 @@ $temp->header_homeScreen();
                                 <?php
                             }
                         }
-                        // free result set 
+                        // free result set
                         $result->free();
                     }
                     ?>

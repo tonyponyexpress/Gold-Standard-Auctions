@@ -24,7 +24,7 @@ $temp->header_homeScreen();
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- CSS -->
-    <link rel="stylesheet" href="cssFiles/howItWorksTab.css">
+    <link rel="stylesheet" href="cssFiles/howItWorks.css">
     <link rel="stylesheet" href="cssFiles/website.css">
 </head>
 <body>
