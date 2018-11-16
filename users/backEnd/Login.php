@@ -22,7 +22,7 @@
 
     $hashed = hash('sha512', $password); //hash the created user's password that will be stored in the database
 
-    $login = mysqli_query($mysqli, "SELECT * FROM Project_Users WHERE username='$username' AND password='$hashed';");
+  
     $stmt->execute();
     // Login credentials are valid
     if ($stmt->fetch()) {
