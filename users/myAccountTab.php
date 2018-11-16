@@ -35,7 +35,7 @@ $temp->header_homeScreen();
         $temp = new users();
         $temp->header_user();
     ?>
-
+<div class="container-fluid">
   <div class="row">
     <div class="col-md-3" onclick="location.href='howItWorksTab';" id="howItWorksButton" style="cursor: pointer;">
       <h1>How it Works</h1>
@@ -170,7 +170,7 @@ $temp->header_homeScreen();
                                 <?php
                             }
                         }
-                        /* free result set */
+                        // free result set 
                         $result->free();
                     }
                     ?>
@@ -183,12 +183,11 @@ $temp->header_homeScreen();
                     <textarea id="message-box" type="text" name="message" placeholder="Message" required=""> </textarea>
                     <button class="btn btn-sml btn-block btnsubmit" type="submit">Submit message</button>
                 </form>
-                <!-- <a class="btn btn-secondary btn-block" href="sendMessage.php" role="button">Submit message</a> -->
             </div>
 
         </div>
     </div>
-
+</div>
 
 
   <!-- Footer -->

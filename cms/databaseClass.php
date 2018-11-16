@@ -81,6 +81,7 @@
            }
 
             ?>
+          <form action="user_delete_item.php" method="post">
             <table class="table table-striped" >
                 <tr>
                     <th scope="col"> ID </th>
@@ -89,19 +90,25 @@
                     <th scope="col"> Image </th>
                     <th scope="col"> Offer </th>
                     <?php
-                        // Status column only for admin panel table. User panel has different tables according to the status
+                        // Admin panel: Status column only for admin panel table. User panel has different tables according to the status
                         if ($type == "get"){
                             ?>
                             <th scope="col"> Status </th>
                             <?php
                         }
-                        // Accept offer button only for table with items with an offer
+                        // Pending Offers Items:
+                        else if ($type == "pending"){
+                          ?>
+                          <th scope="col"> Delete </th>
+                          <?php
+                        }
+                        // Offers:
                         else if ($type == "offer"){
                             ?>
                             <th scope="col"> Accept offer </th>
+                            <th scope="col"> Delete </th>
                             <?php
                         }
-
                     ?>
                 </tr>
 
@@ -144,21 +151,32 @@
                                 else if ($type == "offer"){
                                     ?>
                                     <th scope="col">
-                                        <form action="../users/backEnd/acceptOffer.php" method="post">
-                                             <button name="accept" type="submit" value="<?php echo $item_id?>">accept</button>
-                                        </form>
+                                        <!-- <form action="backEnd/acceptOffer.php" method="post"> -->
+                                             <button class="btn btn-sml" name="accept" type="submit" value="<?php echo $item_id?>">accept</button>
+                                        <!-- </form> -->
                                     </th>
+                                    <th><?php $User_ID = $users_row['item_id']; echo"<input type=checkbox name=$User_ID>"; ?> </th>
                                     <?php
                                 }
-
-                            ?>
+                                else if ($type == "pending"){
+                                    ?>
+                                    <th><?php $User_ID = $users_row['item_id']; echo"<input type=checkbox name=$User_ID>"; ?> </th>
+                                    <?php
+                                }
+                        ?>
                         </tr>
+                        <?php
+                    }
+                    if ($type == "offer" || $type == "pending"  ){
+                        ?>
+                         <button class="btn btn-sml btnsubmit" id="submitDelete" name="delete" type="submit"> Delete selected item(s) </button>
                     <?php
                     }
                     /* free result set */
                     $result->free();
                 } ?>
             </table>
+          </form>
         <?php
         }
 

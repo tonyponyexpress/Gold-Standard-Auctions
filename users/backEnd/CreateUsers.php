@@ -48,7 +48,7 @@ echo "$result";
     echo "Email already exists";
   }
   else{
-    
+
     if ($username == ''){
       echo "Error: cannot have blank username";
     }
@@ -67,6 +67,9 @@ echo "$result";
     else if ($lastName == ''){
       echo "Error: cannot have blank last name";
     }
+    else if (strlen($password) < 8){
+      echo "Error: password must be 8 characters or longer";
+    }
     else if($stmt->execute()){
       //echo "New user created successfully.<br>";
       header('Location: ../homeScreen.php');
@@ -75,7 +78,8 @@ echo "$result";
       echo "Error: " . $mysqli->error;
     }
   }
-  //$stmt2 ->close();
+
+  $stmt2 ->close();
   $stmt3->close();
   $stmt ->close();
 $mysqli->close();

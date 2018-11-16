@@ -34,7 +34,7 @@ $temp->header_homeScreen();
         $temp = new users();
         $temp->header_user();
     ?>
-
+<div class="container-fluid">
     <div class="row">
       <div class="col-md-3" id="howItWorksButton">
         <h1>How it Works</h1>
@@ -89,7 +89,7 @@ $temp->header_homeScreen();
         </div>
       </div>
     </div>
-
+</div>
     <!-- Footer -->
     <?php
         $temp = new users();

@@ -113,11 +113,9 @@ $temp->header_homeScreen();
 
                           <div class="card">
                             <div class="card-header" id="headingOne">
-                              <h5 class="mb-0">
                                 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                   Change email
                                 </button>
-                              </h5>
                             </div>
 
                             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
@@ -164,21 +162,25 @@ $temp->header_homeScreen();
 
                           <div class="card">
                             <div class="card-header" id="headingTwo">
-                              <h5 class="mb-0">
                                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                   Change password
                                 </button>
-                              </h5>
                             </div>
 
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                               <div class="card-body">
                                   <div class="card-body">
                                       <form class="form-sell" action="backEnd/changePassword.php" method="post">
+                                        <div class="form-group row">
+                                          <label for="item" class="col-sm-2 col-form-label">Old password</label>
+                                          <div class="col-sm-10">
+                                            <input type="password" class="form-control" id="old1" name="old1">
+                                          </div>
+                                        </div>
                                           <div class="form-group row">
                                             <label for="item" class="col-sm-2 col-form-label">Repeat old password</label>
                                             <div class="col-sm-10">
-                                              <input type="password" class="form-control" id="old" name="old">
+                                              <input type="password" class="form-control" id="old2" name="old2">
                                             </div>
                                           </div>
 
