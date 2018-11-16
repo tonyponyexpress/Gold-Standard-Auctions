@@ -22,14 +22,10 @@ body{
 
 /* ----------------------------- Header log in  ----------------------------- */
 .navbar li {
-    list-style-type:none
+    list-style-type:none;
 }
 
 /* ----------------------------- Header user panel  ----------------------------- */
 .navbar li {
-    list-style-type:none
+    list-style-type:none;
 }
-
-/*#logout-button {
-    background-color: red;
-}*/
