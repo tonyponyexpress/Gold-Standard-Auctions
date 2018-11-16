@@ -15,15 +15,17 @@
     include ('../../cms/sql_credentials.php');
     global $mysqli;
 
+    $stmt = $mysqli->prepare("SELECT * FROM Project_Users WHERE username = ? AND password = ? ;");
+    $stmt->bind_param("ss", $username, $hashed);
     $username = $_POST["username"];
     $password = $_POST["password"];
 
     $hashed = hash('sha512', $password); //hash the created user's password that will be stored in the database
 
     $login = mysqli_query($mysqli, "SELECT * FROM Project_Users WHERE username='$username' AND password='$hashed';");
-
+    $stmt->execute();
     // Login credentials are valid
-    if (mysqli_num_rows($login)) {
+    if ($stmt->fetch()) {
         // set session
         $_SESSION['user_id'] = $username;
         header('Location: ../sellTab.php');
