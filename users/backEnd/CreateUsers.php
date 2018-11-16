@@ -15,6 +15,14 @@
 include ('../../cms/sql_credentials.php');
 global $mysqli;
 
+//statements
+$stmt2 = $mysqli->prepare("SELECT * FROM Project_Users WHERE username = ? ;");
+$stmt2->bind_param("s", $username);
+$stmt3 = $mysqli->prepare("SELECT * FROM Project_Users WHERE email = ? ;");
+$stmt3->bind_param("s", $email);
+$stmt = $mysqli->prepare("INSERT INTO Project_Users (FirstName, LastName, username, email, password) VALUES (?, ?, ?, ?, ?)");
+$stmt->bind_param("sssss", $firstName, $lastName, $username, $email, $hashed);
+// Variables
 // Variables
 $username = $_POST["newUsername"];
 $password = $_POST["newPassword"];
@@ -23,19 +31,24 @@ $firstName = $_POST["newFirst"];
 $lastName = $_POST["newLast"];
 $email = $_POST["newEmail"];
 
-$query = "SELECT * FROM Project_Users WHERE username = '$username';";
-$query2 = "SELECT * FROM Project_Users WHERE email = '$email';";
-
 $hashed = hash('sha512', $password); //hash the created user's password that will be stored in the database
 
-$result = $mysqli->query($query);
-$result2 = $mysqli->query($query2);
+$stmt3->execute();
+$stmt3->store_result();
+$stmt3->bind_result($result);
+$result2 = $stmt2->execute();
+echo "$result";
 
-  if ($row = $result->fetch_assoc() || $row = $result2->fetch_assoc()){
-    echo "Username/Email already exists";
+  if ($stmt2->fetch()){
+    echo "Username already exists";
+
+    //header('Location: ../homeScreen.php');
+  }
+  elseif ($stmt3->fetch()){
+    echo "Email already exists";
   }
   else{
-    $add_user = "INSERT INTO Project_Users (FirstName, LastName, username, email, password) VALUES ('$firstName','$lastName','$username','$email','$hashed');";
+    
     if ($username == ''){
       echo "Error: cannot have blank username";
     }
@@ -54,15 +67,16 @@ $result2 = $mysqli->query($query2);
     else if ($lastName == ''){
       echo "Error: cannot have blank last name";
     }
-    else if($user_result = $mysqli->query($add_user)){
+    else if($stmt->execute()){
       //echo "New user created successfully.<br>";
-      header('Location: ../sellTab.php');
+      header('Location: ../homeScreen.php');
     }
     else{
       echo "Error: " . $mysqli->error;
     }
   }
-
+  //$stmt2 ->close();
+  $stmt3->close();
+  $stmt ->close();
 $mysqli->close();
-
 ?>

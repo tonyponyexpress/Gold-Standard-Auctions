@@ -31,7 +31,7 @@ if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $stmt->execute();
     header('Location: ../contactUs.php');
 } else {
-
+    header('Location: ../contactUs.php');
 }
 
 $stmt->close();
