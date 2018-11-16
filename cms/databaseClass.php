@@ -169,7 +169,7 @@
                     }
                     if ($type == "offer" || $type == "pending"  ){
                         ?>
-                         <button class="btn btn-sml btnsubmit" id="submitDelete" name="delete" type="submit"> Delete selected item(s) </button>
+                         <button class="btn btn-sml btnsubmit" id="submitDelete" name="delete" value="deleteItems" type="submit"> Delete selected item(s) </button>
                     <?php
                     }
                     /* free result set */
