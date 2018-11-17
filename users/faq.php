@@ -14,12 +14,12 @@
         background-color: #2F2FA2;
         color: white;
         cursor: pointer;
-        padding: 18px;
+        padding: 4%;
         width: 100%;
         border: none;
         text-align: left;
         outline: none;
-        font-size: 15px;
+        font-size: 100%;
         transition: 0.4s;
         border-bottom: 6px solid #F64C72;
     }
@@ -29,7 +29,7 @@
     }
 
     .panel {
-        padding: 0 18px;
+        padding: 2%;
         display: none;
         background-color: white;
         overflow: hidden;
