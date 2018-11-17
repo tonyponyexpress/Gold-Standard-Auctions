@@ -37,20 +37,6 @@ $temp->header_homeScreen();
     ?>
 
 <div class="container-fluid">
-    <!-- <form class="userBar" action="backEnd/userPanel.php" method="post">
-        <div class="row">
-                <div class="col-md-3">
-                    <input type="submit" class="btn btn-lg .btn-block userNavbar" name="option" label="howItWorks" value="howItWorks"></input>
-                </div>
-                <div class="col-md-6">
-                    <input type="submit" class="btn btn-lg .btn-block userNavbar" name="option" label="sell" value="sell"></input>
-                </div>
-                <div class="col-md-3">
-                    <input type="submit" class="btn btn-lg .btn-block userNavbar" name="option" label="myAccount" value="myAccount"></input>
-                </div>
-        </div>
-    </form> -->
-
     <div class="row">
         <div class="col-md-3">
             <input type="button" class="btn btn-lg .btn-block userNavbar" id="howItWorksButton" value="howItWorks" onclick="showHowItWorks()"></input>
@@ -69,82 +55,17 @@ $temp->header_homeScreen();
 
     <div id="userTabs">
         <div id="howItWorks" style="display:none;">
-            <div class="row">
-              <div class="col-md-6" style="text-align: center; margin-top: 50px;">
-                <h1><u>1) Submit Your Item</u></h1>
-                <p>
-                  The first step in the submission process is uploading a<br>
-                  picture of your item, adding a title, and a brief description<br>
-                  Once this is done, press the submit button to submit your item<br>
-                  for our team of experts to review.
-                </p>
-                <br>
-                <br>
-                <br>
-                <h1><u>2) Accept Our Offer</u></h1>
-                <p>
-                  Under the "My Account" tab, users can see any current offers<br>
-                  on their items. Once our experts have evaluated your item <br>
-                  you will be able to find their competitive offer under "Current"<br>
-                  in your "My Account" by pressing accept you are agreeing to the <br>
-                  price offered by our experts.
-                </p>
-                <br>
-                <br>
-                <br>
-                <h1><u>3) Get Paid</u></h1>
-                <p>
-                  Choose from a variety of payment methods to be paid for your item.<br>
-                  Here we will also ask for your current address, so that we can mail<br>
-                  you a prepaid shipping package. Place your item in this package and<br>
-                  place it back in the mailbox. Please contact our staff if your item<br>
-                  it too large for traditional mailing methods.
-                </p>
-              </div>
-
-              <div class="col-md-6" style="text-align: center;">
-                 <img src="../assets/submit.jpg" alt="Tony" width="200" height="250"><br>
-                 <img src="../assets/accept.jpg" alt="Emilia" width="200" height="250"><br>
-                 <img src="../assets/collect.jpg" alt="Rob" width="200" height="250">
-
-              </div>
-            </div>
-          </div>
+            <?php
+                $temp2 = new users();
+                $temp2->tab_howItWorks();
+            ?>
         </div>
 
-        <div id="sell" style="display:none;" >
-            <div class="row">
-              <div class="card card-body">
-                  <form class="form-sell" action="backEnd/soldItem.php" method="post" enctype="multipart/form-data">
-                      <div class="form-signing form-group row">
-                        <label for="item" class="col-sm-2 col-form-label">Item</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" name="item" id="item" placeholder="Item">
-                        </div>
-                      </div>
-
-                      <div class="form-group row">
-                        <label for="description" class="col-sm-2 col-form-label">Description</label>
-                        <div class="col-sm-10">
-                          <textarea type="text" class="form-control" name="description" id="descriptionItem" placeholder="Description"> </textarea>
-                        </div>
-                      </div>
-
-                      <div class="form-group row">
-                        <label for="description" class="col-sm-2 col-form-label">Picture</label>
-                        <div class="col-sm-10">
-                          <input type="file" class="form-control" name="image" id="imageItem" placeholder="Browse">
-                        </div>
-                      </div>
-
-                      <div class="form-group row">
-                        <div class="col-sm-12">
-                          <input type="submit" class="btn" name="submit" id="submitItem" label="Submit" value="Submit"></input>
-                        </div>
-                      </div>
-                  </form>
-              </div>
-          </div>
+        <div id="sell" style="display:block;" >
+            <?php
+                $temp3 = new users();
+                $temp3->tab_sell();
+            ?>
         </div>
 
         <div id="myAccount" style="display:none;" >
@@ -238,20 +159,16 @@ $temp->header_homeScreen();
                             // Access database
                             include ('../cms/sql_credentials.php');
                             global $mysqli;
-
                             // Get username
                             session_start();
                             $username =  $_SESSION['user_id'];
-
                             $messages = "SELECT * FROM Project_Messages WHERE username='$username' ORDER BY message_id ";
-
                             if ($result = $mysqli->query($messages)) {
                                 // Get all users
                                 while ($message_row = $result->fetch_assoc()) {
                                     $ID = $message_row['message_id'];
                                     $message = $message_row['message'];
                                     $admin = $message_row['admin'];
-
                                     if ($admin == 1){
                                         ?>
                                         <tr>
@@ -284,8 +201,13 @@ $temp->header_homeScreen();
 
                 </div>
             </div>
+
         </div>
-    </div>
+
+
+
+
+</div>
 
 
 

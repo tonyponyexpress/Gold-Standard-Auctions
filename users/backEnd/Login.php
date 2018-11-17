@@ -22,13 +22,13 @@
 
     $hashed = hash('sha512', $password); //hash the created user's password that will be stored in the database
 
-  
+
     $stmt->execute();
     // Login credentials are valid
     if ($stmt->fetch()) {
         // set session
         $_SESSION['user_id'] = $username;
-        header('Location: ../sellTab.php');
+        header('Location: ../userPanel.php');
     }
     else {
       echo "error: invalid username or password.";

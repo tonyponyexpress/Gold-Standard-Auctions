@@ -76,6 +76,30 @@ $(document).ready(function(){
                return false;
           }
      });
-
-
 });
+
+
+function showHowItWorks() {
+    document.getElementById('howItWorks').style.display = "block";
+    document.getElementById('sell').style.display = "none";
+    document.getElementById('myAccount').style.display = "none";
+    document.getElementById('howItWorksButton').style.backgroundColor="#474a4b";
+    document.getElementById('sellButton').style.backgroundColor="#797d7f";
+    document.getElementById('myAccountButton').style.backgroundColor="#797d7f";
+}
+function showSell() {
+    document.getElementById('howItWorks').style.display = "none";
+    document.getElementById('sell').style.display = "block";
+    document.getElementById('myAccount').style.display = "none";
+    document.getElementById('howItWorksButton').style.backgroundColor="#797d7f";
+    document.getElementById('sellButton').style.backgroundColor="#474a4b";
+    document.getElementById('myAccountButton').style.backgroundColor="#797d7f";
+}
+function showMyAccount() {
+    document.getElementById('howItWorks').style.display = "none";
+    document.getElementById('sell').style.display = "none";
+    document.getElementById('myAccount').style.display = "block";
+    document.getElementById('howItWorksButton').style.backgroundColor="#797d7f";
+    document.getElementById('sellButton').style.backgroundColor="#797d7f";
+    document.getElementById('myAccountButton').style.backgroundColor="#474a4b";
+}

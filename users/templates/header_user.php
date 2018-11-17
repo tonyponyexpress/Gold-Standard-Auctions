@@ -27,13 +27,13 @@
 <div id="header-userpanel">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" role="navigation">
         <div class="container">
-            <a href="sellTab.php"> <img src="../assets/fakeLogo.jpg" alt="Logo"> </a>
+            <a href="userPanel.php"> <img src="../assets/fakeLogo.jpg" alt="Logo"> </a>
 
             <li class="dropdown order-1">
                 <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-light dropdown-toggle"> Hello <?php echo $username ?>  </button>
                 <ul class="dropdown-menu dropdown-menu-right mt-2">
                     <li class="px-3 py-2">
-                        <form action="sellTab.php" method="post">
+                        <form action="userPanel.php" method="post">
                             <input type="submit" value="Home"  class="btn btn-light">
                         </form>
                     </li>

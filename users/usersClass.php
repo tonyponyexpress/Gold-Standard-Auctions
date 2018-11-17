@@ -32,6 +32,20 @@ class users{
     }
   }
 
+  public function tab_howItWorks(){
+    include('templates/howItWorksTab.php');
+  }
+
+  public function tab_sell(){
+    include('templates/sellTab.php');
+  }
+
+  // not working, problem when objectis being created
+  public function tab_myAccount(){
+    include('templates/myAccountTab.php');
+  }
+
+
 }
 
 ?>
