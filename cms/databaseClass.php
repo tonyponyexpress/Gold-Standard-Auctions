@@ -82,95 +82,98 @@
 
             ?>
           <form action="backEnd/user_delete_item.php" method="post">
-            <table class="table table-striped" >
-                <tr>
-                    <th scope="col"> ID </th>
-                    <th scope="col"> Item </th>
-                    <th scope="col"> Description </th>
-                    <th scope="col"> Image </th>
-                    <th scope="col"> Offer </th>
-                    <?php
-                        // Admin panel: Status column only for admin panel table. User panel has different tables according to the status
-                        if ($type == "get"){
-                            ?>
-                            <th scope="col"> Status </th>
-                            <?php
-                        }
-                        // Pending Offers Items:
-                        else if ($type == "pending"){
-                          ?>
-                          <th scope="col"> Delete </th>
-                          <?php
-                        }
-                        // Offers:
-                        else if ($type == "offer"){
-                            ?>
-                            <th scope="col"> Accept offer </th>
-                            <th scope="col"> Delete </th>
-                            <?php
-                        }
-                    ?>
-                </tr>
-
-                <?php
-                // Selects all the items of the user for the admin panel
-                if ($type=="get"){
-                    $items = "SELECT * FROM Project_Items WHERE username='$username' ORDER BY item_id ";
-                }
-                // Selects all the items of the user according to the status for the user panel
-                else {
-                    $items = "SELECT * FROM Project_Items WHERE username='$username' AND status='$type' ORDER BY item_id";
-                }
-
-                if ($result = $mysqli->query($items)) {
-                    // Get all items of the specific user
-                    while ($users_row = $result->fetch_assoc()) {
-                        $item_id = $users_row['item_id'];
-                        $name = $users_row['name'];
-                        $description = $users_row['description'];
-                        $image = $users_row['image'];
-                        $offer = $users_row['offer'];
-                        $status = $users_row['status'];
-                        ?>
-                        <tr>
-                            <th> <?php echo $item_id; ?> </th>
-                            <th> <?php echo $name; ?> </th>
-                            <th> <?php echo $description; ?> </th>
-                            <?php
-                                echo '
-                                <th> <img src="data:image/jpeg;base64,'.base64_encode($users_row['image'] ).'" height="75" width="75" class="img-thumnail" />  </th>
-                                ';
-                            ?>
-                            <th> <?php echo $offer; ?> </th>
-                            <?php
-                                if ($type == "get"){
-                                    ?>
-                                    <th> <?php echo $status; ?> </th>
-                                    <?php
-                                }
-                                else if ($type == "offer"){
-                                    ?>
-                                    <th scope="col">
-                                             <button class="btn btn-sml" id="acceptOffer" name="accept" type="submit" value="<?php echo $item_id?>">accept</button>
-
-                                    </th>
-                                    <th><?php $User_ID = $users_row['item_id']; echo"<input type=checkbox name=$User_ID>"; ?> </th>
-                                    <?php
-                                }
-                                else if ($type == "pending"){
-                                    ?>
-                                    <th><?php $User_ID = $users_row['item_id']; echo"<input type=checkbox name=$User_ID>"; ?> </th>
-                                    <?php
-                                }
-                        ?>
-                        </tr>
+            <div class="table-responsive">
+                <table class="table table-striped" >
+                    <tr>
+                        <th scope="col"> ID </th>
+                        <th scope="col"> Item </th>
+                        <th scope="col"> Description </th>
+                        <th scope="col"> Image </th>
+                        <th scope="col"> Offer </th>
                         <?php
+                            // Admin panel: Status column only for admin panel table. User panel has different tables according to the status
+                            if ($type == "get"){
+                                ?>
+                                <th scope="col"> Status </th>
+                                <?php
+                            }
+                            // Pending Offers Items:
+                            else if ($type == "pending"){
+                              ?>
+                              <th scope="col"> Delete </th>
+                              <?php
+                            }
+                            // Offers:
+                            else if ($type == "offer"){
+                                ?>
+                                <th scope="col"> Accept offer </th>
+                                <th scope="col"> Delete </th>
+                                <?php
+                            }
+                        ?>
+                    </tr>
+
+                    <?php
+                    // Selects all the items of the user for the admin panel
+                    if ($type=="get"){
+                        $items = "SELECT * FROM Project_Items WHERE username='$username' ORDER BY item_id ";
+                    }
+                    // Selects all the items of the user according to the status for the user panel
+                    else {
+                        $items = "SELECT * FROM Project_Items WHERE username='$username' AND status='$type' ORDER BY item_id";
                     }
 
-                    /* free result set */
-                    $result->free();
-                } ?>
-            </table>
+                    if ($result = $mysqli->query($items)) {
+                        // Get all items of the specific user
+                        while ($users_row = $result->fetch_assoc()) {
+                            $item_id = $users_row['item_id'];
+                            $name = $users_row['name'];
+                            $description = $users_row['description'];
+                            $image = $users_row['image'];
+                            $offer = $users_row['offer'];
+                            $status = $users_row['status'];
+                            ?>
+                            <tr>
+                                <td scope="row"> <?php echo $item_id; ?> </td>
+                                <td> <?php echo $name; ?> </td>
+                                <td> <?php echo $description; ?> </td>
+                                <?php
+                                    echo '
+                                    <td> <img src="data:image/jpeg;base64,'.base64_encode($users_row['image'] ).'" height="75" width="75" class="img-thumnail" />  </td>
+                                    ';
+                                ?>
+                                <td> <?php echo $offer; ?> </td>
+                                <?php
+                                    if ($type == "get"){
+                                        ?>
+                                        <td> <?php echo $status; ?> </td>
+                                        <?php
+                                    }
+                                    else if ($type == "offer"){
+                                        ?>
+                                        <td scope="col">
+                                                 <button class="btn btn-sml" id="acceptOffer" name="accept" type="submit" value="<?php echo $item_id?>">accept</button>
+
+                                        </td>
+                                        <td><?php $User_ID = $users_row['item_id']; echo"<input type=checkbox name=$User_ID>"; ?> </td>
+                                        <?php
+                                    }
+                                    else if ($type == "pending"){
+                                        ?>
+                                        <td><?php $User_ID = $users_row['item_id']; echo"<input type=checkbox name=$User_ID>"; ?> </td>
+                                        <?php
+                                    }
+                            ?>
+                            </tr>
+                            <?php
+                        }
+
+                        /* free result set */
+                        $result->free();
+                    } ?>
+                </table>
+
+            </div>
 
             <?php
             if ($type == "offer" || $type == "pending"  ){

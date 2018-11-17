@@ -23,8 +23,8 @@ $temp->header_homeScreen();
     <!-- Header -->
     <?php
     /**
-    *User myAccountTab
-    *Shows the user's account information
+    *User: myAccountTab
+    *Shows the user's item status and message board
     *
     *
     *
