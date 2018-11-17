@@ -29,3 +29,15 @@ body{
 .navbar li {
     list-style-type:none;
 }
+
+/* ----------------------------- User Navigation Bar -----------------------------*/
+.userNavbar{
+    width: 100%;
+    background-color: #797d7f;
+    color: #ffffff;
+}
+
+.userNavbar:hover{
+    background-color: #474a4b;
+    color: #ffffff;
+}

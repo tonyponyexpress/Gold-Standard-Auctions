@@ -35,7 +35,7 @@ $temp->header_homeScreen();
     ?>
 
 <div class="container-fluid">
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-md-3" onclick="location.href='howItWorksTab';" id="howItWorksButton" style="cursor: pointer;">
         <h1>How it Works</h1>
       </div>
@@ -45,37 +45,52 @@ $temp->header_homeScreen();
       <div class="col-md-3" onclick="location.href='myAccountTab';" id="myAccountButton" style="cursor: pointer;">
         <h1>My Account</h1>
       </div>
+    </div> -->
+
+
+    <div class="row">
+        <div class="col-md-3">
+            <a href="howItWorksTab.php" class="btn btn-lg .btn-block userNavbar">How It Works</a>
+        </div>
+        <div class="col-md-6">
+            <a href="sellTab.php" class="btn btn-lg .btn-block userNavbar">Sell</a>
+        </div>
+        <div class="col-md-3">
+            <a href="myAccountTab" class="btn btn-lg .btn-block userNavbar">My Account</a>
+        </div>
     </div>
 
 
-  <form class="form-sell" action="backEnd/soldItem.php" method="post" enctype="multipart/form-data">
-      <div class="form-signing form-group row">
-        <label for="item" class="col-sm-2 col-form-label">Item</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" name="item" id="item" placeholder="Item">
-        </div>
-      </div>
+    <div class="row">
+      <form class="form-sell" action="backEnd/soldItem.php" method="post" enctype="multipart/form-data">
+          <div class="form-signing form-group row">
+            <label for="item" class="col-sm-2 col-form-label">Item</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="item" id="item" placeholder="Item">
+            </div>
+          </div>
 
-      <div class="form-group row">
-        <label for="description" class="col-sm-2 col-form-label">Description</label>
-        <div class="col-sm-10">
-          <textarea type="text" class="form-control" name="description" id="descriptionItem" placeholder="Description"> </textarea>
-        </div>
-      </div>
+          <div class="form-group row">
+            <label for="description" class="col-sm-2 col-form-label">Description</label>
+            <div class="col-sm-10">
+              <textarea type="text" class="form-control" name="description" id="descriptionItem" placeholder="Description"> </textarea>
+            </div>
+          </div>
 
-      <div class="form-group row">
-        <label for="description" class="col-sm-2 col-form-label">Picture</label>
-        <div class="col-sm-10">
-          <input type="file" class="form-control" name="image" id="imageItem" placeholder="Browse">
-        </div>
-      </div>
+          <div class="form-group row">
+            <label for="description" class="col-sm-2 col-form-label">Picture</label>
+            <div class="col-sm-10">
+              <input type="file" class="form-control" name="image" id="imageItem" placeholder="Browse">
+            </div>
+          </div>
 
-      <div class="form-group row">
-        <div class="col-sm-12">
-          <input type="submit" class="btn" name="submit" id="submitItem" label="Submit" value="Submit"></input>
-        </div>
-      </div>
-  </form>
+          <div class="form-group row">
+            <div class="col-sm-12">
+              <input type="submit" class="btn" name="submit" id="submitItem" label="Submit" value="Submit"></input>
+            </div>
+          </div>
+      </form>
+    </div>
 </div>
 
   <!-- Footer -->

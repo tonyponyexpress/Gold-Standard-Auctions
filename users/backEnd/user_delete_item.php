@@ -1,7 +1,4 @@
 <?php
-include ('../cms/sql_credentials.php');
-global $mysqli;
-
     // Access database
     include ('../../cms/sql_credentials.php');
     global $mysqli;
