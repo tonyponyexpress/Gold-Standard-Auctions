@@ -15,5 +15,9 @@ class admin{
     include('templates/sidebar.php');
   }
 
+  public function tmpl_toggle(){
+    include('templates/toggleSidebar.php');
+  }
+
 }
 ?>
