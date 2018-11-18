@@ -22,7 +22,7 @@
                 </thead>
 
                 <?php
-                $items = "SELECT * FROM Project_Items ORDER BY item_id";
+                $items = "SELECT * FROM Project_Items ORDER BY item_id DESC";
                 if ($result = $mysqli->query($items)) {
                     // Get all items of the specific user
                     while ($users_row = $result->fetch_assoc()) {
@@ -116,11 +116,11 @@
                     <?php
                     // Selects all the items of the user for the admin panel
                     if ($type=="get"){
-                        $items = "SELECT * FROM Project_Items WHERE username='$username' ORDER BY item_id ";
+                        $items = "SELECT * FROM Project_Items WHERE username='$username' ORDER BY item_id DESC ";
                     }
                     // Selects all the items of the user according to the status for the user panel
                     else {
-                        $items = "SELECT * FROM Project_Items WHERE username='$username' AND status='$type' ORDER BY item_id";
+                        $items = "SELECT * FROM Project_Items WHERE username='$username' AND status='$type' ORDER BY item_id DESC";
                     }
 
                     if ($result = $mysqli->query($items)) {
@@ -255,7 +255,7 @@
 
 
              <?php
-                 $users = "SELECT * FROM Project_Messages WHERE admin IS NULL ORDER BY message_id";
+                 $users = "SELECT * FROM Project_Messages WHERE admin IS NULL ORDER BY message_id DESC";
                  if ($result = $mysqli->query($users)) {
                      // Get all users
                      while ($message_row = $result->fetch_assoc()) {
@@ -281,13 +281,53 @@
         }
 
 
+        public function showMessagesUser(){
+            ?>
+            <table class="table" >
+            <?php
+                // Access database
+                include ('../cms/sql_credentials.php');
+                global $mysqli;
+                // Get username
+                session_start();
+                $username =  $_SESSION['user_id'];
+                $messages = "SELECT * FROM Project_Messages WHERE username='$username' ORDER BY message_id ";
+                if ($result = $mysqli->query($messages)) {
+                    // Get all users
+                    while ($message_row = $result->fetch_assoc()) {
+                        $ID = $message_row['message_id'];
+                        $message = $message_row['message'];
+                        $admin = $message_row['admin'];
+                        if ($admin == 1){
+                            ?>
+                            <tr>
+                                <th id="message-admin"> admin: <?php echo $message; ?> </th>
+                            </tr>
+                            <?php
+                        }
+                        else{
+                            ?>
+                            <tr>
+                                <th id="message-user"> user: <?php echo $message; ?> </th>
+                            </tr>
+                            <?php
+                        }
+                    }
+                    // free result set
+                    $result->free();
+                }
+                ?>
+            </table>
+            <?php
+        }
+
         public function showIssues(){
             // Access database
             include ('../cms/sql_credentials.php');
             global $mysqli;
             ?>
 
-            <form action="admin_delete_issue.php" method="post">
+            <form action="backEnd/admin_delete_issue.php" method="post">
                 <table class="table thead-light table-hover">
                  <thead class="thead-light">
                      <th scope="col"> ID </th>
@@ -299,7 +339,7 @@
 
 
                 <?php
-                 $problems = "SELECT * FROM Project_Problems";
+                 $problems = "SELECT * FROM Project_Problems ORDER BY problem_id DESC";
                  if ($result = $mysqli->query($problems)) {
                      // Get all users
                      while ($message_row = $result->fetch_assoc()) {

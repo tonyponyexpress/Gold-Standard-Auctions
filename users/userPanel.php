@@ -151,41 +151,10 @@ $temp->header_homeScreen();
                     <h2> Message Board </h2>
                     <div id="message-board">
 
-                        <table class="table" >
                         <?php
-                            // Access database
-                            include ('../cms/sql_credentials.php');
-                            global $mysqli;
-                            // Get username
-                            session_start();
-                            $username =  $_SESSION['user_id'];
-                            $messages = "SELECT * FROM Project_Messages WHERE username='$username' ORDER BY message_id ";
-                            if ($result = $mysqli->query($messages)) {
-                                // Get all users
-                                while ($message_row = $result->fetch_assoc()) {
-                                    $ID = $message_row['message_id'];
-                                    $message = $message_row['message'];
-                                    $admin = $message_row['admin'];
-                                    if ($admin == 1){
-                                        ?>
-                                        <tr>
-                                            <th id="message-admin"> admin: <?php echo $message; ?> </th>
-                                        </tr>
-                                        <?php
-                                    }
-                                    else{
-                                        ?>
-                                        <tr>
-                                            <th id="message-user"> user: <?php echo $message; ?> </th>
-                                        </tr>
-                                        <?php
-                                    }
-                                }
-                                // free result set
-                                $result->free();
-                            }
-                            ?>
-                        </table>
+                            $messages = new database();
+                            $messages->showMessagesUser();
+                        ?>
 
                     </div>
                     </br>
