@@ -8,9 +8,23 @@ body {
 }
 
 .form-signin {
-  max-width: 380px;
-  padding: 15px 35px 45px;
-  margin: 0 auto;
-  background-color: #fff;
-  border: 1px solid rgba(0,0,0,0.1);
+    max-width: 380px;
+    padding: 15px 35px 45px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+h2{
+    text-align: center;
+}
+
+#adminLogin{
+    background-color: #2f2fa2;
+    color: #fff;
+}
+
+#adminLogin:hover{
+    background-color: #f64c72;
+    color: #fff;
 }

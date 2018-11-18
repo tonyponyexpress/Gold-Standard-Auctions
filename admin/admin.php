@@ -27,12 +27,12 @@
 
     <div class="wrapper">
       <form class="form-signin" action="backEnd/admin_login.php" method="post">
-        <h2 class="form-signin-heading">Admin login</h2>
+        <h2>Admin login</h2>
         <input type="text" class="form-control" name="username" placeholder="Username" required=""/>
         <p> </p>
         <input type="password" class="form-control" name="password" placeholder="Password" required=""/>
         <p> </p>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+        <button class="btn btn-block" id="adminLogin" type="submit">Login</button>
       </form>
     </div>
 
