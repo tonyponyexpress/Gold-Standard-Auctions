@@ -8,7 +8,7 @@
            global $mysqli;
 
             ?>
-          <form action="admin_delete_items.php" method="post">
+          <form action="backEnd/admin_delete_items.php" method="post">
             <table class="table thead-light table-hover" >
                 <thead class="thead-light">
                     <th scope="col"> ID </th>
@@ -193,7 +193,7 @@
            include ('../cms/sql_credentials.php');
            global $mysqli;
            ?>
-           <form action="admin_delete_user.php" method="post">
+           <form action="backEnd/admin_delete_user.php" method="post">
             <table class="table thead-light table-hover" >
                 <thead class="thead-light">
                     <th scope="col"> Name </th>
