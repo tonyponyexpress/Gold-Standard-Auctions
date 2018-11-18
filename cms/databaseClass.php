@@ -83,8 +83,8 @@
             ?>
           <form action="backEnd/user_delete_item.php" method="post">
             <div class="table-responsive">
-                <table class="table table-striped" >
-                    <tr>
+                <table class="table thead-light table-hover" >
+                    <thead class="thead-light">
                         <th scope="col"> ID </th>
                         <th scope="col"> Item </th>
                         <th scope="col"> Description </th>
@@ -111,7 +111,7 @@
                                 <?php
                             }
                         ?>
-                    </tr>
+                    </thead>
 
                     <?php
                     // Selects all the items of the user for the admin panel

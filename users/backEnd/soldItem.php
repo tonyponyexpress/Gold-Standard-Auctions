@@ -41,7 +41,7 @@
                 }
             }
             echo "New item submitted successfully";
-            header('Location: ../sellTab.php');
+            header('Location: ../userPanel.php');
         }
         else {
             echo "Error";

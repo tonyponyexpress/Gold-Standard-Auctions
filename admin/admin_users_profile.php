@@ -63,13 +63,27 @@
             <div class="user_info">
                  <h2> <?php echo $username ?> profile</h2>
 
+                 <h3> Items </h3>
                  <?php
                      // Items table
-                     $temp = new database();
-                     $temp->showItemsUser("get");
+                     $items = new database();
+                     $items->showItemsUser("get");
                  ?>
 
-
+                 <h3> Messages </h3>
+                     <div id="message-board">
+                         <?php
+                             $messages = new database();
+                             $messages->showMessagesUser();
+                         ?>
+                     </div>
+                     </br>
+                     <div id="message-submission">
+                         <form action="backEnd/sendMessage.php" method="post">
+                             <textarea id="message-box" type="text" name="message" placeholder="Message" required=""> </textarea>
+                             <button class="btn btn-sml btn-block btnsubmit" type="submit">Submit message</button>
+                         </form>
+                     </div>
             </div>
 
              <?php

@@ -126,3 +126,24 @@ tr a:hover {
     background-color: #f64c72;
     color: #fff;
 }
+
+/* ---------------------------------- Message Board User ---------------------------------- */
+#message-board{
+    max-height: 75%;
+    overflow:auto;
+    background-color:white;
+    scrollbar-base-color:gold;
+}
+
+#message-box{
+    width: 100%;
+}
+
+#message-admin{
+    background-color: rgba(0,0,0,.03);
+}
+
+#message-user{
+    text-align: right;
+    background-color: #d8c3d2;
+}

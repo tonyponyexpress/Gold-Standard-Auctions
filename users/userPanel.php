@@ -150,12 +150,10 @@ $temp->header_homeScreen();
                 <div class="col-md-4">
                     <h2> Message Board </h2>
                     <div id="message-board">
-
                         <?php
                             $messages = new database();
                             $messages->showMessagesUser();
                         ?>
-
                     </div>
                     </br>
                     <div id="message-submission">
