@@ -19,6 +19,9 @@
     if ( ! isset( $_SESSION['admin_id'] ) ) {
         header("Location: admin_login.html");
     }
+    include('adminClass.php');
+    $temp = new admin();
+    $temp->header_admin_login();
 ?>
 
 <!DOCTYPE html>
@@ -39,8 +42,8 @@
     <div class="wrapper">
         <!-- Sidebar  -->
         <?php
-            session_start();
-            include('templates/sidebar.php');
+            $temp = new admin();
+            $temp->tmpl_sidebar();
         ?>
 
         <!-- Page Content  -->
@@ -50,65 +53,43 @@
                 $toggle = new admin();
                 $toggle->tmpl_toggle();
             ?>
-             <h2>Answer message</h2>
 
-             <?php
-                // Access database
-                include ('../cms/sql_credentials.php');
-                global $mysqli;
-                $username = $_GET['Username'];
+            <div class="user_info">
 
-             ?>
+                 <h2>Answer message</h2>
 
-             <form class="form-signin" action="backEnd/admin_answer_be.php" method="post">
-               <h2 class="form-signin-heading"> From <? echo $username; ?> </h2>
-               <label> Answer to: </label>
-               <input class="form-control" id="disabledInput" type="text" name="username" placeholder="<?php echo $_GET['Username'] ?>" value="<?php echo $_GET['Username'] ?>"   readonly>
-               <label> Message </label>
-               <textarea type="text" class="form-control" name="message" required="" cols="32"/> </textarea>
-               <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
-             </form>
+                 <?php
+                    // Access database
+                    include ('../cms/sql_credentials.php');
+                    global $mysqli;
+                    $username = $_GET['Username'];
+                 ?>
+
+                 <form class="form-signin" action="backEnd/admin_answer_be.php" method="post">
+                   <label> Answer to: </label>
+                   <input class="form-control" id="disabledInput" type="text" name="username" placeholder="<?php echo $_GET['Username'] ?>" value="<?php echo $_GET['Username'] ?>"   readonly>
+                   <label> Message </label>
+                   <textarea type="text" class="form-control" name="message" required="" cols="32"/> </textarea>
+                   <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+                 </form>
 
 
 
-             <?php
-             /* close connection */
-             $mysqli->close();
-             ?>
-
+                 <?php
+                 // close connection
+                 $mysqli->close();
+                 ?>
+             </div>
 
 
         </div>
      </div>
 
 
-    <!-- Footer -->
-    <div class= "container-fluid" style="background-color: rgba(0,87,110,0.8)">
-      <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-3">
-          <br>
-          <a href="faq.html">FAQ</a><br>
-          <a href="contactUs.html">Contact Us</a><br>
-        </div>
-        <div class="col-md-3">
-          <br>
-          <a href="reportAnIssue.html">Report an Issue</a><br>
-          <a href="returnPolicy.html">Return Policy</a><br>
-        </div>
-        <div class="col-md-4" style="text-align: center">
-          <br>
-          <img src="../assets/fakeLogo.jpg" alt="Logo">
-          <br>
-          <br>
-        </div>
-      </div>
-    </div>
-
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="style.js"></script>
-    
+
 </body>
 </html>

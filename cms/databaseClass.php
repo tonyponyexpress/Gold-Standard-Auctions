@@ -43,12 +43,12 @@
                             <?php
                                 if ($status != "accepted"){
                                     ?>
-                                        <th> <a href="../admin/admin_createOffer.php?itemOffer=<?php echo $item_id?>"> X </a> </td>
+                                        <td> <a href="../admin/admin_createOffer.php?itemOffer=<?php echo $item_id?>"> X </a> </td>
                                     <?php
                                 }
                                 else{
                                     ?>
-                                        <th> </th>
+                                        <td> </td>
                                     <?php
                                 }
                             ?>
@@ -237,6 +237,7 @@
         <?php
         }
 
+
         public function showMessages(){
             // Access database
             include ('sql_credentials.php');
@@ -254,7 +255,7 @@
 
 
              <?php
-                 $users = "SELECT * FROM Project_Messages ORDER BY message_id";
+                 $users = "SELECT * FROM Project_Messages WHERE admin IS NULL ORDER BY message_id";
                  if ($result = $mysqli->query($users)) {
                      // Get all users
                      while ($message_row = $result->fetch_assoc()) {
@@ -266,8 +267,8 @@
                          <tr>
                              <td> <?php echo $ID; ?> </td>
                              <td> <?php echo $message; ?> </td>
-                             <td> <a href="admin_users_profile.php?Username=<?php echo $username?>"> <?php echo $username; ?>  </a> </td>
-                             <td> <a href="admin_answer.php?Username=<?php echo $username?>"> X </td>
+                             <td> <a href="../admin/admin_users_profile.php?Username=<?php echo $username?>"> <?php echo $username; ?>  </a> </td>
+                             <td> <a href="../admin/admin_answer.php?Username=<?php echo $username?>"> X </td>
                          </tr>
                      <?php
                      }
@@ -277,6 +278,51 @@
                  ?>
              </table>
              <?php
+        }
+
+        public function showIssues(){
+            // Access database
+            include ('../cms/sql_credentials.php');
+            global $mysqli;
+            ?>
+
+
+            <table class="table thead-light table-hover">
+             <thead class="thead-light">
+                 <th scope="col"> ID </th>
+                 <th scope="col"> Title </th>
+                 <th scope="col"> Description </th>
+                 <th scope="col"> E-mail </th>
+                 <th scope="col"> Delete </th>
+             </thead>
+
+
+            <?php
+             $problems = "SELECT * FROM Project_Problems";
+             if ($result = $mysqli->query($problems)) {
+                 // Get all users
+                 while ($message_row = $result->fetch_assoc()) {
+                     $ID = $message_row['problem_id'];
+                     $title = $message_row['title'];
+                     $description = $message_row['description'];
+                     $email = $message_row['email'];
+                     ?>
+
+                     <tr>
+                         <td> <?php echo $ID; ?> </td>
+                         <td> <?php echo $title; ?> </td>
+                         <td> <?php echo $description ?> </td>
+                         <td> <?php echo $email  ?>   </td>
+                         <td> <a href="../admin/admin_delete_issue.php?id=<?php echo $ID?>"> X </td>
+                     </tr>
+                 <?php
+                 }
+                 /* free result set */
+                 $result->free();
+             }
+             ?>
+            </table>
+            <?php
         }
 
     }
