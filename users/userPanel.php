@@ -39,16 +39,13 @@ $temp->header_homeScreen();
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-3">
-            <input type="button" class="btn btn-lg .btn-block userNavbar" id="howItWorksButton" value="howItWorks" onclick="showHowItWorks()"></input>
-            <!-- <a class="btn btn-lg .btn-block userNavbar" data-toggle="collapse" href="#howItWorks" role="button" aria-expanded="false" aria-controls="collapseExample" data-parent="#userBar"> How It Works </a> -->
+            <input type="button" class="btn btn-lg .btn-block userNavbar" id="howItWorksButton" value="How It Works" onclick="showHowItWorks()"></input>
         </div>
         <div class="col-md-6">
             <input type="button" class="btn btn-lg .btn-block userNavbar" id="sellButton" value="Sell" onclick="showSell()"></input>
-            <!-- <a class="btn btn-lg .btn-block userNavbar" data-toggle="collapse" href="#sell" role="button" aria-expanded="false" aria-controls="collapseExample" data-parent="#userBar" > Sell </a> -->
         </div>
         <div class="col-md-3">
             <input type="button" class="btn btn-lg .btn-block userNavbar" id="myAccountButton" value="My Account" onclick="showMyAccount()"></input>
-            <!-- <a class="btn btn-lg .btn-block userNavbar" data-toggle="collapse" href="#myAccount" role="button" aria-expanded="false" aria-controls="collapseExample"  > My Account </a> -->
         </div>
     </div>
 

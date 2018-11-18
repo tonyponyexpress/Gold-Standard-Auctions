@@ -1,34 +1,3 @@
-/* ----------------------------- Userbar----------------------------- */
-#howItWorksButton{
-	border-style: solid;
-	border-width: medium;
-	text-align: center;
-	border-right: 0px;
-}
-#sellButton{
-	border-style: solid;
-	border-width: medium;
-	text-align: center;
-}
-#myAccountButton{
-	border-style: solid;
-	border-width: medium;
-	text-align: center;
-	border-bottom: 0px;
-	border-left: 0px;
-}
-
-.btnsubmit{
-    background-color: #F64C72;
-    color: #FFFFFF;
-}
-
-.btnsubmit:hover{
-    background-color: #242582;
-    color: #FFFFFF;
-}
-
-
 /* ----------------------------- Message Board ----------------------------- */
 #message-board{
     max-height: 75%;
@@ -48,6 +17,16 @@
 #message-user{
     text-align: right;
     background-color: #d8c3d2;
+}
+
+.btnsubmit{
+    background-color: #F64C72;
+    color: #FFFFFF;
+}
+
+.btnsubmit:hover{
+    background-color: #242582;
+    color: #FFFFFF;
 }
 
 

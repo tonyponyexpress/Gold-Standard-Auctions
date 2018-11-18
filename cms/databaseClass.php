@@ -56,11 +56,11 @@
                         </tr>
                     <?php
                     }
-                    /* free result set */
+                    // free result set
                     $result->free();
                 } ?>
             </table>
-            <input type="submit" value="Delete selected item(s)">
+            <input type="submit" class="btn float-right deleteAdmin" value="Delete selected item(s)">
           </form>
         <?php
         }
@@ -232,7 +232,7 @@
                     $result->free();
                 } ?>
             </table>
-            <input type="submit" value="Delete selected user(s)">
+            <input type="submit" class="btn float-right deleteAdmin" value="Delete selected user(s)">
           </form>
         <?php
         }
@@ -280,48 +280,50 @@
              <?php
         }
 
+
         public function showIssues(){
             // Access database
             include ('../cms/sql_credentials.php');
             global $mysqli;
             ?>
 
+            <form action="admin_delete_issue.php" method="post">
+                <table class="table thead-light table-hover">
+                 <thead class="thead-light">
+                     <th scope="col"> ID </th>
+                     <th scope="col"> Title </th>
+                     <th scope="col"> Description </th>
+                     <th scope="col"> E-mail </th>
+                     <th scope="col"> Delete </th>
+                 </thead>
 
-            <table class="table thead-light table-hover">
-             <thead class="thead-light">
-                 <th scope="col"> ID </th>
-                 <th scope="col"> Title </th>
-                 <th scope="col"> Description </th>
-                 <th scope="col"> E-mail </th>
-                 <th scope="col"> Delete </th>
-             </thead>
 
-
-            <?php
-             $problems = "SELECT * FROM Project_Problems";
-             if ($result = $mysqli->query($problems)) {
-                 // Get all users
-                 while ($message_row = $result->fetch_assoc()) {
-                     $ID = $message_row['problem_id'];
-                     $title = $message_row['title'];
-                     $description = $message_row['description'];
-                     $email = $message_row['email'];
-                     ?>
-
-                     <tr>
-                         <td> <?php echo $ID; ?> </td>
-                         <td> <?php echo $title; ?> </td>
-                         <td> <?php echo $description ?> </td>
-                         <td> <?php echo $email  ?>   </td>
-                         <td> <a href="../admin/admin_delete_issue.php?id=<?php echo $ID?>"> X </td>
-                     </tr>
-                 <?php
+                <?php
+                 $problems = "SELECT * FROM Project_Problems";
+                 if ($result = $mysqli->query($problems)) {
+                     // Get all users
+                     while ($message_row = $result->fetch_assoc()) {
+                         $ID = $message_row['problem_id'];
+                         $title = $message_row['title'];
+                         $description = $message_row['description'];
+                         $email = $message_row['email'];
+                         ?>
+                         <tr>
+                             <td> <?php echo $ID; ?> </td>
+                             <td> <?php echo $title; ?> </td>
+                             <td> <?php echo $description ?> </td>
+                             <td> <?php echo $email  ?>   </td>
+                             <td><?php echo"<input type=checkbox name=$ID>"; ?> </td>
+                         </tr>
+                     <?php
+                     }
+                     // free result set
+                     $result->free();
                  }
-                 /* free result set */
-                 $result->free();
-             }
-             ?>
-            </table>
+                 ?>
+                </table>
+                <input type="submit" class="btn float-right deleteAdmin" value="Delete selected issue(s)">
+            </form>
             <?php
         }
 

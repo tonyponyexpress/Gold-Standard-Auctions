@@ -35,6 +35,8 @@ body{
     width: 100%;
     background-color: #797d7f;
     color: #ffffff;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .userNavbar:hover{

@@ -1,26 +1,5 @@
-/* ----------------------------- Userbar ----------------------------- */
-#howItWorksButton{
-	border-style: solid;
-	border-width: medium;
-	text-align: center;
-}
-#sellButton{
-	border-style: solid;
-	border-width: medium;
-	text-align: center;
-	border-left: 0px;
-	border-bottom: 0px;
-	border-right: 0px;
-}
-#myAccountButton{
-	border-style: solid;
-	border-width: medium;
-	text-align: center;
-}
-
-
 .form-sell {
-      max-width: 850px;
+      max-width: 1000px;
       padding: 15px 35px 45px;
       margin: 0 auto;
       background-color: rgba(0,0,0,.03);
