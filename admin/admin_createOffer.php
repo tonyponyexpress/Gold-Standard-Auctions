@@ -109,8 +109,8 @@
                     </div>
 
                     <div class="form-group row">
-                        <div class="col-sm-10">
-                          <button type="submit" class="btn btn-primary">Submit</button>
+                        <div class="col-sm-12">
+                          <button type="submit" class="btn submitAdmin float-right">Submit</button>
                         </div>
                     </div>
 

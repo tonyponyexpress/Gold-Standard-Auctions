@@ -70,7 +70,7 @@
                    <input class="form-control" id="disabledInput" type="text" name="username" placeholder="<?php echo $_GET['Username'] ?>" value="<?php echo $_GET['Username'] ?>"   readonly>
                    <label> Message </label>
                    <textarea type="text" class="form-control" name="message" required="" cols="32"/> </textarea>
-                   <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+                   <button class="btn submitAdmin float-right" type="submit">Submit</button>
                  </form>
 
 

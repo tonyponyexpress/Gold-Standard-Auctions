@@ -61,6 +61,22 @@ a[data-toggle="collapse"] {
     background: #fff;
 }
 
+#sidebar ul li form {
+    padding: 10px;
+    display: block;
+    color: #fff;
+}
+
+#sidebar input{
+    -moz-appearance: none;
+}
+
+#sidebar ul li form:hover {
+    color: #f64c72;
+    background: #fff;
+}
+
+
 #sidebarCollapse{
     background-color: #f64c72;
     height: 25px;
@@ -96,4 +112,11 @@ tr a:active {
 tr a:hover {
     color: #f64c72;
     text-decoration: none;
+}
+
+/* ---------------------------------- Buttons ---------------------------------- */
+.submitAdmin{
+    margin-top: 10px;
+    background-color: #f64c72;
+    color: #fff;
 }
