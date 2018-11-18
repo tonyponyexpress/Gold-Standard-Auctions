@@ -73,3 +73,27 @@ a[data-toggle="collapse"] {
 #sidebarCollapse:hover{
     background-color: #191956;
 }
+
+/* ---------------------------------- Content ---------------------------------- */
+
+#content {
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+h2{
+    font-size: 30px;
+}
+
+tr a:link,
+tr a:visited,
+tr a:active {
+    color: black;
+    text-decoration: none;
+}
+
+tr a:hover {
+    color: #f64c72;
+    text-decoration: none;
+}

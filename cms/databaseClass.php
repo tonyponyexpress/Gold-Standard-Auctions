@@ -9,8 +9,8 @@
 
             ?>
           <form action="admin_delete_items.php" method="post">
-            <table class="table table-striped" >
-                <tr>
+            <table class="table thead-light table-hover" >
+                <thead class="thead-light">
                     <th scope="col"> ID </th>
                     <th scope="col"> Item </th>
                     <th scope="col"> Description </th>
@@ -19,7 +19,7 @@
                     <th scope="col"> Status </th>
                     <th scope="col"> Create offer </th>
                     <th scope="col"> Delete </th>
-                </tr>
+                </thead>
 
                 <?php
                 $items = "SELECT * FROM Project_Items ORDER BY item_id";
@@ -34,16 +34,16 @@
                         $status = $users_row['status'];
                         ?>
                         <tr>
-                            <th> <?php echo $item_id; ?> </th>
-                            <th> <?php echo $name; ?> </th>
-                            <th> <?php echo $description; ?> </th>
-                            <th> <?php echo $username; ?> </th>
-                            <th> <?php echo $offer; ?> </th>
-                            <th> <?php echo $status; ?> </th>
+                            <td> <?php echo $item_id; ?> </td>
+                            <td> <?php echo $name; ?> </td>
+                            <td> <?php echo $description; ?> </td>
+                            <td> <?php echo $username; ?> </td>
+                            <td> <?php echo $offer; ?> </td>
+                            <td> <?php echo $status; ?> </td>
                             <?php
                                 if ($status != "accepted"){
                                     ?>
-                                        <th> <a href="../admin/admin_createOffer.php?itemOffer=<?php echo $item_id?>"> X </a> </th>
+                                        <th> <a href="../admin/admin_createOffer.php?itemOffer=<?php echo $item_id?>"> X </a> </td>
                                     <?php
                                 }
                                 else{
@@ -52,7 +52,7 @@
                                     <?php
                                 }
                             ?>
-                            <th><?php $Admin_ID = $users_row['item_id']; echo"<input type=checkbox name=$Admin_ID>"; ?> </th>
+                            <td><?php $Admin_ID = $users_row['item_id']; echo"<input type=checkbox name=$Admin_ID>"; ?> </td>
                         </tr>
                     <?php
                     }
@@ -194,13 +194,14 @@
            global $mysqli;
            ?>
            <form action="admin_delete_user.php" method="post">
-            <table class="table table-striped" >
-                <tr>
+            <table class="table thead-light table-hover" >
+                <thead class="thead-light">
                     <th scope="col"> Name </th>
+                    <th scope="col"> Username </th>
                     <th scope="col"> # of items </th>
                     <th scope="col"> Profile </th>
                     <th scope="col"> Delete </th>
-                </tr>
+                </thead>
 
             <?php
                 $users = "SELECT * FROM Project_Users ORDER BY user_id";
@@ -210,17 +211,19 @@
                         $ID = $users_row['user_id'];
                         $FirstName = $users_row['FirstName'];
                         $LastName = $users_row['LastName'];
+                        $username = $users_row['username'];
                         $number_items = $users_row['number_items'];
                         $username = $users_row['username'];
                         ?>
                         <tr>
-                            <th>
+                            <td>
                                 <div id="table_name"> <?php echo $FirstName; echo " "; echo $LastName ?>  </div>
                                 <div id="table_id"> ID: <?php echo $ID; ?>  </div>
-                            </th>
-                            <th> <?php echo $number_items; ?> </th>
-                            <th> <a href="admin_users_profile.php?Username=<?php echo $username?>"> X </a> </th>
-                            <th> <?php $Admin_ID = $users_row['user_id']; echo"<input type=checkbox name=$Admin_ID>"; ?> </th>
+                            </td>
+                            <td> <?php echo $username; ?> </td>
+                            <td> <?php echo $number_items; ?> </td>
+                            <td> <a href="admin_users_profile.php?Username=<?php echo $username?>"> X </a> </td>
+                            <td> <?php $Admin_ID = $users_row['user_id']; echo"<input type=checkbox name=$Admin_ID>"; ?> </td>
                         </tr>
 
                     <?php
@@ -233,6 +236,49 @@
           </form>
         <?php
         }
+
+        public function showMessages(){
+            // Access database
+            include ('sql_credentials.php');
+            global $mysqli;
+
+            ?>
+
+             <table class="table thead-light table-hover">
+                 <thead class="thead-light">
+                     <th scope="col"> ID </th>
+                     <th scope="col"> Message </th>
+                     <th scope="col"> Username </th>
+                     <th scope="col"> Answer </th>
+                 </thead>
+
+
+             <?php
+                 $users = "SELECT * FROM Project_Messages ORDER BY message_id";
+                 if ($result = $mysqli->query($users)) {
+                     // Get all users
+                     while ($message_row = $result->fetch_assoc()) {
+                         $ID = $message_row['message_id'];
+                         $message = $message_row['message'];
+                         $username = $message_row['username'];
+                         ?>
+
+                         <tr>
+                             <td> <?php echo $ID; ?> </td>
+                             <td> <?php echo $message; ?> </td>
+                             <td> <a href="admin_users_profile.php?Username=<?php echo $username?>"> <?php echo $username; ?>  </a> </td>
+                             <td> <a href="admin_answer.php?Username=<?php echo $username?>"> X </td>
+                         </tr>
+                     <?php
+                     }
+                     /* free result set */
+                     $result->free();
+                 }
+                 ?>
+             </table>
+             <?php
+        }
+
     }
 
 ?>

@@ -55,41 +55,12 @@
              <?php
                 // Access database
                 include ('../cms/sql_credentials.php');
+                include('../cms/databaseClass.php');
                 global $mysqli;
+                // Messages for message table
+                $temp = new database();
+                $temp->showMessages();
              ?>
-
-             <table class="table table-striped" >
-                 <tr>
-                     <th scope="col"> ID </th>
-                     <th scope="col"> Message </th>
-                     <th scope="col"> Username </th>
-                     <th scope="col"> Answer </th>
-                 </tr>
-
-
-             <?php
-                 $users = "SELECT * FROM Project_Messages";
-                 if ($result = $mysqli->query($users)) {
-                     // Get all users
-                     while ($message_row = $result->fetch_assoc()) {
-                         $ID = $message_row['message_id'];
-                         $message = $message_row['message'];
-                         $username = $message_row['username'];
-                         ?>
-
-                         <tr>
-                             <th> <?php echo $ID; ?> </th>
-                             <th> <?php echo $message; ?> </th>
-                             <th> <a href="admin_users_profile.php?Username=<?php echo $username?>"> <?php echo $username; ?>  </a> </th>
-                             <th> <a href="admin_answer.php?Username=<?php echo $username?>"> X </th>
-                         </tr>
-                     <?php
-                     }
-                     /* free result set */
-                     $result->free();
-                 }
-                 ?>
-             </table>
 
              <?php
              /* close connection */
