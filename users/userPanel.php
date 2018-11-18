@@ -90,24 +90,24 @@ $temp->header_homeScreen();
                     </h5>
 
                     <div class="accordion" id="accordionExample">
-                      <div class="card">
 
-                        <div class="card-header" id="headingOne">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                              Pending Offers
-                            </button>
-                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                  Pending Offers
+                                </button>
+                            </div>
                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                          <div class="card-body">
+                            <div class="card-body">
                               <?php
                                  include('../cms/databaseClass.php');
                                  // Pending offer items table
                                  $temp = new database();
                                  $temp->showItemsUser("pending");
                               ?>
-                          </div>
+                            </div>
                         </div>
-                      </div>
+                    </div>
 
                       <div class="card">
                         <div class="card-header" id="headingTwo">
@@ -165,6 +165,7 @@ $temp->header_homeScreen();
 
                 </div>
             </div>
+
 
         </div>
 

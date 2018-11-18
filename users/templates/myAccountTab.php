@@ -22,24 +22,24 @@
         </h5>
 
         <div class="accordion" id="accordionExample">
-          <div class="card">
 
-            <div class="card-header" id="headingOne">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Pending Offers
-                </button>
-            </div>
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Pending Offers
+                    </button>
+                </div>
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-              <div class="card-body">
+                <div class="card-body">
                   <?php
                      include('../cms/databaseClass.php');
                      // Pending offer items table
                      $temp = new database();
                      $temp->showItemsUser("pending");
                   ?>
-              </div>
+                </div>
             </div>
-          </div>
+        </div>
 
           <div class="card">
             <div class="card-header" id="headingTwo">
@@ -82,43 +82,10 @@
     <div class="col-md-4">
         <h2> Message Board </h2>
         <div id="message-board">
-
-            <table class="table" >
             <?php
-                // Access database
-                include ('../cms/sql_credentials.php');
-                global $mysqli;
-                // Get username
-                session_start();
-                $username =  $_SESSION['user_id'];
-                $messages = "SELECT * FROM Project_Messages WHERE username='$username' ORDER BY message_id ";
-                if ($result = $mysqli->query($messages)) {
-                    // Get all users
-                    while ($message_row = $result->fetch_assoc()) {
-                        $ID = $message_row['message_id'];
-                        $message = $message_row['message'];
-                        $admin = $message_row['admin'];
-                        if ($admin == 1){
-                            ?>
-                            <tr>
-                                <th id="message-admin"> admin: <?php echo $message; ?> </th>
-                            </tr>
-                            <?php
-                        }
-                        else{
-                            ?>
-                            <tr>
-                                <th id="message-user"> user: <?php echo $message; ?> </th>
-                            </tr>
-                            <?php
-                        }
-                    }
-                    // free result set
-                    $result->free();
-                }
-                ?>
-            </table>
-
+                $messages = new database();
+                $messages->showMessagesUser();
+            ?>
         </div>
         </br>
         <div id="message-submission">

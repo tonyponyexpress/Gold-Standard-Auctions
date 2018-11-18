@@ -298,17 +298,18 @@
                         $ID = $message_row['message_id'];
                         $message = $message_row['message'];
                         $admin = $message_row['admin'];
+                        $date = $message_row['m_date'];
                         if ($admin == 1){
                             ?>
                             <tr>
-                                <th id="message-admin"> admin: <?php echo $message; ?> </th>
+                                <td id="message-admin"> admin: <?php echo $message; ?> <span> <?php echo "<br>" . $date ?> </td>
                             </tr>
                             <?php
                         }
                         else{
                             ?>
                             <tr>
-                                <th id="message-user"> user: <?php echo $message; ?> </th>
+                                <td id="message-user"> <?php echo $username . ":" . $message ;?>  <span> <?php echo "<br>" . $date ?> </td>
                             </tr>
                             <?php
                         }

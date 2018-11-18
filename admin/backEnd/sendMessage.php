@@ -18,12 +18,18 @@ global $mysqli;
 // Get username
 session_start();
 
-$stmt = $mysqli->prepare("INSERT INTO Project_Messages (message, username, admin) VALUES (?, ?, ?)");
-$stmt->bind_param("ssi", $message, $username, $admin);
+$stmt = $mysqli->prepare("INSERT INTO Project_Messages (message, username, m_date, admin) VALUES (?, ?, ?, ?)");
+$stmt->bind_param("sssi", $message, $username, $date, $admin);
+
 // Variables
 $message = $_POST["message"];
 $username =  $_SESSION['user_id'];
 $admin = 1;
+
+// Time
+date_default_timezone_set("America/Chicago");
+$timestamp = time();
+$date = date("h:i:s A. M d, Y", $timestamp);
 
 // Check if message is not empty
 if ($message != ""){

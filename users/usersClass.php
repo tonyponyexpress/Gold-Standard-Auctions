@@ -34,7 +34,7 @@ class users{
         session_start();
         include('templates/footer.php');
     }
-    
+
     /* ----------------------------- User Panel ----------------------------- */
     public function tab_howItWorks(){
         include('templates/howItWorksTab.php');
@@ -44,7 +44,7 @@ class users{
         include('templates/sellTab.php');
     }
 
-    // not working, problem when objectis being created
+    // not working, problem when objects being created
     public function tab_myAccount(){
         include('templates/myAccountTab.php');
     }
