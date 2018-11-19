@@ -31,8 +31,9 @@
         header('Location: ../userPanel.php');
     }
     else {
-      echo "error: invalid username or password.";
-      header('Location: ../homeScreenInvalidLogin.php');
+        $errorLogin = "username/password incorrect";
+        $_SESSION['errorLogin'] = $errorLogin;
+        header('Location: ../homeScreen.php');
     }
 
 

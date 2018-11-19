@@ -93,23 +93,69 @@
         </div>
 
 
-        <div class="col-md-3" style="text-align: center;">
-          <h1>Mission Statement</h1>
-          <p> GetRidofIt is known for creating a simple buying concept<br> which offers the highest dollar cash payout for any<br>
-             collectible items, furthermore, serving our customers in a<br> a manner that will generate a referral business that money can't buy.
-            <div class= "centerMissionStatement" style="text-align: right">
-              <form action="backEnd/CreateUsers.php" method="post">
-              First Name:<input type="text" name="newFirst"><br><br>
-              Last Name:<input type="text" name="newLast"><br><br>
-              Email:<input type="email" name="newEmail"><br><br>
-              Username:<input type="text" name="newUsername"><br><br>
-              Password:<input type="password" name="newPassword"><br><br>
-              Re-enter Password:<input type="password" name="newPassword2"><br><br>
-                <input type="submit" value="Sign Up" />
-              </form>
-          </div>
+        <div class="col-md-4" style="text-align: center;">
+          <h1>Create Account</h1>
+          <p> GetRidofIt is known for creating a simple buying concept which offers the highest dollar cash payout for any collectible items, furthermore, serving our customers in a manner that will generate a referral business that money can't buy. </p>
+
+            <form action="backEnd/CreateUsers.php" method="post">
+                <div class="form-group row">
+                  <label for="item" class="col-sm-3 col-form-label">First Name</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" name="newFirst">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="description" class="col-sm-3 col-form-label">Last Name</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" name="newLast">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="description" class="col-sm-3 col-form-label">Email</label>
+                  <div class="col-sm-9">
+                    <input type="email" class="form-control" name="newEmail">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="description" class="col-sm-3 col-form-label">Username</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" name="newEmail">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="description" class="col-sm-3 col-form-label">Password</label>
+                  <div class="col-sm-9">
+                    <input type="password" class="form-control" name="newPassword">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="description" class="col-sm-3 col-form-label">Re-enter Password</label>
+                  <div class="col-sm-9">
+                    <input type="password" class="form-control" name="newPassword2">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-sm-12">
+                    <input type="submit" class="btn" name="submit" id="submitItem" label="Submit" value="Sign Up"></input>
+                  </div>
+                </div>
+            </form>
+            <?php
+                session_start();
+                if(isset($_SESSION["error"])){
+                    $error = $_SESSION["error"];
+                    echo "<p id='invalidMessage'>$error</p>";
+                }
+            ?>
         </div>
-        <div class="col-md-1"> </div>
+
+
       </div>
     </div>
 

@@ -1,19 +1,4 @@
-/* unvisited link */
-a:link {
-    color: white;
-}
-
-/* visited link */
-a:visited {
-    color: purple;
-}
-
-/* mouse over link */
-a:hover {
-    color: yellow;
-}
-
-/* selected link */
-a:active {
-    color: blue;
+#invalidMessage{
+    margin-top: 10px;
+    color: #f64c72;
 }

@@ -30,6 +30,13 @@
                             <input type="submit" value="Log in" class="btn btn-secondary btn-block" >
                         </div>
                     </form>
+                    <?php
+                        session_start();
+                        if(isset($_SESSION["errorLogin"])){
+                            $error = $_SESSION["errorLogin"];
+                            echo "<p id='invalidMessage'>$error</p>";
+                        }
+                    ?>
                 </li>
             </ul>
         </li>
