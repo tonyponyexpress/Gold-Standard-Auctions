@@ -25,7 +25,7 @@
 
     // Check if message is not empty
     if (!empty($offer)){
-        // Create post
+        // Create offer
         $entry = "UPDATE Project_Items SET offer='$offer', status='offer' WHERE item_id='$item_id';";
         if ($mysqli->query($entry) === TRUE) {
             header('Location: ../admin_items.php');

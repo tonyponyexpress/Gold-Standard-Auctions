@@ -19,5 +19,9 @@ class admin{
     include('templates/toggleSidebar.php');
   }
 
+  public function scripts(){
+    include('templates/scripts.html');
+  }
+
 }
 ?>
