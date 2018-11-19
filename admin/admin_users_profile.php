@@ -74,12 +74,15 @@
                      <div id="message-board">
                          <?php
                              $messages = new database();
-                             $messages->showMessagesUser();
+                             $messages->showMessagesUser($username);
                          ?>
                      </div>
                      </br>
                      <div id="message-submission">
                          <form action="backEnd/sendMessage.php" method="post">
+                             <div style="display: none;">
+                                 <input class="form-control" id="disabledInput" type="text" name="username" placeholder="<?php echo $username ?>" value="<?php echo $username ?>"   readonly>
+                             </div>
                              <textarea id="message-box" type="text" name="message" placeholder="Message" required=""> </textarea>
                              <button class="btn btn-sml btn-block btnsubmit" type="submit">Submit message</button>
                          </form>

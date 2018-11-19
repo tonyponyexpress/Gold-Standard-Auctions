@@ -152,7 +152,7 @@ $temp->header_homeScreen();
                     <div id="message-board">
                         <?php
                             $messages = new database();
-                            $messages->showMessagesUser();
+                            $messages->showMessagesUser($username);
                         ?>
                     </div>
                     </br>

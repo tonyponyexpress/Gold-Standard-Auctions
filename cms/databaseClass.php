@@ -284,16 +284,14 @@
         }
 
 
-        public function showMessagesUser(){
+        public function showMessagesUser($username){
             ?>
             <table class="table" >
             <?php
                 // Access database
                 include ('../cms/sql_credentials.php');
                 global $mysqli;
-                // Get username
-                session_start();
-                $username =  $_SESSION['user_id'];
+
                 $messages = "SELECT * FROM Project_Messages WHERE username='$username' ORDER BY message_id ";
                 if ($result = $mysqli->query($messages)) {
                     // Get all users

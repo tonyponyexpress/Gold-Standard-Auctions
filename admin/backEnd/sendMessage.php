@@ -23,7 +23,7 @@ $stmt->bind_param("sssi", $message, $username, $date, $admin);
 
 // Variables
 $message = $_POST["message"];
-$username =  $_SESSION['user_id'];
+$username =  $_POST["username"];
 $admin = 1;
 
 // Time
