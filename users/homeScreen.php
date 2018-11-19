@@ -122,7 +122,7 @@
                 <div class="form-group row">
                   <label for="description" class="col-sm-3 col-form-label">Username</label>
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" name="newEmail">
+                    <input type="text" class="form-control" name="newUsername">
                   </div>
                 </div>
 
@@ -148,10 +148,13 @@
             </form>
             <?php
                 session_start();
+                // Shows an error message if the creation of the user is invalid, shows an accepting message if the user has been created
                 if(isset($_SESSION["error"])){
                     $error = $_SESSION["error"];
                     echo "<p id='invalidMessage'>$error</p>";
                 }
+                // Destroys the adminError session and its message if the page is refreshed
+                session_destroy();
             ?>
         </div>
 

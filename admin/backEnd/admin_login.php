@@ -35,8 +35,8 @@
         header('Location: ../admin_dashboard.php');
     }
     else{
-        $error = "username/password incorrect";
-        $_SESSION['error'] = $error;
+        $adminError = "username/password incorrect";
+        $_SESSION['adminError'] = $adminError;
         header('Location: ../admin.php');
     }
 
