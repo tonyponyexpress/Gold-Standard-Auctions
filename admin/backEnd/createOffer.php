@@ -28,6 +28,7 @@
         // Create post
         $entry = "UPDATE Project_Items SET offer='$offer', status='offer' WHERE item_id='$item_id';";
         if ($mysqli->query($entry) === TRUE) {
+            header('Location: ../admin_items.php');
             echo "Offer created successfully";
         }
         else {

@@ -271,7 +271,7 @@
                              <td> <?php echo $message; ?> </td>
                              <td> <a href="../admin/admin_users_profile.php?Username=<?php echo $username?>"> <?php echo $username; ?>  </a> </td>
                              <td> <?php echo $date; ?> </td>
-                             <td> <a href="../admin/admin_answer.php?Username=<?php echo $username?>"> X </td>
+                             <td> <a href="../admin/admin_users_profile.php?Username=<?php echo $username?>"> X </td>
                          </tr>
                      <?php
                      }
