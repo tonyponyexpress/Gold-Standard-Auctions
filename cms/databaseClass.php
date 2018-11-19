@@ -60,6 +60,7 @@
                     $result->free();
                 } ?>
             </table>
+
             <input type="submit" class="btn float-right deleteAdmin" value="Delete selected item(s)">
           </form>
         <?php
