@@ -46,7 +46,7 @@
                 $toggle = new admin();
                 $toggle->tmpl_toggle();
             ?>
-
+            <h2> Dashboard </h2>
 
         </div>
     </div>

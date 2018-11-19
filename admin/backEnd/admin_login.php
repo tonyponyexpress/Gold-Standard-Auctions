@@ -35,7 +35,9 @@
         header('Location: ../admin_dashboard.php');
     }
     else{
-      echo "Error: invalid admin username/password";
+        $error = "username/password incorrect";
+        $_SESSION['error'] = $error;
+        header('Location: ../admin.php');
     }
 
     $mysqli->close();

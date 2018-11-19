@@ -250,6 +250,7 @@
                      <th scope="col"> ID </th>
                      <th scope="col"> Message </th>
                      <th scope="col"> Username </th>
+                     <th scope="col"> Date </th>
                      <th scope="col"> Answer </th>
                  </thead>
 
@@ -262,12 +263,14 @@
                          $ID = $message_row['message_id'];
                          $message = $message_row['message'];
                          $username = $message_row['username'];
+                         $date = $message_row['m_date'];
                          ?>
 
                          <tr>
                              <td> <?php echo $ID; ?> </td>
                              <td> <?php echo $message; ?> </td>
                              <td> <a href="../admin/admin_users_profile.php?Username=<?php echo $username?>"> <?php echo $username; ?>  </a> </td>
+                             <td> <?php echo $date; ?> </td>
                              <td> <a href="../admin/admin_answer.php?Username=<?php echo $username?>"> X </td>
                          </tr>
                      <?php

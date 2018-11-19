@@ -11,6 +11,7 @@ body {
     max-width: 380px;
     padding: 15px 35px 45px;
     margin: 0 auto;
+    height: 275px;
     background-color: #fff;
     border: 1px solid rgba(0,0,0,0.1);
 }
@@ -27,4 +28,10 @@ h2{
 #adminLogin:hover{
     background-color: #f64c72;
     color: #fff;
+}
+
+
+#invalidMessage{
+    margin-top: 10px;
+    color: #f64c72;
 }

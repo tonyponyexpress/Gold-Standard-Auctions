@@ -32,9 +32,20 @@
         <p> </p>
         <input type="password" class="form-control" name="password" placeholder="Password" required=""/>
         <p> </p>
-        <button class="btn btn-block" id="adminLogin" type="submit">Login</button>
+        <button class="btn btn-block" id="adminLogin" type="submit" onclick="showDiv()">Login</button>
+
+        <?php
+            session_start();
+            if(isset($_SESSION["error"])){
+                $error = $_SESSION["error"];
+                echo "<p id='invalidMessage'>$error</p>";
+            }
+        ?>
+
       </form>
     </div>
+
+
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
