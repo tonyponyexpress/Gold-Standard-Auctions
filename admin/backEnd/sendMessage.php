@@ -36,7 +36,7 @@ if ($message != ""){
     // Create post
     //$entry = "INSERT INTO  Project_Messages(message, username) VALUES ('$message','$username');";
     if ($stmt->execute()) {
-        header('Location: ../admin_dashboard.php');
+        header('Location: ../admin_users_profile.php?Username='.$username);
     }
     else {
         echo "Error";
