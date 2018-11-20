@@ -291,3 +291,57 @@ class TestSuiteUsers{
     $stmt->close();
     $mysqli->close();
   }
+
+  public function changePassword($test, $username, $old1, $old2, $new1, $new2){
+    if($test=="true"){
+        echo "true cms";
+        include ('cms/sql_credentials.php');
+
+    }
+    else if($test== "false"){
+        echo "false cms";
+        include ('../../cms/sql_credentials.php');
+    }
+
+    $stmt = $mysqli->prepare("SELECT * FROM Project_Users WHERE username= ? AND password = ? ;");
+    $stmt->bind_param("ss", $username, $old_hash);
+    $stmt2 = $mysqli->prepare("UPDATE Project_Users SET password= ? WHERE username= ? ;");
+    $stmt2->bind_param("ss", $new_hash, $username);
+
+    $old_hash = hash('sha512', $old1);
+    $new_hash = hash('sha512', $new1);
+
+    $stmt->execute();
+    $stmt->store_result();
+    $stmt->bind_result($result);
+
+    if ($stmt->fetch()){
+      //echo "Correct old password";
+      if (($old1 == '') || ($old2 == '') || ($new1 == '') || ($new2 == '')){
+        echo "Error: cannot have blank input for passwords";
+      }
+      else if ($old1 != $old2){
+        echo "Error: old password inputs does not match up";
+      }
+      else if ($new1 != $new2){
+        echo "Error: new password inputs do not match up";
+      }
+      else if(strlen($new1) < 8){
+        echo "new password must be 8 characters or longer.";
+      }
+      else if ($stmt2->execute()){
+        echo "New password changed successfully";
+      }
+    }
+    else{
+      echo "Error: invalid old password";
+    }
+
+    if($test == "false"){
+      header('Location: ../settings.php');
+    }
+
+    // close connectio
+    $mysqli->close();
+  }
+}
