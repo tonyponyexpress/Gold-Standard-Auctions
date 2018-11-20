@@ -185,15 +185,26 @@ class TestSuiteUsers{
 
     $description = str_replace("'", "''", $description);
     $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+    echo "$test";
 
+    $success = false;
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        //$add_contact = "INSERT INTO Project_Problems (title, description, email) VALUES ('$title', '$description', '$email');";
         $stmt->execute();
-        header('Location: ../contactUs.php');
-    } else {
-        header('Location: ../contactUs.php');
+        $success = true;
+        echo "succesfully submitted issue <br>";
     }
-
+    else{
+        echo "issue submission failed. <br>";
+    }
+    if($test == "false"){
+      if($success == true){
+        header('Location: ../contactUs.php');
+      }
+      else{
+        //need to add some sort of error reporting on what went wrong to the user.
+        header('Location: ../contactUs.php');
+      }
+    }
     $stmt->close();
     $mysqli->close();
   }
