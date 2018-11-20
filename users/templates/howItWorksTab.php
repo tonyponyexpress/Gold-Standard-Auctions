@@ -31,10 +31,10 @@
       </p>
     </div>
 
-    <div class="col-md-6" style="text-align: center;">
-       <img src="../assets/submit.jpg" alt="Tony" width="200" height="250"><br>
-       <img src="../assets/accept.jpg" alt="Emilia" width="200" height="250"><br>
-       <img src="../assets/collect.jpg" alt="Rob" width="200" height="250">
+    <div class="col-md-6" style="text-align: center; margin-top: 3%;">
+       <img src="../assets/submitScreenShot.png" alt="Tony" width="400" height="250"><br>
+       <img src="../assets/acceptScreenShot.png" alt="Emilia" width="800" height="200"><br>
+       <img src="../assets/cash.jpg" alt="Rob" width="500" height="300">
 
     </div>
 </div>
