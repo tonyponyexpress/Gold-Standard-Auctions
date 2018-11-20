@@ -9,6 +9,7 @@
 *@package users
 *
 */
+
     $username = $_POST["newUsername"];
     $password = $_POST["newPassword"];
     $password2 = $_POST["newPassword2"];
@@ -17,7 +18,7 @@
     $email = $_POST["newEmail"];
     $test = "false";
 
-    include('../../testSuite.php');
-    $homeScreen = new TestSuite();
+    include('../testSuiteUsers.php');
+    $homeScreen = new TestSuiteUsers();
     $homeScreen->createUsers($test,$username,$password,$password2,$firstName,$lastName,$email)
 ?>

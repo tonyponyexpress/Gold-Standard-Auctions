@@ -3,22 +3,25 @@
 // ini_set("display_errors",1);
 global $mysqli;
 
-class TestSuite{
+class TestSuiteUsers{
 
   public function TestSuite(){
     //empty constructor
   }
 
-  /*Runs every single test*/
-  public function runTests(){
-
-  }
-
   /*Test for creating users*/
   public function createUsers($test,$username,$password,$password2,$firstName,$lastName,$email){
 
-    include ('cms/sql_credentials.php');
 
+      if($test="true"){
+          echo "true cms";
+          include ('cms/sql_credentials.php');
+
+      }
+      else if($test="false"){
+          echo "false cms";
+          include ('../../cms/sql_credentials.php');
+      }
 
     // Start session
     session_start();
@@ -45,43 +48,58 @@ class TestSuite{
 
 
     if ($stmt2->fetch()){
-        echo "Username already exists";
+        $error = "Username already exists";
+        echo nl2br("Error: Username already exists \n");
     }
     elseif ($stmt3->fetch()){
-        echo "Email already exists";
+        $error = "Email already exists";
+        echo nl2br("Error: Email already exists \n");
     }
     else{
 
         if ($username == ''){
+             $error = "Error: cannot have blank username";
             echo "Error: cannot have blank username <br>";
         }
         else if ($email == ''){
+            $error = "Error: cannot have blank email";
             echo "Error: cannot have blank email <br>";
         }
         else if ($password == ''){
+            $error = "Error: cannot have blank password";
             echo "Error: cannot have blank password <br>";
         }
         else if ($password != $password2){
+            $error = "Error: Passwords do not match up";
             echo "Error: Passwords do not match up <br>";
         }
         else if ($firstName == ''){
+            $error = "Error: cannot have blank first name";
             echo "Error: cannot have blank first name <br>";
         }
         else if ($lastName == ''){
+            $error = "Error: cannot have blank last name";
             echo "Error: cannot have blank last name <br>";
         }
         else if (strlen($password) < 8){
+            $error = "Error: password must be 8 characters or longer";
             echo "Error: password must be 8 characters or longer <br>";
         }
         else if($stmt->execute()){
+            $error = "New user created successfully";
             echo "New user created successfully <br>";
         }
         else{
             echo "Error: " . $mysqli->error;
         }
-        $_SESSION['error'] = $error;
-        if($test="false"){
-            header('Location: ../homeScreen.php');
+
+
+        if($test="true"){
+            echo "true";
+        }
+        else if($test="false"){
+            $_SESSION['error'] = $error;
+            header('Location: users/homeScreen.php');
         }
 
     }
@@ -95,7 +113,10 @@ class TestSuite{
   }
 
 
+  /*Test for creating users*/
+  public function login(){
 
+  }
 }
 
 ?>
