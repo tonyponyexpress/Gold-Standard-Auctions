@@ -114,8 +114,50 @@ class TestSuiteUsers{
 
 
   /*Test for creating users*/
-  public function login(){
+  public function login($test, $username, $password){
 
+    if($test=="true"){
+        echo "true cms";
+        include ('cms/sql_credentials.php');
+
+    }
+    else if($test== "false"){
+        echo "false cms";
+        include ('../../cms/sql_credentials.php');
+    }
+
+  // Start session
+  session_start();
+
+
+    $stmt = $mysqli->prepare("SELECT * FROM Project_Users WHERE username = ? AND password = ? ;");
+    $stmt->bind_param("ss", $username, $hashed);
+
+    $hashed = hash('sha512', $password); //hash the created user's password that will be stored in the database
+
+
+    $stmt->execute();
+    // Login credentials are valid
+    if ($stmt->fetch()) {
+        // set session
+        $_SESSION['user_id'] = $username;
+        header('Location: ../userPanel.php');
+    }
+    else {
+        $errorLogin = "username/password incorrect";
+        $_SESSION['errorLogin'] = $errorLogin;
+        header('Location: ../homeScreen.php');
+    }
+
+    if($test=="true"){
+        echo "true";
+    }
+    else if($test=="false"){
+        $_SESSION['error'] = $error;
+        header('Location: ../userPanel.php');
+    }
+    $stmt->close();
+    $mysqli->close();
   }
 }
 

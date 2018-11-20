@@ -20,5 +20,5 @@
 
     include('../testSuiteUsers.php');
     $homeScreen = new TestSuiteUsers();
-    $homeScreen->createUsers($test,$username,$password,$password2,$firstName,$lastName,$email)
+    $homeScreen->createUsers($test,$username,$password,$password2,$firstName,$lastName,$email);
 ?>
