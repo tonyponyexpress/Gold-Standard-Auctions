@@ -172,7 +172,7 @@ class TestSuiteUsers{
   public function contact($test, $title, $description, $email){
 
     if($test=="true"){
-        echo "true cms";
+        //echo "true cms";
         include ('cms/sql_credentials.php');
 
     }
@@ -186,13 +186,13 @@ class TestSuiteUsers{
 
     $description = str_replace("'", "''", $description);
     $email = filter_var($email, FILTER_SANITIZE_EMAIL);
-    echo "$test";
+    //echo "$test";
 
     $success = false;
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $stmt->execute();
         $success = true;
-        echo "succesfully submitted issue <br>";
+        echo "successfully submitted issue <br>";
     }
     else{
         echo "issue submission failed. <br>";
@@ -206,6 +206,7 @@ class TestSuiteUsers{
         header('Location: ../contactUs.php');
       }
     }
+    echo "<br>";
     $stmt->close();
     $mysqli->close();
   }
