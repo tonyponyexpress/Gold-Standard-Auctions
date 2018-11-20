@@ -13,20 +13,25 @@ class functionsAdmin{
       // Credentials
       if($test=="true"){
           include ('../cms/sql_credentials.php');
-
       }
-      else if($test== "false"){
+      else if($test == "false"){
           include ('../../cms/sql_credentials.php');
       }
 
-      $query = "DELETE FROM Project_Problems WHERE problem_id='$id';";
+      $query = "SELECT * FROM Project_Problems WHERE problem_id='$id'";
 
       // Echo errors
       if ($result = $mysqli->query($query)){
-          echo $id . " deleted";
-      }
-      else{
-          echo "item doesn't exist";
+          if(mysqli_num_rows($result) == 0){
+            echo "Issue ID#" . $id . " does not exist";
+          }
+          else{
+            $query2 = "DELETE FROM Project_Problems WHERE problem_id='$id'";
+            if ($result2 = $mysqli->query($query2)){
+              echo $id . " deleted";
+            }
+          }
+
       }
 
       // Return to page if it is not a test
@@ -34,10 +39,18 @@ class functionsAdmin{
           header("Location: ../admin_problems.php");
       }
 
-
   }
 
   public function delete_items(){
+    // Credentials
+    if($test=="true"){
+        include ('../cms/sql_credentials.php');
+    }
+    else if($test == "false"){
+        include ('../../cms/sql_credentials.php');
+    }
+
+
 
   }
 
