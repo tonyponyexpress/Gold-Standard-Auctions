@@ -11,20 +11,21 @@
     $admin->delete_issue("true",50);
 
 
+    echo "<br> <br>";
     // Test #2: delete_items
     // 2.1
 
-
+    echo "<br> <br>";
     // Test #3: delete_user
     // 3.1
 
     // Test #4: login
     echo "<b>#4 Login Tests: </b><br>";
     // 4.1 Valid login
-    echo "4.1 Valid login <br>";
+    echo "<br> 4.1 Valid login <br>";
     $admin->login("true","EmiliaPaz","eecs448");
     // 4.2 Invalid login
-    echo "4.1 Invalid login <br>";
+    echo "<br> 4.1 Invalid login <br>";
     $admin->login("true","EmiliaPaz","xxxxxxxxxx");
 
 
