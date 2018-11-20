@@ -14,7 +14,7 @@ class TestSuiteUsers{
 
 
       if($test=="true"){
-          echo "true cms";
+          //echo "true cms";
           include ('cms/sql_credentials.php');
 
       }
@@ -95,7 +95,7 @@ class TestSuiteUsers{
 
 
         if($test=="true"){
-            echo "true";
+            //echo "true";
         }
         else if($test=="false"){
             $_SESSION['error'] = $error;
@@ -117,7 +117,7 @@ class TestSuiteUsers{
   public function login($test, $username, $password){
 
     if($test=="true"){
-        echo "true cms";
+        //echo "true cms";
         include ('cms/sql_credentials.php');
 
     }
@@ -141,18 +141,18 @@ class TestSuiteUsers{
     $valid_login = false;
     if ($stmt->fetch()) {
         // set session
-        echo "succesful login";
+        echo "successful login";
         $valid_login = true;
         $_SESSION['user_id'] = $username;
     }
     else {
-        echo "failed login";
+        echo "Error: failed login";
         $errorLogin = "username/password incorrect";
         $_SESSION['errorLogin'] = $errorLogin;
     }
 
     if($test=="true"){
-        echo "true";
+        //echo "true";
     }
     else if($test=="false"){
         $_SESSION['error'] = $error;
@@ -163,6 +163,7 @@ class TestSuiteUsers{
           header('Location: users/homeScreen.php');
         }
     }
+    echo "<br>";
     $stmt->close();
     $mysqli->close();
   }
