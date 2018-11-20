@@ -10,31 +10,12 @@
 *
 */
 
+    $title = $_POST["contactReason"];
+    $description = $_POST["description"];
+    $email = $_POST["contactEmail"];
+    $test = "false";
 
-// Access database
-include ('../../cms/sql_credentials.php');
-global $mysqli;
-
-$stmt = $mysqli->prepare("INSERT INTO Project_Problems (title, description, email) VALUES (?, ?, ?)");
-$stmt->bind_param("sss", $title, $description, $email);
-
-$title = $_POST["contactReason"];
-$description = $_POST["description"];
-$email = $_POST["contactEmail"];
-$description = str_replace("'", "''", $description);
-$email = filter_var($email, FILTER_SANITIZE_EMAIL);
-
-
-
-if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    //$add_contact = "INSERT INTO Project_Problems (title, description, email) VALUES ('$title', '$description', '$email');";
-    $stmt->execute();
-    header('Location: ../contactUs.php');
-} else {
-    header('Location: ../contactUs.php');
-}
-
-$stmt->close();
-$mysqli->close();
-
+    include('../testSuiteUsers.php');
+    $homeScreen = new TestSuiteUsers();
+    $homeScreen->contact($test, $title, $description, $email);
 ?>

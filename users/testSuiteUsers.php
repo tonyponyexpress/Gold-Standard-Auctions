@@ -159,6 +159,35 @@ class TestSuiteUsers{
     $stmt->close();
     $mysqli->close();
   }
-}
 
-?>
+
+  public function contact($test, $title, $description, $email){
+
+    if($test=="true"){
+        echo "true cms";
+        include ('cms/sql_credentials.php');
+
+    }
+    else if($test== "false"){
+        echo "false cms";
+        include ('../../cms/sql_credentials.php');
+    }
+
+    $stmt = $mysqli->prepare("INSERT INTO Project_Problems (title, description, email) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $title, $description, $email);
+
+    $description = str_replace("'", "''", $description);
+    $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        //$add_contact = "INSERT INTO Project_Problems (title, description, email) VALUES ('$title', '$description', '$email');";
+        $stmt->execute();
+        header('Location: ../contactUs.php');
+    } else {
+        header('Location: ../contactUs.php');
+    }
+
+    $stmt->close();
+    $mysqli->close();
+  }
+}
