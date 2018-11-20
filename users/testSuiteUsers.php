@@ -141,10 +141,12 @@ class TestSuiteUsers{
     $valid_login = false;
     if ($stmt->fetch()) {
         // set session
+        echo "succesful login";
         $valid_login = true;
         $_SESSION['user_id'] = $username;
     }
     else {
+        echo "failed login";
         $errorLogin = "username/password incorrect";
         $_SESSION['errorLogin'] = $errorLogin;
     }
