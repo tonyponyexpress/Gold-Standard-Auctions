@@ -211,7 +211,7 @@ class TestSuiteUsers{
     $mysqli->close();
   }
 
-  public function sendMessage($test, $message, $username, $date){
+  public function sendMessage($test, $message, $username){
     if($test=="true"){
         echo "true cms";
         include ('cms/sql_credentials.php');
@@ -227,32 +227,121 @@ class TestSuiteUsers{
     date_default_timezone_set("America/Chicago");
     $timestamp = time();
     $date = date("h:i:s A. M d, Y", $timestamp);
+    $success = false;
 
     // Check if message is not empty
     if ($message != ""){
         // Create post
-        //$entry = "INSERT INTO  Project_Messages(message, username) VALUES ('$message','$username');";
         if ($stmt->execute()) {
-            header('Location: ../userPanel.php');
+            $success = true;
+            echo "message was submitted successfully.<br>";
         }
         else {
-            echo "Error";
+            echo "Failed: message submission failed";
         }
     }
     else
     {
-        echo "Message is empty";
+        echo "Failed: Message is empty";
     }
 
-    if($test=="true"){
-        echo "true";
-    }
-    else if($test=="false"){
+    if($test=="false"){
         $_SESSION['error'] = $error;
         header('Location: ../userPanel.php');
     }
     // Close database
     $stmt->close();
+    $mysqli->close();
+  }
+
+  public function changeEmail($test, $username, $newEmail){
+
+    if($test=="true"){
+        echo "true cms";
+        include ('cms/sql_credentials.php');
+
+    }
+    else if($test== "false"){
+        echo "false cms";
+        include ('../../cms/sql_credentials.php');
+    }
+    $testUser = mysqli_query($mysqli, "SELECT username FROM Project_Users WHERE username = '$username' ;");
+    if(mysqli_num_rows($testUser)){
+      $stmt = $mysqli->prepare("UPDATE Project_Users SET email= ? WHERE username= ? ;");
+      $stmt->bind_param("ss", $newEmail, $username);
+
+      $user = "UPDATE Project_Users SET email='$newEmail' WHERE username='$username';";
+
+      if ($stmt->execute()) {
+          echo "Email updated succesfully";
+      }
+      else {
+          echo "Failed: Email not updated";
+      }
+
+      if($test == "false"){
+          header('Location: ../settings.php');
+      }
+    }
+    else{
+      echo "this failed.";
+    }
+
+    // close connection
+    $stmt->close();
+    $mysqli->close();
+  }
+
+  public function changePassword($test, $username, $old1, $old2, $new1, $new2){
+    if($test=="true"){
+        echo "true cms";
+        include ('cms/sql_credentials.php');
+
+    }
+    else if($test== "false"){
+        echo "false cms";
+        include ('../../cms/sql_credentials.php');
+    }
+
+    $stmt = $mysqli->prepare("SELECT * FROM Project_Users WHERE username= ? AND password = ? ;");
+    $stmt->bind_param("ss", $username, $old_hash);
+    $stmt2 = $mysqli->prepare("UPDATE Project_Users SET password= ? WHERE username= ? ;");
+    $stmt2->bind_param("ss", $new_hash, $username);
+
+    $old_hash = hash('sha512', $old1);
+    $new_hash = hash('sha512', $new1);
+
+    $stmt->execute();
+    $stmt->store_result();
+    $stmt->bind_result($result);
+
+    if ($stmt->fetch()){
+      //echo "Correct old password";
+      if (($old1 == '') || ($old2 == '') || ($new1 == '') || ($new2 == '')){
+        echo "Error: cannot have blank input for passwords";
+      }
+      else if ($old1 != $old2){
+        echo "Error: old password inputs does not match up";
+      }
+      else if ($new1 != $new2){
+        echo "Error: new password inputs do not match up";
+      }
+      else if(strlen($new1) < 8){
+        echo "new password must be 8 characters or longer.";
+      }
+      else if ($stmt2->execute()){
+        echo "New password changed successfully";
+      }
+    }
+    else{
+      echo "Error: invalid old password";
+    }
+
+    if($test == "false"){
+      header('Location: ../settings.php');
+    }
+
+    // close connectio
     $mysqli->close();
   }
 }

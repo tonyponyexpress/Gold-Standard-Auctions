@@ -5,10 +5,12 @@
     include('users/testSuiteUsers.php');
     $homeScreen = new TestSuiteUsers();
 
+    echo "<b><u>USER SIDE TESTS</u></b> <br><br>";
+
     echo "<b>Create User Tests: </b><br>";
     // Test #1: createUsers
     // 1.1 valid
-    echo "1.1 Valid <br>";
+    echo "<br>1.1 Valid <br>";
     $homeScreen->createUsers("true","1.1","123456789","123456789","First","Last","1.1@email.com");
     // 1.2 Username already exists
     echo " <br>1.2 Username already exists <br>";
@@ -44,12 +46,12 @@
     echo " <br>1.12 Password too short <br>";
     $homeScreen->createUsers("true","1.12","123456","123456","First","Last","1.12@email.com");
 
-    echo "<br> <br>";
+echo "<br> <br>";
 
     echo "<b>Login Tests: </b><br>";
     // Test #2: login
     // 2.1 valid
-    echo "2.1 Valid <br>";
+    echo "<br>2.1 Valid <br>";
     $homeScreen->login("true","1.1","123456789");
     // 2.2 unknown username
     echo " <br>2.2 Unregistered Username <br>";
@@ -69,7 +71,7 @@ echo "<br><br>";
     echo "<b>Contact Tests: </b><br>";
     // Test #3 contact
     // 3.1 valid
-    echo "3.1 Valid <br>";
+    echo "<br>3.1 Valid <br>";
     $homeScreen->contact("true","TestTitle","TestDescription","test@email.com");
     // 3.2 title Empty
     echo "3.2 Title empty <br>";
@@ -81,4 +83,22 @@ echo "<br><br>";
     echo "3.4 Email empty <br>";
     $homeScreen->contact("true","TestTitle","TestDescription","");
 
+echo "<br><br>";
+
+    echo "<b>Send Message Tests: </b><br>";
+    // Test #4 send message
+    // 4.1 valid
+    echo "<br>4.1 Valid <br>";
+    $homeScreen->sendMessage("true","TestMessage","1.1");
+    // 4.2 message Empty
+    echo "<br>4.2 message empty <br>";
+    $homeScreen->sendMessage("true","","1.1");
+    // 4.3 username empty
+    echo "<br>4.3 username empty <br>";
+    $homeScreen->sendMessage("true","TestMessage","");
+    // 4.4 username wrong
+    echo "<br>4.4 username wrong <br>";
+    $homeScreen->sendMessage("true","TestMessage","4.4");
+
+echo "<br><br>";
 ?>
