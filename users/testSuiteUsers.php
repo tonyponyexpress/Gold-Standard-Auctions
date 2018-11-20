@@ -211,7 +211,7 @@ class TestSuiteUsers{
     $mysqli->close();
   }
 
-  public function sendMessage($test, $message, $username, $date){
+  public function sendMessage($test, $message, $username){
     if($test=="true"){
         echo "true cms";
         include ('cms/sql_credentials.php');
@@ -227,27 +227,25 @@ class TestSuiteUsers{
     date_default_timezone_set("America/Chicago");
     $timestamp = time();
     $date = date("h:i:s A. M d, Y", $timestamp);
+    $success = false;
 
     // Check if message is not empty
     if ($message != ""){
         // Create post
-        //$entry = "INSERT INTO  Project_Messages(message, username) VALUES ('$message','$username');";
         if ($stmt->execute()) {
-            header('Location: ../userPanel.php');
+            $success = true;
+            echo "message was submitted successfully.<br>";
         }
         else {
-            echo "Error";
+            echo "Failed: message submission failed";
         }
     }
     else
     {
-        echo "Message is empty";
+        echo "Failed: Message is empty";
     }
 
-    if($test=="true"){
-        echo "true";
-    }
-    else if($test=="false"){
+    if($test=="false"){
         $_SESSION['error'] = $error;
         header('Location: ../userPanel.php');
     }
