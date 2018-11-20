@@ -212,45 +212,41 @@ class TestSuiteUsers{
   }
 
   public function sendMessage($test, $message, $username){
-    if($test=="true"){
-        echo "true cms";
-        include ('cms/sql_credentials.php');
-
-    }
-    else if($test== "false"){
-        echo "false cms";
-        include ('../../cms/sql_credentials.php');
-    }
-
-    $stmt = $mysqli->prepare("INSERT INTO Project_Messages (message, username, m_date) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $message, $username, $date);
-    date_default_timezone_set("America/Chicago");
-    $timestamp = time();
-    $date = date("h:i:s A. M d, Y", $timestamp);
-    $success = false;
-
-    // Check if message is not empty
-    if ($message != ""){
-        // Create post
-        if ($stmt->execute()) {
-            $success = true;
-            echo "message was submitted successfully.<br>";
-        }
-        else {
-            echo "Failed: message submission failed";
-        }
-    }
-    else
-    {
-        echo "Failed: Message is empty";
-    }
-
-    if($test=="false"){
-        $_SESSION['error'] = $error;
-        header('Location: ../userPanel.php');
-    }
-    // Close database
-    $stmt->close();
-    $mysqli->close();
-  }
-}
+     if($test=="true"){
+         //echo "true cms";
+         include ('cms/sql_credentials.php');
+     }
+     else if($test== "false"){
+         echo "false cms";
+         include ('../../cms/sql_credentials.php');
+     }
+     $stmt = $mysqli->prepare("INSERT INTO Project_Messages (message, username, m_date) VALUES (?, ?, ?)");
+     $stmt->bind_param("sss", $message, $username, $date);
+     date_default_timezone_set("America/Chicago");
+     $timestamp = time();
+     $date = date("h:i:s A. M d, Y", $timestamp);
+     $success = false;
+     // Check if message is not empty
+     if ($message != ""){
+         // Create post
+         if ($stmt->execute()) {
+             $success = true;
+             echo "message was submitted successfully.<br>";
+         }
+         else {
+             echo "Failed: message submission failed <br>";
+         }
+     }
+     else
+     {
+         echo "Failed: Message is empty <br>";
+     }
+     if($test=="false"){
+         $_SESSION['error'] = $error;
+         header('Location: ../userPanel.php');
+     }
+     // Close database
+     $stmt->close();
+     $mysqli->close();
+   }
+ }
