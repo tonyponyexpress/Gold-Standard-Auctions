@@ -45,7 +45,42 @@ class functionsAdmin{
 
   }
 
-  public function login(){
+  public function login($test,$admin_user,$admin_password){
+      // Database credentials
+      if($test=="true"){
+          include ('../cms/sql_credentials.php');
+
+      }
+      else if($test== "false"){
+          include ('../../cms/sql_credentials.php');
+      }
+
+      // Start session
+      session_start();
+
+      $stmt = $mysqli->prepare("SELECT * FROM Project_Admins WHERE username= ? AND password= ?");
+      $stmt->bind_param("ss", $admin_user, $hashed);
+      $hashed = hash('sha512', $admin_password); //hashing the admin password to check if this hashed password matches on in database
+      $stmt->execute();
+
+      // Login credentials are valid
+      if ($stmt->fetch()){
+          $_SESSION['admin_id'] = $admin_user;
+          echo "Succesful login </br>";
+          if($test== "false"){
+              header('Location: ../admin_dashboard.php');
+          }
+      }
+      else{
+          $adminError = "username/password incorrect";
+          $_SESSION['adminError'] = $adminError;
+          echo $adminError . "</br>";
+          if($test== "false"){
+              header('Location: ../admin.php');
+          }
+      }
+
+      $mysqli->close();
 
   }
 
