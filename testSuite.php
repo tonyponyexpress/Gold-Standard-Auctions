@@ -32,6 +32,8 @@ class TestSuite{
     $result = $mysqli->query($query);
     $result2 = $mysqli->query($query2);
 
+    echo "start";
+    
     if ($row = $result->fetch_assoc() || $row = $result2->fetch_assoc()){
       echo "Test#01: Creating User FAILED<b>";
     }
@@ -65,6 +67,7 @@ class TestSuite{
         echo "Test#01: Creating User FAILED<b>";
       }
     }
+    echo "end";
 
     $mysqli->close();
   }
