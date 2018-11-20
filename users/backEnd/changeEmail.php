@@ -1,3 +1,7 @@
+<?php
+// error_reporting(E_ALL);
+// ini_set("display_errors",1);
+global $mysqli;
 
 <?php
 /**
@@ -16,21 +20,11 @@
     // Start user session
     session_start();
     // Variables
-    $stmt = $mysqli->prepare("UPDATE Project_Users SET email= ? WHERE username= ? ;");
-    $stmt->bind_param("ss", $newEmail, $username);
-
     $username =  $_SESSION['user_id'];
     $newEmail =  $_POST['newEmail1'];
-    $user = "UPDATE Project_Users SET email='$newEmail' WHERE username='$username';";
+    $test = "false";
 
-    if ($stmt->execute()) {
-        echo "Email updated succesfully";
-        header('Location: ../settings.php');
-    }
-    else {
-        echo "Error";
-    }
-    // close connection
-    $stmt->close();
-    $mysqli->close();
+    include('../testSuiteUsers.php');
+    $homeScreen = new TestSuiteUsers();
+    $homeScreen->changeEmail($test,$username, $newEmail);
 ?>
