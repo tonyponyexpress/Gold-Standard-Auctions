@@ -159,7 +159,7 @@
 
 
             <!-- Test suite -->
-            <form action="../testButtonUsers.php" method="post">
+            <form action="../testButton.php" method="post">
                 <input type="submit"  class="btn btn-lg .btn-block userNavbar" name="testSuite" id="testSuite" label="Submit" value="Test Suite"></input>
             </form>
 

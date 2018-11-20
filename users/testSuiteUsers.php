@@ -138,15 +138,15 @@ class TestSuiteUsers{
 
     $stmt->execute();
     // Login credentials are valid
+    $valid_login = false;
     if ($stmt->fetch()) {
         // set session
+        $valid_login = true;
         $_SESSION['user_id'] = $username;
-        header('Location: ../userPanel.php');
     }
     else {
         $errorLogin = "username/password incorrect";
         $_SESSION['errorLogin'] = $errorLogin;
-        header('Location: ../homeScreen.php');
     }
 
     if($test=="true"){
@@ -154,7 +154,12 @@ class TestSuiteUsers{
     }
     else if($test=="false"){
         $_SESSION['error'] = $error;
-        header('Location: ../userPanel.php');
+        if($valid_login == true){
+          header('Location: ../userPanel.php');
+        }
+        else{
+          header('Location: users/homeScreen.php');
+        }
     }
     $stmt->close();
     $mysqli->close();
@@ -187,6 +192,51 @@ class TestSuiteUsers{
         header('Location: ../contactUs.php');
     }
 
+    $stmt->close();
+    $mysqli->close();
+  }
+
+  public function sendMessage($test, $message, $username, $date){
+    if($test=="true"){
+        echo "true cms";
+        include ('cms/sql_credentials.php');
+
+    }
+    else if($test== "false"){
+        echo "false cms";
+        include ('../../cms/sql_credentials.php');
+    }
+
+    $stmt = $mysqli->prepare("INSERT INTO Project_Messages (message, username, m_date) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $message, $username, $date);
+    date_default_timezone_set("America/Chicago");
+    $timestamp = time();
+    $date = date("h:i:s A. M d, Y", $timestamp);
+
+    // Check if message is not empty
+    if ($message != ""){
+        // Create post
+        //$entry = "INSERT INTO  Project_Messages(message, username) VALUES ('$message','$username');";
+        if ($stmt->execute()) {
+            header('Location: ../userPanel.php');
+        }
+        else {
+            echo "Error";
+        }
+    }
+    else
+    {
+        echo "Message is empty";
+    }
+
+    if($test=="true"){
+        echo "true";
+    }
+    else if($test=="false"){
+        $_SESSION['error'] = $error;
+        header('Location: ../userPanel.php');
+    }
+    // Close database
     $stmt->close();
     $mysqli->close();
   }
