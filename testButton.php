@@ -44,7 +44,7 @@
     echo " <br>1.12 Password too short <br>";
     $homeScreen->createUsers("true","1.12","123456","123456","First","Last","1.12@email.com");
 
-    echo "<br> <br>";
+echo "<br> <br>";
 
     echo "<b>Login Tests: </b><br>";
     // Test #2: login
@@ -81,4 +81,22 @@ echo "<br><br>";
     echo "3.4 Email empty <br>";
     $homeScreen->contact("true","TestTitle","TestDescription","");
 
+echo "<br><br>";
+
+    echo "<b>Send Message Tests: </b><br>";
+    // Test #4 send message
+    // 4.1 valid
+    echo "<br>4.1 Valid <br>";
+    $homeScreen->sendMessage("true","TestMessage","1.1");
+    // 4.2 message Empty
+    echo "<br>4.2 message empty <br>";
+    $homeScreen->sendMessage("true","","1.1");
+    // 4.3 username empty
+    echo "<br>4.3 username empty <br>";
+    $homeScreen->sendMessage("true","TestMessage","");
+    // 4.4 username wrong
+    echo "<br>4.4 username wrong <br>";
+    $homeScreen->sendMessage("true","TestMessage","4.4");
+
+echo "<br><br>";
 ?>
