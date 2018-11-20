@@ -10,10 +10,10 @@
     // 1.1
     $admin->delete_issue("true",50);
 
-
     echo "<br> <br>";
     // Test #2: delete_items
     // 2.1
+    $admin->delete_items("true",123);
 
     echo "<br> <br>";
     // Test #3: delete_user
