@@ -5,12 +5,14 @@ global $mysqli;
 
 class TestSuiteUsers{
 
-  public function TestSuiteUsers(){
+  public function TestSuite(){
     //empty constructor
   }
 
   /*Test for creating users*/
   public function createUsers($test,$username,$password,$password2,$firstName,$lastName,$email){
+
+
       if($test=="true"){
           echo "true cms";
           include ('cms/sql_credentials.php');
