@@ -45,7 +45,13 @@
         ?>
 
       </form>
+
     </div>
+
+    <!-- Test suite -->
+    <form action="testButtonAdmin.php" method="post">
+        <input type="submit"  class="btn btn-lg" id="testButton" name="testSuite" id="testSuite" label="Submit" value="Test Suite"></input>
+    </form>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
