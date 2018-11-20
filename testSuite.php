@@ -8,7 +8,7 @@ class TestSuite{
 
   /*Runs every single test*/
   public function runTests(){
-
+      echo "run tests";
   }
 
   /*Test for creating users*/
