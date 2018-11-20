@@ -13,12 +13,12 @@ class TestSuiteUsers{
   public function createUsers($test,$username,$password,$password2,$firstName,$lastName,$email){
 
 
-      if($test="true"){
+      if($test=="true"){
           echo "true cms";
           include ('cms/sql_credentials.php');
 
       }
-      else if($test="false"){
+      else if($test== "false"){
           echo "false cms";
           include ('../../cms/sql_credentials.php');
       }
@@ -94,12 +94,12 @@ class TestSuiteUsers{
         }
 
 
-        if($test="true"){
+        if($test=="true"){
             echo "true";
         }
-        else if($test="false"){
+        else if($test=="false"){
             $_SESSION['error'] = $error;
-            header('Location: users/homeScreen.php');
+            header('Location: ../homeScreen.php');
         }
 
     }
