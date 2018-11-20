@@ -5,10 +5,12 @@
     include('users/testSuiteUsers.php');
     $homeScreen = new TestSuiteUsers();
 
+    echo "<b><u>USER SIDE TESTS</u></b> <br><br>";
+
     echo "<b>Create User Tests: </b><br>";
     // Test #1: createUsers
     // 1.1 valid
-    echo "1.1 Valid <br>";
+    echo "<br>1.1 Valid <br>";
     $homeScreen->createUsers("true","1.1","123456789","123456789","First","Last","1.1@email.com");
     // 1.2 Username already exists
     echo " <br>1.2 Username already exists <br>";
@@ -49,7 +51,7 @@ echo "<br> <br>";
     echo "<b>Login Tests: </b><br>";
     // Test #2: login
     // 2.1 valid
-    echo "2.1 Valid <br>";
+    echo "<br>2.1 Valid <br>";
     $homeScreen->login("true","1.1","123456789");
     // 2.2 unknown username
     echo " <br>2.2 Unregistered Username <br>";
@@ -69,7 +71,7 @@ echo "<br><br>";
     echo "<b>Contact Tests: </b><br>";
     // Test #3 contact
     // 3.1 valid
-    echo "3.1 Valid <br>";
+    echo "<br>3.1 Valid <br>";
     $homeScreen->contact("true","TestTitle","TestDescription","test@email.com");
     // 3.2 title Empty
     echo "3.2 Title empty <br>";
