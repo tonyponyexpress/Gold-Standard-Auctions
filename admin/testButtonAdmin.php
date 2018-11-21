@@ -7,23 +7,46 @@
 
     $test="true";
 
+    echo "<b><u>ADMIN SIDE TESTS</u></b> <br><br>";
+
     // Test #1: delete_issue
     echo "<b>#1 Delete Issue Tests: </b><br>";
-    // 1.1
-    $admin->delete_issue("true",50);
+    // 1.1 Valid delete
+    echo "<br> 1.1 Valid delete (once the issue is deleted, it will be invalid)<br>";
+    $admin->delete_issue($test,1);
+    // 1.2 Invalid delete
+    echo "<br> 1.2 Invalid delete  <br>";
+    $admin->delete_issue($test,50);
+    // 1.3 Invalid delete (varchar id)
+    echo "<br> 1.3 Invalid delete (string) <br>";
+    $admin->delete_issue($test,"abc123");
     echo "<br> <br>";
 
 
     // Test #2: delete_items
     echo "<br><b>#2 Delete Items Tests: </b><br>";
-    // 2.1
-    $admin->delete_items("true",123);
+    // 2.1  Valid delete
+    echo "<br> 2.1  Valid delete (once the item is deleted, it will be invalid)<br>";
+    $admin->delete_items($test,1);
+    // 2.2  Invalid delete
+    echo "<br> 2.1 Invalid delete <br>";
+    $admin->delete_items($test,123);
+    // 2.3 Invalid delete (varchar id)
+    echo "<br> 1.3 Invalid delete (string) <br>";
+    $admin->delete_items($test,"abc123");
     echo "<br> <br>";
 
     // Test #3: delete_user
     echo "<br><b>#3 Delete Users Tests: </b><br>";
-    // 3.1
-    $admin->delete_user("true",95);
+    // 3.1  Valid delete
+    echo "<br> 3.1  Valid delete (once the user is deleted, it will be invalid)<br>";
+    $admin->delete_user($test,1);
+    // 3.2  Valid delete
+    echo "<br> 3.1 Invalid delete <br>";
+    $admin->delete_user($test,95);
+    // 3.3 Invalid delete (varchar id)
+    echo "<br> 1.3 Invalid delete (string) <br>";
+    $admin->delete_user($test,"abc123");
     echo "<br> <br>";
 
     // Test #4: login
@@ -32,7 +55,7 @@
     echo "<br> 4.1 Valid login <br>";
     $admin->login($test,"EmiliaPaz","eecs448");
     // 4.2 Invalid login
-    echo "<br> 4.1 Invalid login <br>";
+    echo "<br> 4.2 Invalid login <br>";
     $admin->login($test,"EmiliaPaz","xxxxxxxx");
     echo "<br> <br>";
 

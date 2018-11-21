@@ -122,7 +122,7 @@ class functionsAdmin{
       // Login credentials are valid
       if ($stmt->fetch()){
           $_SESSION['admin_id'] = $admin_user;
-          echo "Succesful login </br>";
+          echo "Succesful login";
           if($test== "false"){
               header('Location: ../admin_dashboard.php');
           }
@@ -130,7 +130,7 @@ class functionsAdmin{
       else{
           $adminError = "username/password incorrect";
           $_SESSION['adminError'] = $adminError;
-          echo $adminError . "</br>";
+          echo $adminError ;
           if($test== "false"){
               header('Location: ../admin.php');
           }
