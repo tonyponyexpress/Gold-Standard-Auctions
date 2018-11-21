@@ -234,7 +234,7 @@ class TestSuiteUsers{
         // Create post
         if ($stmt->execute()) {
             $success = true;
-            echo "message was submitted successfully.<br>";
+            echo "message was submitted successfully.";
         }
         else {
             echo "Failed: message submission failed";
@@ -249,6 +249,7 @@ class TestSuiteUsers{
         $_SESSION['error'] = $error;
         header('Location: ../userPanel.php');
     }
+    echo "<br>";
     // Close database
     $stmt->close();
     $mysqli->close();
@@ -257,7 +258,7 @@ class TestSuiteUsers{
   public function changeEmail($test, $username, $newEmail){
 
     if($test=="true"){
-        echo "true cms";
+        //echo "true cms";
         include ('cms/sql_credentials.php');
 
     }
@@ -293,7 +294,7 @@ class TestSuiteUsers{
     else{
       echo "this failed.";
     }
-
+    echo "<br>";
     // close connection
     $stmt->close();
     $mysqli->close();
@@ -301,7 +302,7 @@ class TestSuiteUsers{
 
   public function changePassword($test, $username, $old1, $old2, $new1, $new2){
     if($test=="true"){
-        echo "true cms";
+        //echo "true cms";
         include ('cms/sql_credentials.php');
 
     }
@@ -347,8 +348,8 @@ class TestSuiteUsers{
     if($test == "false"){
       header('Location: ../settings.php');
     }
-
-    // close connectio
+    echo "<br>";
+    // close connection
     $mysqli->close();
   }
 }
