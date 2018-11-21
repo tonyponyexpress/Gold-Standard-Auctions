@@ -18,7 +18,7 @@
     echo "<br> 1.2 Invalid delete  <br>";
     $admin->delete_issue($test,50);
     // 1.3 Invalid delete (varchar id)
-    echo "<br> 1.3 Invalid delete (string) <br>";
+    echo "<br> 1.3 Invalid delete (varchar) <br>";
     $admin->delete_issue($test,"abc123");
     echo "<br> <br>";
 
@@ -32,7 +32,7 @@
     echo "<br> 2.1 Invalid delete <br>";
     $admin->delete_items($test,123);
     // 2.3 Invalid delete (varchar id)
-    echo "<br> 1.3 Invalid delete (string) <br>";
+    echo "<br> 1.3 Invalid delete (varchar) <br>";
     $admin->delete_items($test,"abc123");
     echo "<br> <br>";
 
@@ -45,7 +45,7 @@
     echo "<br> 3.1 Invalid delete <br>";
     $admin->delete_user($test,95);
     // 3.3 Invalid delete (varchar id)
-    echo "<br> 1.3 Invalid delete (string) <br>";
+    echo "<br> 1.3 Invalid delete (varchar) <br>";
     $admin->delete_user($test,"abc123");
     echo "<br> <br>";
 
