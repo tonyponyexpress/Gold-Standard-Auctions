@@ -1,13 +1,16 @@
 <?php
 include ('../../cms/sql_credentials.php');
 global $mysqli;
+include('../functionsAdmin.php');
+$admin = new functionsAdmin();
 
 $delete_ids = $_POST;
 foreach($delete_ids as $id => $value){
-  $query = "DELETE FROM Project_Users WHERE user_id='{$id}';";
-  if ($result = $mysqli->query($query)){
-    header("Location: ../admin_users.php");
-  }
+  // $query = "DELETE FROM Project_Users WHERE user_id='{$id}';";
+  // if ($result = $mysqli->query($query)){
+  //   header("Location: ../admin_users.php");
+  // }
+  $admin->delete_user("false",$id);
 }
 
 $mysqli->close();

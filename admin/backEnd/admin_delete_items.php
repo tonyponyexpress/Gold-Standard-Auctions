@@ -4,6 +4,9 @@ global $mysqli;
 
 $delete_items_ids = $_POST;
 
+include('../functionsAdmin.php');
+$admin = new functionsAdmin();
+
 foreach($delete_items_ids as $id => $value){
 
     $result = mysqli_query($mysqli, "SELECT * FROM Project_Items WHERE item_id='$id'");
@@ -27,10 +30,11 @@ foreach($delete_items_ids as $id => $value){
             }
         }
     }
-    $query = "DELETE FROM Project_Items WHERE item_id='{$id}';";
-    if ($result = $mysqli->query($query)){
-        header("Location: ../admin_items.php");
-    }
+    // $query = "DELETE FROM Project_Items WHERE item_id='{$id}';";
+    // if ($result = $mysqli->query($query)){
+    //     header("Location: ../admin_items.php");
+    // }
+    $admin->delete_items("false",$id);
 
 }
 

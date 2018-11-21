@@ -122,7 +122,7 @@ class TestSuiteUsers{
 
     }
     else if($test== "false"){
-        echo "false cms";
+        //echo "false cms";
         include ('../../cms/sql_credentials.php');
     }
 
