@@ -265,14 +265,21 @@ class TestSuiteUsers{
         echo "false cms";
         include ('../../cms/sql_credentials.php');
     }
-    $testUser = mysqli_query($mysqli, "SELECT username FROM Project_Users WHERE username = '$username' ;");
-    if(mysqli_num_rows($testUser)){
-      $stmt = $mysqli->prepare("UPDATE Project_Users SET email= ? WHERE username= ? ;");
-      $stmt->bind_param("ss", $newEmail, $username);
+    $stmt = $mysqli->prepare("SELECT * FROM Project_Users WHERE username= ? AND password = ? ;");
+    $stmt->bind_param("ss", $username, $newEmail);
+    $stmt->execute();
+    $stmt->store_result();
+    $stmt->bind_result($result);
+
+    $testUser =("SELECT username FROM Project_Users WHERE username = '$username' ;");
+    $result = $mysqli->query($testUser);
+    if($stmt->fetch()){
+      $stmt2 = $mysqli->prepare("UPDATE Project_Users SET email= ? WHERE username= ? ;");
+      $stmt2->bind_param("ss", $newEmail, $username);
 
       $user = "UPDATE Project_Users SET email='$newEmail' WHERE username='$username';";
 
-      if ($stmt->execute()) {
+      if ($stmt2->execute()) {
           echo "Email updated succesfully";
       }
       else {
