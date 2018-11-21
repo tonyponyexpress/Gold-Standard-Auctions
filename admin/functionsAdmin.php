@@ -2,13 +2,10 @@
 // error_reporting(E_ALL);
 // ini_set("display_errors",1);
 global $mysqli;
-
 class functionsAdmin{
-
   public function functionsAdmin(){
     //empty constructor
   }
-
   public function delete_issue($test,$id){
       // Credentials
       if($test=="true"){
@@ -17,9 +14,7 @@ class functionsAdmin{
       else if($test == "false"){
           include ('../../cms/sql_credentials.php');
       }
-
       $query = "SELECT * FROM Project_Problems WHERE problem_id='$id'";
-
       // Echo errors
       if ($result = $mysqli->query($query)){
           if(mysqli_num_rows($result) == 0){
@@ -31,16 +26,12 @@ class functionsAdmin{
               echo $id . " deleted";
             }
           }
-
       }
-
       // Return to page if it is not a test
       if($test=="false"){
           header("Location: ../admin_problems.php");
       }
-
   }
-
   public function delete_items($test, $id){
     // Credentials
     if($test=="true"){
@@ -49,7 +40,6 @@ class functionsAdmin{
     else if($test == "false"){
         include ('../../cms/sql_credentials.php');
     }
-
     $result = mysqli_query($mysqli, "SELECT * FROM Project_Items WHERE item_id='$id'");
     while ($item_row = $result->fetch_assoc()) {
         $username = $item_row['username'];
@@ -71,9 +61,7 @@ class functionsAdmin{
             }
         }
     }
-
     $query2 = "SELECT * FROM Project_Items WHERE item_id='$id'";
-
     // Echo errors
     if ($result2 = $mysqli->query($query2)){
         if(mysqli_num_rows($result2) == 0){
@@ -90,9 +78,7 @@ class functionsAdmin{
     if($test=="false"){
         header("Location: ../admin_items.php");
     }
-
   }
-
   public function delete_user($test, $id){
     // Credentials
     if($test=="true"){
@@ -101,9 +87,7 @@ class functionsAdmin{
     else if($test == "false"){
         include ('../../cms/sql_credentials.php');
     }
-
     $query = "SELECT * FROM Project_Users WHERE user_id='$id'";
-
     // Echo errors
     if ($result = $mysqli->query($query)){
         if(mysqli_num_rows($result) == 0){
@@ -116,32 +100,25 @@ class functionsAdmin{
           }
         }
     }
-
     // Return to page if it is not a test
     if($test=="false"){
         header("Location: ../admin_users.php");
     }
-
   }
-
   public function login($test,$admin_user,$admin_password){
       // Database credentials
       if($test=="true"){
           include ('../cms/sql_credentials.php');
-
       }
       else if($test== "false"){
           include ('../../cms/sql_credentials.php');
       }
-
       // Start session
       session_start();
-
       $stmt = $mysqli->prepare("SELECT * FROM Project_Admins WHERE username= ? AND password= ?");
       $stmt->bind_param("ss", $admin_user, $hashed);
       $hashed = hash('sha512', $admin_password); //hashing the admin password to check if this hashed password matches on in database
       $stmt->execute();
-
       // Login credentials are valid
       if ($stmt->fetch()){
           $_SESSION['admin_id'] = $admin_user;
@@ -158,24 +135,18 @@ class functionsAdmin{
               header('Location: ../admin.php');
           }
       }
-
       $mysqli->close();
-
   }
-
   public function createOffer($test,$item_id,$offer){
       // Database credentials
       if($test=="true"){
           include ('../cms/sql_credentials.php');
-
       }
       else if($test== "false"){
           include ('../../cms/sql_credentials.php');
       }
-
       // Start session
       session_start();
-
       // Check if message is not empty
       if(is_numeric($offer) && $offer > 0){
           // Create offer
@@ -194,19 +165,51 @@ class functionsAdmin{
       {
           echo "Input is not valid";
       }
-
       $mysqli->close();
-
   }
 
   public function logout(){
-
   }
 
-  public function sendMessage(){
+  public function sendMessage($test, $message, $username, $date, $admin){
+    // Credentials
+    if($test=="true"){
+        include ('../cms/sql_credentials.php');
+
+    }
+    else if($test== "false"){
+        include ('../../cms/sql_credentials.php');
+    }
+
+    // Start session
+    session_start();
+
+    $stmt = $mysqli->prepare("INSERT INTO Project_Messages (message, username, m_date, admin) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("sssi", $message, $username, $date, $admin);
+
+    // Check if message is not empty
+    if ($message != ""){
+        // Create post
+        //$entry = "INSERT INTO  Project_Messages(message, username) VALUES ('$message','$username');";
+        if ($stmt->execute()) {
+            echo "Message sent successfully";
+            if($test== "false"){
+                header('Location: ../admin_users_profile.php?Username='.$username);
+            }
+        }
+        else {
+            echo "Error";
+        }
+    }
+    else
+    {
+        echo "Message is empty";
+    }
+
+    // Close database
+    $stmt->close();
+    $mysqli->close();
 
   }
-
 }
-
 ?>
