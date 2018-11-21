@@ -46,7 +46,7 @@
     echo " <br>1.12 Password too short <br>";
     $homeScreen->createUsers("true","1.12","123456","123456","First","Last","1.12@email.com");
 
-echo "<br> <br>";
+echo "<br>";
 
     echo "<b>Login Tests: </b><br>";
     // Test #2: login
@@ -66,7 +66,7 @@ echo "<br> <br>";
     echo " <br>2.5 Valid Username, Empty Password <br>";
     $homeScreen->login("true","1.1","");
 
-echo "<br><br>";
+echo "<br>";
 
     echo "<b>Contact Tests: </b><br>";
     // Test #3 contact
@@ -83,7 +83,7 @@ echo "<br><br>";
     echo "3.4 Email empty <br>";
     $homeScreen->contact("true","TestTitle","TestDescription","");
 
-echo "<br><br>";
+echo "<br>";
 
     echo "<b>Send Message Tests: </b><br>";
     // Test #4 send message
@@ -100,5 +100,85 @@ echo "<br><br>";
     echo "<br>4.4 username wrong <br>";
     $homeScreen->sendMessage("true","TestMessage","4.4");
 
-echo "<br><br>";
+echo "<br>";
+
+    echo "<b>Change Email Tests: </b><br>";
+    // Test #5 change email
+
+    //create users for tests
+    echo "<br>Create Users for Tests <br>";
+    $homeScreen->createUsers("true","5.1","123456789","123456789","First","Last","5.1@email.com");
+    $homeScreen->createUsers("true","5.2","123456789","123456789","First","Last","5.2@email.com");
+    $homeScreen->createUsers("true","5.3","123456789","123456789","First","Last","5.3@email.com");
+    $homeScreen->createUsers("true","5.4","123456789","123456789","First","Last","5.4@email.com");
+
+    // 5.1 valid
+    echo "<br>5.1 Valid <br>";
+    $homeScreen->changeEmail("true","5.1","changed5.1@email.com");
+    // 5.2 email Empty
+    echo "<br>5.2 Email empty <br>";
+    $homeScreen->changeEmail("true","5.2","");
+    // 5.3 username empty
+    echo "<br>5.3 Username empty <br>";
+    $homeScreen->changeEmail("true","","changed5.3@email.com");
+    // 5.4 username wrong
+    echo "<br>5.4 Username wrong <br>";
+    $homeScreen->changeEmail("true","5.40","changed5.4@email.com");
+
+echo "<br>";
+
+    echo "<b>Change Password Tests: </b><br>";
+    // Test #6 change password
+
+    //create users for tests
+    echo "<br>Create Users for Tests <br>";
+    $homeScreen->createUsers("true","6.1","123456789","123456789","First","Last","6.1@email.com");
+    $homeScreen->createUsers("true","6.2","123456789","123456789","First","Last","6.2@email.com");
+    $homeScreen->createUsers("true","6.3","123456789","123456789","First","Last","6.3@email.com");
+    $homeScreen->createUsers("true","6.4","123456789","123456789","First","Last","6.4@email.com");
+    $homeScreen->createUsers("true","6.5","123456789","123456789","First","Last","6.5@email.com");
+    $homeScreen->createUsers("true","6.6","123456789","123456789","First","Last","6.6@email.com");
+    $homeScreen->createUsers("true","6.7","123456789","123456789","First","Last","6.7@email.com");
+    $homeScreen->createUsers("true","6.8","123456789","123456789","First","Last","6.8@email.com");
+    $homeScreen->createUsers("true","6.9","123456789","123456789","First","Last","6.9@email.com");
+    $homeScreen->createUsers("true","6.10","123456789","123456789","First","Last","6.10@email.com");
+    $homeScreen->createUsers("true","6.11","123456789","123456789","First","Last","6.11@email.com");
+
+    // 6.1 valid
+    echo "<br>6.1 Valid <br>";
+    $homeScreen->changePassword("true","6.1","123456789","123456789","987654321","987654321");
+    // 6.2 username not exist
+    echo "<br>6.2 Username Not Exist <br>";
+    $homeScreen->changePassword("true","6.20","123456789","123456789","987654321","987654321");
+    // 6.3 username empty
+    echo "<br>6.3 Username Empty <br>";
+    $homeScreen->changePassword("true","","123456789","123456789","987654321","987654321");
+    // 6.4 old password 1 not correct
+    echo "<br>6.4 Old Pass 1 wrong <br>";
+    $homeScreen->changePassword("true","6.4","111111111","123456789","987654321","987654321");
+    // 6.5 old password 2 not Correct
+    echo "<br>6.5 Old Pass 2 wrong <br>";
+    $homeScreen->changePassword("true","6.5","123456789","111111111","987654321","987654321");
+    // 6.6 old password 1 Empty
+    echo "<br>6.6 Old Pass 1 Empty <br>";
+    $homeScreen->changePassword("true","6.6","","123456789","987654321","987654321");
+    // 6.7 old password 2 empty
+    echo "<br>6.7 Old Pass 2 Empty <br>";
+    $homeScreen->changePassword("true","6.7","123456789","","987654321","987654321");
+    // 6.8 new password not long enough
+    echo "<br>6.8 New Pass Too Short <br>";
+    $homeScreen->changePassword("true","6.8","123456789","123456789","123456","123456");
+    // 6.9 new password Empty
+    echo "<br>6.9 New Pass Empty <br>";
+    $homeScreen->changePassword("true","6.9","123456789","123456789","","");
+    // 6.10 new passwords not the same
+    echo "<br>6.10 New Passes Not the Same <br>";
+    $homeScreen->changePassword("true","6.10","123456789","123456789","987654321","111111111");
+    // 6.11 new passwords equal old passwords
+    echo "<br>6.11 New Passes equal Old Passes<br>";
+    $homeScreen->changePassword("true","6.11","123456789","123456789","123456789","123456789");
+    // 6.12 both old passwords wrong
+    echo "<br>6.12 Both Old Passwords wrong <br>";
+    $homeScreen->changePassword("true","6.12","111111111","111111111","987654321","987654321");
+
 ?>

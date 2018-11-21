@@ -234,7 +234,7 @@ class TestSuiteUsers{
         // Create post
         if ($stmt->execute()) {
             $success = true;
-            echo "message was submitted successfully.<br>";
+            echo "message was submitted successfully.";
         }
         else {
             echo "Failed: message submission failed";
@@ -249,6 +249,7 @@ class TestSuiteUsers{
         $_SESSION['error'] = $error;
         header('Location: ../userPanel.php');
     }
+    echo "<br>";
     // Close database
     $stmt->close();
     $mysqli->close();
@@ -257,7 +258,7 @@ class TestSuiteUsers{
   public function changeEmail($test, $username, $newEmail){
 
     if($test=="true"){
-        echo "true cms";
+        //echo "true cms";
         include ('cms/sql_credentials.php');
 
     }
@@ -265,14 +266,21 @@ class TestSuiteUsers{
         echo "false cms";
         include ('../../cms/sql_credentials.php');
     }
-    $testUser = mysqli_query($mysqli, "SELECT username FROM Project_Users WHERE username = '$username' ;");
-    if(mysqli_num_rows($testUser)){
-      $stmt = $mysqli->prepare("UPDATE Project_Users SET email= ? WHERE username= ? ;");
-      $stmt->bind_param("ss", $newEmail, $username);
+    $stmt = $mysqli->prepare("SELECT * FROM Project_Users WHERE username= ? AND password = ? ;");
+    $stmt->bind_param("ss", $username, $newEmail);
+    $stmt->execute();
+    $stmt->store_result();
+    $stmt->bind_result($result);
+
+    $testUser =("SELECT username FROM Project_Users WHERE username = '$username' ;");
+    $result = $mysqli->query($testUser);
+    if($stmt->fetch()){
+      $stmt2 = $mysqli->prepare("UPDATE Project_Users SET email= ? WHERE username= ? ;");
+      $stmt2->bind_param("ss", $newEmail, $username);
 
       $user = "UPDATE Project_Users SET email='$newEmail' WHERE username='$username';";
 
-      if ($stmt->execute()) {
+      if ($stmt2->execute()) {
           echo "Email updated succesfully";
       }
       else {
@@ -286,7 +294,7 @@ class TestSuiteUsers{
     else{
       echo "this failed.";
     }
-
+    echo "<br>";
     // close connection
     $stmt->close();
     $mysqli->close();
@@ -294,7 +302,7 @@ class TestSuiteUsers{
 
   public function changePassword($test, $username, $old1, $old2, $new1, $new2){
     if($test=="true"){
-        echo "true cms";
+        //echo "true cms";
         include ('cms/sql_credentials.php');
 
     }
@@ -340,8 +348,8 @@ class TestSuiteUsers{
     if($test == "false"){
       header('Location: ../settings.php');
     }
-
-    // close connectio
+    echo "<br>";
+    // close connection
     $mysqli->close();
   }
 }
