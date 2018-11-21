@@ -84,7 +84,39 @@ class functionsAdmin{
 
   }
 
-  public function createOffer(){
+  public function createOffer($test,$item_id,$offer){
+      // Database credentials
+      if($test=="true"){
+          include ('../cms/sql_credentials.php');
+
+      }
+      else if($test== "false"){
+          include ('../../cms/sql_credentials.php');
+      }
+
+      // Start session
+      session_start();
+
+      // Check if message is not empty
+      if(is_numeric($offer) && $offer > 0){
+          // Create offer
+          $entry = "UPDATE Project_Items SET offer='$offer', status='offer' WHERE item_id='$item_id';";
+          if ($mysqli->query($entry) === TRUE) {
+              if($test== "false"){
+                  header('Location: ../admin_items.php');
+              }
+              echo "Offer created successfully";
+          }
+          else {
+              echo "Error in creating offer";
+          }
+      }
+      else
+      {
+          echo "Input is not valid";
+      }
+
+      $mysqli->close();
 
   }
 
