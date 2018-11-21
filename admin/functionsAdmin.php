@@ -93,8 +93,34 @@ class functionsAdmin{
 
   }
 
-  public function delete_user(){
-    
+  public function delete_user($test, $id){
+    // Credentials
+    if($test=="true"){
+        include ('../cms/sql_credentials.php');
+    }
+    else if($test == "false"){
+        include ('../../cms/sql_credentials.php');
+    }
+
+    $query = "SELECT * FROM Project_Users WHERE user_id='$id'";
+
+    // Echo errors
+    if ($result = $mysqli->query($query)){
+        if(mysqli_num_rows($result) == 0){
+          echo "User ID#" . $id . " does not exist";
+        }
+        else{
+          $query2 = "DELETE FROM Project_Users WHERE user_id='$id'";
+          if ($result2 = $mysqli->query($query2)){
+            echo $id . " deleted";
+          }
+        }
+    }
+
+    // Return to page if it is not a test
+    if($test=="false"){
+        header("Location: ../admin_users.php");
+    }
 
   }
 

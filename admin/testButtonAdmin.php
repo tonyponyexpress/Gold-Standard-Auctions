@@ -18,9 +18,10 @@
     echo "<br> <br>";
     // Test #3: delete_user
     // 3.1
+    $admin->delete_user("true",95);
 
     // Test #4: login
-    echo "<b>#4 Login Tests: </b><br>";
+    echo "<br><b>#4 Login Tests: </b><br>";
     // 4.1 Valid login
     echo "<br> 4.1 Valid login <br>";
     $admin->login("true","EmiliaPaz","eecs448");
