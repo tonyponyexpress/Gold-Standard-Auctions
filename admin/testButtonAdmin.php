@@ -11,17 +11,20 @@
     echo "<b>#1 Delete Issue Tests: </b><br>";
     // 1.1
     $admin->delete_issue("true",50);
-
     echo "<br> <br>";
+
+
     // Test #2: delete_items
+    echo "<br><b>#2 Delete Items Tests: </b><br>";
     // 2.1
     $admin->delete_items("true",123);
-
     echo "<br> <br>";
-    
+
     // Test #3: delete_user
+    echo "<br><b>#3 Delete Users Tests: </b><br>";
     // 3.1
     $admin->delete_user("true",95);
+    echo "<br> <br>";
 
     // Test #4: login
     echo "<br><b>#4 Login Tests: </b><br>";
