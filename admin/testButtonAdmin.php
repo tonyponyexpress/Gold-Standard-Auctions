@@ -19,7 +19,7 @@
     // 2.1
 
     echo "<br> <br>";
-    
+
     // Test #3: delete_user
     // 3.1
 
@@ -41,7 +41,7 @@
     // 5.2 Valid create offer
     echo "<br> 5.2 Invalid input for create offer (empty) <br>";
     $admin->createOffer($test,"1","");
-    echo "<br> 5.2 Invalid input for create offer (string) <br>";
+    echo "<br> 5.3 Invalid input for create offer (string) <br>";
     $admin->createOffer($test,"1","fgieajghw");
 
 

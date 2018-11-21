@@ -19,7 +19,4 @@
     $admin = new functionsAdmin();
     $admin->login($test,$admin_user,$admin_password);
 
-
-    $mysqli->close();
-
 ?>

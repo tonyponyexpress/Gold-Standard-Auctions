@@ -120,11 +120,43 @@ class functionsAdmin{
 
   }
 
-  public function logout(){
+  public function sendMessage($test, $message, $username, $date, $admin)){
+      // Credentials
+      if($test=="true"){
+          include ('../cms/sql_credentials.php');
 
-  }
+      }
+      else if($test== "false"){
+          include ('../../cms/sql_credentials.php');
+      }
 
-  public function sendMessage(){
+      // Start session
+      session_start();
+
+      $stmt = $mysqli->prepare("INSERT INTO Project_Messages (message, username, m_date, admin) VALUES (?, ?, ?, ?)");
+      $stmt->bind_param("sssi", $message, $username, $date, $admin);
+
+      // Check if message is not empty
+      if ($message != ""){
+          // Create post
+          //$entry = "INSERT INTO  Project_Messages(message, username) VALUES ('$message','$username');";
+          if ($stmt->execute()) {
+              if($test== "false"){
+                  header('Location: ../admin_users_profile.php?Username='.$username);
+              }
+          }
+          else {
+              echo "Error";
+          }
+      }
+      else
+      {
+          echo "Message is empty";
+      }
+
+      // Close database
+      $stmt->close();
+      $mysqli->close();
 
   }
 
