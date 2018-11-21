@@ -36,16 +36,27 @@
     $admin->login($test,"EmiliaPaz","xxxxxxxx");
     echo "<br> <br>";
 
-    // Test #5: login
+    // Test #5: Create Offer
     echo "<b>#5 Create Offer Tests: </b><br>";
     // 5.1 Valid create offer
     echo "<br> 5.1 Valid create offer <br>";
     $admin->createOffer($test,"1","35.5");
-    // 5.2 Valid create offer
+    // 5.2 Invalid create offer (empty)
     echo "<br> 5.2 Invalid input for create offer (empty) <br>";
     $admin->createOffer($test,"1","");
+    // 5.3 Invalid create offer (string)
     echo "<br> 5.3 Invalid input for create offer (string) <br>";
     $admin->createOffer($test,"1","fgieajghw");
+    echo "<br> <br>";
+
+    // Test #6: Send Message
+    echo "<b>#6 Send Message Tests: </b><br>";
+    // 6.1 Valid send message
+    echo "<br> 6.1 Valid send message <br>";
+    $admin->sendMessage($test,"this is a message","test","08:39:05 AM. Nov 19, 2018",1);
+    // 6.2 Empty message
+    echo "<br> 6.2 Empty message <br>";
+    $admin->sendMessage($test,"","test","08:39:05 AM. Nov 19, 2018",1);
 
 
 
