@@ -2,8 +2,6 @@
 // error_reporting(E_ALL);
 // ini_set("display_errors",1);
 global $mysqli;
-
-<?php
 /**
 * User settings: change Email
 * Changes the user email
@@ -14,6 +12,7 @@ global $mysqli;
 *@package users
 *
 */
+
     // Access database
     include ('../../cms/sql_credentials.php');
     global $mysqli;

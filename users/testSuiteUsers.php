@@ -126,8 +126,8 @@ class TestSuiteUsers{
         include ('../../cms/sql_credentials.php');
     }
 
-  // Start session
-  session_start();
+    // Start session
+    session_start();
 
 
     $stmt = $mysqli->prepare("SELECT * FROM Project_Users WHERE username = ? AND password = ? ;");
@@ -160,7 +160,7 @@ class TestSuiteUsers{
           header('Location: ../userPanel.php');
         }
         else{
-          header('Location: users/homeScreen.php');
+          header('Location: ../homeScreen.php');
         }
     }
     echo "<br>";
@@ -257,44 +257,31 @@ class TestSuiteUsers{
 
   public function changeEmail($test, $username, $newEmail){
 
-    if($test=="true"){
-        //echo "true cms";
-        include ('cms/sql_credentials.php');
-
-    }
-    else if($test== "false"){
-        echo "false cms";
-        include ('../../cms/sql_credentials.php');
-    }
-    $stmt = $mysqli->prepare("SELECT * FROM Project_Users WHERE username= ? AND password = ? ;");
-    $stmt->bind_param("ss", $username, $newEmail);
-    $stmt->execute();
-    $stmt->store_result();
-    $stmt->bind_result($result);
-
-    $testUser =("SELECT username FROM Project_Users WHERE username = '$username' ;");
-    $result = $mysqli->query($testUser);
-    if($stmt->fetch()){
-      $stmt2 = $mysqli->prepare("UPDATE Project_Users SET email= ? WHERE username= ? ;");
-      $stmt2->bind_param("ss", $newEmail, $username);
-
-      $user = "UPDATE Project_Users SET email='$newEmail' WHERE username='$username';";
-
-      if ($stmt2->execute()) {
-          echo "Email updated succesfully";
+      if($test=="true"){
+          include ('cms/sql_credentials.php');
       }
-      else {
-          echo "Failed: Email not updated";
+      else if($test== "false"){
+          include ('../../cms/sql_credentials.php');
+      }
+      $testUser = mysqli_query($mysqli, "SELECT username FROM Project_Users WHERE username = '$username' ;");
+      if(mysqli_num_rows($testUser)){
+        $stmt = $mysqli->prepare("UPDATE Project_Users SET email= ? WHERE username= ? ;");
+        $stmt->bind_param("ss", $newEmail, $username);
+        $user = "UPDATE Project_Users SET email='$newEmail' WHERE username='$username';";
+        if ($stmt->execute()) {
+            echo "Email updated succesfully";
+        }
+        else {
+            echo "Failed: Email not updated";
+        }
+        if($test == "false"){
+            header('Location: ../settings.php');
+        }
+      }
+      else{
+        echo "this failed.";
       }
 
-      if($test == "false"){
-          header('Location: ../settings.php');
-      }
-    }
-    else{
-      echo "this failed.";
-    }
-    echo "<br>";
     // close connection
     $stmt->close();
     $mysqli->close();

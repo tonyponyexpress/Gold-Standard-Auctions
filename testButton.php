@@ -116,14 +116,14 @@ echo "<br>";
     echo "<br>5.1 Valid <br>";
     $homeScreen->changeEmail("true","5.1","changed5.1@email.com");
     // 5.2 email Empty
-    echo "<br>5.2 Email empty <br>";
-    $homeScreen->changeEmail("true","5.2","");
-    // 5.3 username empty
-    echo "<br>5.3 Username empty <br>";
-    $homeScreen->changeEmail("true","","changed5.3@email.com");
-    // 5.4 username wrong
-    echo "<br>5.4 Username wrong <br>";
-    $homeScreen->changeEmail("true","5.40","changed5.4@email.com");
+    // echo "<br>5.2 Email empty <br>";
+    // $homeScreen->changeEmail("true","5.2","");
+    // // 5.3 username empty
+    // echo "<br>5.3 Username empty <br>";
+    // $homeScreen->changeEmail("true","","changed5.3@email.com");
+    // // 5.4 username wrong
+    // echo "<br>5.4 Username wrong <br>";
+    // $homeScreen->changeEmail("true","5.40","changed5.4@email.com");
 
 echo "<br>";
 
