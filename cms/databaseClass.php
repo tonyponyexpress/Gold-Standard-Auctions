@@ -1,7 +1,23 @@
 <?php
+/**
+    * Database: class with database functions
+    *
+    * Holds different functions used in the user and admin panel that displays the database information
+    *
+    * @author Tritens
+    * @package admin
+    */
 
     class database
     {
+
+        /**
+           * Show Items
+           *
+           * Creates an table with the items in the database
+           *
+           * @return void
+           */
         public function showItems(){
            // Access database
            include ('sql_credentials.php');
@@ -67,6 +83,15 @@
         }
 
 
+        /**
+           * Show Items of a user
+           *
+           * Creates an table with the items of a specific user. Table differs in the user and admin panel
+           *
+           * @param string $type
+           *
+           * @return void
+           */
         public function showItemsUser($type){
            // Access database
            include ('sql_credentials.php');
@@ -189,6 +214,13 @@
         }
 
 
+        /**
+           * Show Items
+           *
+           * Creates an table with the users in the database
+           *
+           * @return void
+           */
         public function showUsers(){
            // Access database
            include ('../cms/sql_credentials.php');
@@ -238,7 +270,13 @@
         <?php
         }
 
-
+        /**
+           * Show Items
+           *
+           * Creates an table with the messages in the database
+           *
+           * @return void
+           */
         public function showMessages(){
             // Access database
             include ('sql_credentials.php');
@@ -284,7 +322,15 @@
              <?php
         }
 
-
+        /**
+           * Show messages of a user
+           *
+           * Creates an table with the items of a specific user
+           *
+           * @param string $username
+           *
+           * @return void
+           */
         public function showMessagesUser($username){
             ?>
             <table class="table" >
@@ -324,6 +370,13 @@
             <?php
         }
 
+        /**
+           * Show Issues
+           *
+           * Creates an table with the issues in the database
+           *
+           * @return void
+           */
         public function showIssues(){
             // Access database
             include ('../cms/sql_credentials.php');

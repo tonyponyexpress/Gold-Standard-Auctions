@@ -1,4 +1,6 @@
 <?php
+global $mysqli;
+
 /**
     * TestSuiteUsers: class with admin functions
     *
@@ -7,10 +9,6 @@
     * @author Tritens
     * @package admin
     */
-
-
-global $mysqli;
-
 class TestSuiteUsers{
 
     /**
