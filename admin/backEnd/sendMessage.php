@@ -1,16 +1,12 @@
 <?php
 /**
-*Admin: sendMessage
-*This file is in charge of getting the message from the user and storing in the database
-*
-*
-*
-*@author Tritens
-*@package users
-*
-*/
-    error_reporting(E_ALL);
-    ini_set("display_errors",1);
+    * Admin Send Message
+    *
+    * Creates a functionsAdmin object that calls the function to send a message to a user by passing the message, username, date and admin 1.
+    *
+    * @author Tritens
+    * @package admin
+    */
 
     // Variables
     $message = $_POST["message"];

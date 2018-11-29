@@ -1,11 +1,9 @@
-
-
 <?php
 
 /**
-    * admin_login.php
+    * Admin Login
     *
-    * Allows only admins to log in. If admin redirect to admin panel, else stay in the page
+    * Creates a functionsAdmin object that calls the function to login to the Admin Panel by passing the username and password recieved
     *
     * @author Tritens
     * @package admin

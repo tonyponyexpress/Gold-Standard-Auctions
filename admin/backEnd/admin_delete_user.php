@@ -1,17 +1,23 @@
 <?php
-include ('../../cms/sql_credentials.php');
-global $mysqli;
-include('../functionsAdmin.php');
-$admin = new functionsAdmin();
 
-$delete_ids = $_POST;
-foreach($delete_ids as $id => $value){
-  // $query = "DELETE FROM Project_Users WHERE user_id='{$id}';";
-  // if ($result = $mysqli->query($query)){
-  //   header("Location: ../admin_users.php");
-  // }
-  $admin->delete_user("false",$id);
-}
+/**
+    * Admin Delete User
+    *
+    * Creates a functionsAdmin object that calls the function to delete an user by passing the user id
+    *
+    * @author Tritens
+    * @package admin
+    */
 
-$mysqli->close();
+    include ('../../cms/sql_credentials.php');
+    global $mysqli;
+    include('../functionsAdmin.php');
+    $admin = new functionsAdmin();
+
+    $delete_ids = $_POST;
+    foreach($delete_ids as $id => $value){
+      $admin->delete_user("false",$id);
+    }
+
+    $mysqli->close();
 ?>
