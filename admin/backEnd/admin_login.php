@@ -3,7 +3,7 @@
 /**
     * Admin Login
     *
-    * Creates a functionsAdmin object that calls the function to login to the Admin Panel by passing the username and password recieved
+    * Creates a functionsAdmin object that calls the function to login to the Admin Panel by passing the username and password recieved, and false for the testSuite.
     *
     * @author Tritens
     * @package admin

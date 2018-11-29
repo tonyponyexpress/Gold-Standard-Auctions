@@ -3,12 +3,12 @@
 /**
     * Admin Delete Item
     *
-    * Creates a functionsAdmin object that calls the function to delete an item by passing the item id
+    * Creates a functionsAdmin object that calls the function to delete an item by passing the item id and false for the testSuite.
     *
     * @author Tritens
     * @package admin
     */
-    
+
     include ('../../cms/sql_credentials.php');
     global $mysqli;
 

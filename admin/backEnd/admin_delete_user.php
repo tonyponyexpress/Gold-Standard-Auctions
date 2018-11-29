@@ -3,7 +3,7 @@
 /**
     * Admin Delete User
     *
-    * Creates a functionsAdmin object that calls the function to delete an user by passing the user id
+    * Creates a functionsAdmin object that calls the function to delete an user by passing the user id and false for the testSuite.
     *
     * @author Tritens
     * @package admin

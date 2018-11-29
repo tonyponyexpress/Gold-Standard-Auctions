@@ -2,7 +2,7 @@
 /**
     * Admin Delete Issue
     *
-    * Creates a functionsAdmin object that calls the function to delete an issue by passing the issue id
+    * Creates a functionsAdmin object that calls the function to delete an issue by passing the issue id 
     *
     * @author Tritens
     * @package admin

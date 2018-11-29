@@ -2,7 +2,7 @@
 /**
     * Admin Send Message
     *
-    * Creates a functionsAdmin object that calls the function to send a message to a user by passing the message, username, date and admin 1.
+    * Creates a functionsAdmin object that calls the function to send a message to a user by passing the message, username, date and admin 1, and false for the testSuite.
     *
     * @author Tritens
     * @package admin
