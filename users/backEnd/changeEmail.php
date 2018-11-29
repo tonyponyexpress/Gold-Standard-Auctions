@@ -1,17 +1,12 @@
 <?php
-// error_reporting(E_ALL);
-// ini_set("display_errors",1);
-global $mysqli;
 /**
-* User settings: change Email
-* Changes the user email
-*
-*
-*
-*@author Tritens
-*@package users
-*
-*/
+    * User Change Email
+    *
+    * Creates a testSuiteUsers object that calls the function to change email by passing the user id, new email and false for the testSuite.
+    *
+    * @author Tritens
+    * @package user
+    */
 
     // Access database
     include ('../../cms/sql_credentials.php');

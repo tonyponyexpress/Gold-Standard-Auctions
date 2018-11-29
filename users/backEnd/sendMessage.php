@@ -1,14 +1,12 @@
 <?php
 /**
-*User: sendMessage
-*This file is in charge of getting the message from the user and storing in the database
-*
-*
-*
-*@author Tritens
-*@package users
-*
-*/
+    * User Send Message
+    *
+    * Creates a testSuiteUsers object that calls the function to send message to the admin by passing the username, message and false for the testSuite.
+    *
+    * @author Tritens
+    * @package user
+    */
 
     $message = $_POST["message"];
     $username =  $_SESSION['user_id'];

@@ -1,14 +1,13 @@
 <?php
 /**
-*User soldItem
-*how to store an item and tell if it is sold
-*
-*
-*
-*@author Tritens
-*@package users
-*
-*/
+    * User Sold Item
+    *
+    * Recieves the item with its title, description, image and username of the owner and inserts it into the database
+    *
+    * @author Tritens
+    * @package user
+    */
+    
     session_start();
     // Access database
     include ('../../cms/sql_credentials.php');

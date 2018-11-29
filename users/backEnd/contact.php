@@ -1,14 +1,12 @@
 <?php
 /**
-*User CreateUsers
-*This file is in charge of creating users and storing them in a databse
-*
-*
-*
-*@author Tritens
-*@package users
-*
-*/
+    * User Change Email
+    *
+    * Creates a testSuiteUsers object that calls the function to create a contact form problem by passing the title, description, email and false for the testSuite.
+    *
+    * @author Tritens
+    * @package user
+    */
 
     $title = $_POST["contactReason"];
     $description = $_POST["description"];

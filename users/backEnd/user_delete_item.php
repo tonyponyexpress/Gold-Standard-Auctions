@@ -1,4 +1,14 @@
 <?php
+
+/**
+    * User Delete Item
+    *
+    * Deletes an item given the user id and the item id.
+    *
+    * @author Tritens
+    * @package user
+    */
+
     // Access database
     include ('../../cms/sql_credentials.php');
     global $mysqli;

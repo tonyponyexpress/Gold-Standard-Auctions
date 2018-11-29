@@ -1,14 +1,13 @@
 <?php
 /**
-*User Login
-*Basic functionality of how user login works
-*
-*
-*
-*@author Tritens
-*@package users
-*
-*/
+    * User Login
+    *
+    * Creates a testSuiteUsers object that calls the function to login by passing the username, password and false for the testSuite.
+    *
+    * @author Tritens
+    * @package user
+    */
+
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 

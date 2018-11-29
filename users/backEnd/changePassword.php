@@ -1,14 +1,12 @@
 <?php
 /**
-* User settings: change password
-* Changes the user password
-*
-*
-*
-*@author Tritens
-*@package users
-*
-*/
+    * User Change Password
+    *
+    * Creates a testSuiteUsers object that calls the function to change password by passing the user id, old password 1, old password 2, new password 1, new passoword 2 and false for the testSuite.
+    *
+    * @author Tritens
+    * @package user
+    */
 
     // Access database
     include ('../../cms/sql_credentials.php');

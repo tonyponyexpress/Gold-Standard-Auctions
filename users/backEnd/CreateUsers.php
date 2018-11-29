@@ -1,14 +1,12 @@
 <?php
 /**
-*User CreateUsers
-*This file is in charge of creating users and storing them in a databse
-*
-*
-*
-*@author Tritens
-*@package users
-*
-*/
+    * User Create Users
+    *
+    * Creates a testSuiteUsers object that calls the function to create a usser by passing the username, password1, password2, first name, last name, email and false for the testSuite.
+    *
+    * @author Tritens
+    * @package user
+    */
 
     $username = $_POST["newUsername"];
     $password = $_POST["newPassword"];
