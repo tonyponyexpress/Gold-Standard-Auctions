@@ -39,16 +39,14 @@
 <body>
 
     <?php
-      /**
-      *User faq
-      *Lists the faq that customers may have
-      *
-      *
-      *
-      *@author Tritens
-      *@package users
-      *
-      */
+    /**
+        * User FAQ
+        *
+        * Lists the frequent asked questions that customers may have
+        *
+        * @author Tritens
+        * @package user
+        */
         include('usersClass.php');
         $temp = new users();
         $temp->header_login_user();

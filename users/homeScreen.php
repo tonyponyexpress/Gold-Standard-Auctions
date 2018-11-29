@@ -16,15 +16,14 @@
     <!-- Header -->
     <?php
     /**
-    *User homescreen
-    *Shows the homescreen and allows users to login in, as well as creating users
-    *
-    *
-    *
-    *@author Tritens
-    *@package users
-    *
-    */
+        * User HomeScreen
+        *
+        * Shows the homescreen, allows users to create an account and to login in
+        *
+        * @author Tritens
+        * @package user
+        */
+
         session_start();
         include('templates/header_login.php');
     ?>

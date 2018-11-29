@@ -10,17 +10,17 @@
     <link rel="stylesheet" href="cssFiles/website.css">
 </head>
 <body>
+
   <?php
-    /**
-    *User faq
-    *Lists the faq that customers may have
-    *
-    *
-    *
-    *@author Tritens
-    *@package users
-    *
-    */
+  /**
+      * User FAQ
+      *
+      * Contact us form for any visitor (user or not)
+      *
+      * @author Tritens
+      * @package user
+      */
+
       include('usersClass.php');
       $temp = new users();
       $temp->header_login_user();

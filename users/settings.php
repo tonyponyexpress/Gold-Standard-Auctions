@@ -1,15 +1,17 @@
 <?php
 /**
-    * User settings
+    * User Settings
     *
-    * Description goes here
+    * Shows the user account details (first name, last name, email, username, password), user information (total number of items, total profit) and settings (change password, change email)
+    *
     * @author Tritens
     * @package user
     */
-// // Redirect to home page if user hasn't logged in
-include('usersClass.php');
-$temp = new users();
-$temp->header_homeScreen();
+
+    // Redirect to home page if user hasn't logged in
+    include('usersClass.php');
+    $temp = new users();
+    $temp->header_homeScreen();
 
 ?>
 

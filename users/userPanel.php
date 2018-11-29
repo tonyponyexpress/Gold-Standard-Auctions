@@ -1,15 +1,17 @@
 <?php
 /**
-    * Sell title
+    * User: User Panel
     *
-    * Description goes here
+    * Shows the user panel: How It Works, Sell and My Account tab
+    *
     * @author Tritens
     * @package user
     */
-// // Redirect to home page if user hasn't logged in
-include('usersClass.php');
-$temp = new users();
-$temp->header_homeScreen();
+    
+    // Redirect to home page if user hasn't logged in
+    include('usersClass.php');
+    $temp = new users();
+    $temp->header_homeScreen();
 ?>
 
 <!DOCTYPE html>

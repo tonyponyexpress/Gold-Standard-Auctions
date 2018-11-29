@@ -1,7 +1,6 @@
 <?php
-
 /**
-    * functionAdmin: class with admin functions
+    * FunctionAdmin: class with admin functions
     *
     * Holds different functions used in the admin panel that works with the database information
     *

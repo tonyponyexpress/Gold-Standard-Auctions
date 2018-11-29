@@ -1,18 +1,46 @@
 <?php
-// error_reporting(E_ALL);
-// ini_set("display_errors",1);
+/**
+    * TestSuiteUsers: class with admin functions
+    *
+    * Holds different functions used in the user panel that works with the database information
+    *
+    * @author Tritens
+    * @package admin
+    */
+
+
 global $mysqli;
 
 class TestSuiteUsers{
 
-  public function TestSuite(){
-    //empty constructor
-  }
+    /**
+       * Constructor
+       *
+       * Empty constructor
+       *
+       * @return void
+       */
+    public function TestSuite(){
+        //empty constructor
+    }
 
-  /*Test for creating users*/
+    /**
+       * Create Users
+       *
+       * Creates an user given its username, password, password2, first name, last name and email
+       * Stays on the page if its called in the admin panel or echo's the result if its called in the test suite
+       *
+       * @param string $test
+       * @param string $username
+       * @param string $password
+       * @param string $password2
+       * @param string $firstName
+       * @param string $lastName
+       * @param string $email
+       *
+       * @return void
+       */
   public function createUsers($test,$username,$password,$password2,$firstName,$lastName,$email){
-
-
       if($test=="true"){
           //echo "true cms";
           include ('cms/sql_credentials.php');
@@ -113,7 +141,18 @@ class TestSuiteUsers{
   }
 
 
-  /*Test for creating users*/
+  /**
+     * Login User
+     *
+     * Login to the user panel if given the correct password for the admin username
+     * Moves to the user panel if its succesfully called in the home screen, stays in the home screen panel if its unsuccesfully called in the home screen panel or echo's the result if its called in the test suite
+     *
+     * @param string $test
+     * @param string $username
+     * @param string $password
+     *
+     * @return void
+     */
   public function login($test, $username, $password){
 
     if($test=="true"){
@@ -169,6 +208,19 @@ class TestSuiteUsers{
   }
 
 
+  /**
+     * Contact form
+     *
+     * Creates an issue given its title, description and email
+     * Stays on the page if its called in the admin panel or echo's the result if its called in the test suite
+     *
+     * @param string $test
+     * @param string $title
+     * @param string $description
+     * @param string $email
+     *
+     * @return void
+     */
   public function contact($test, $title, $description, $email){
 
     if($test=="true"){
@@ -211,6 +263,18 @@ class TestSuiteUsers{
     $mysqli->close();
   }
 
+  /**
+     * Contact form
+     *
+     * Creates an message given its content and username
+     * Stays on the page if its called in the admin panel or echo's the result if its called in the test suite
+     *
+     * @param string $test
+     * @param string $message
+     * @param string $username
+     *
+     * @return void
+     */
   public function sendMessage($test, $message, $username){
     if($test=="true"){
         echo "true cms";
@@ -255,6 +319,18 @@ class TestSuiteUsers{
     $mysqli->close();
   }
 
+  /**
+     * Contact form
+     *
+     * Changes the email given a username and the newemail
+     * Stays on the page if its called in the admin panel or echo's the result if its called in the test suite
+     *
+     * @param string $test
+     * @param string $username
+     * @param string $newEmail
+     *
+     * @return void
+     */
   public function changeEmail($test, $username, $newEmail){
 
       if($test=="true"){
@@ -287,6 +363,21 @@ class TestSuiteUsers{
     $mysqli->close();
   }
 
+  /**
+     * Contact form
+     *
+     * Changes the password give the username, old password 1, old password 2, new password 1 and new password 2
+     * Stays on the page if its called in the admin panel or echo's the result if its called in the test suite
+     *
+     * @param string $test
+     * @param string $username
+     * @param string $old1
+     * @param string $old2
+     * @param string $new1
+     * @param string $new2
+     *
+     * @return void
+     */
   public function changePassword($test, $username, $old1, $old2, $new1, $new2){
     if($test=="true"){
         //echo "true cms";
