@@ -94,6 +94,7 @@ class users{
         include('templates/sellTab.php');
     }
 
+    // not working, problem when objects being created
     /**
        * How It Works Tab
        *
@@ -101,7 +102,6 @@ class users{
        *
        * @return void
        */
-    // not working, problem when objects being created
     public function tab_myAccount(){
         include('templates/myAccountTab.php');
     }

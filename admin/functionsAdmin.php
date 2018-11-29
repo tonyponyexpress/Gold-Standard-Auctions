@@ -1,4 +1,6 @@
 <?php
+global $mysqli;
+
 /**
     * FunctionAdmin: class with admin functions
     *
@@ -7,10 +9,6 @@
     * @author Tritens
     * @package admin
     */
-
-
-
-global $mysqli;
 class functionsAdmin{
 
     /**
@@ -246,9 +244,6 @@ class functionsAdmin{
         }
         $mysqli->close();
     }
-
-  public function logout(){
-  }
 
   /**
       * Create offer for item

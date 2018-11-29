@@ -5,7 +5,7 @@
     * Holds different functions used in the user and admin panel that displays the database information
     *
     * @author Tritens
-    * @package admin
+    * @package cms
     */
 
     class database
