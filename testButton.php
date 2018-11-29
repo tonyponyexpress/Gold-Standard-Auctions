@@ -1,7 +1,14 @@
 <?php
-    // error_reporting(E_ALL);
-    // ini_set("display_errors", 1);
-    //
+
+/**
+    * testButtonAdmin
+    *
+    * Test button for the user test suit that shows all the test cases for the admin panel
+    *
+    * @author Tritens
+    * @package admin
+    */
+
     include('users/testSuiteUsers.php');
     $homeScreen = new TestSuiteUsers();
 

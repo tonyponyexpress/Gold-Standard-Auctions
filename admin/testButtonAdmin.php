@@ -2,7 +2,7 @@
 /**
     * testButtonAdmin
     *
-    * Test button for the test suit that shows all the test cases for the admin panel
+    * Test button for the admin test suit that shows all the test cases for the admin panel
     *
     * @author Tritens
     * @package admin
