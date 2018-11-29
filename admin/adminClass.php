@@ -1,8 +1,8 @@
 <?php
 /**
-    * Admin: class with admin panel functions
+    * Admin: class with admin panel functions for displaying templates
     *
-    * Holds different functions used in the admin panel
+    * Holds different functions used in the admin panel for displaying templates
     *
     * @author Tritens
     * @package admin
