@@ -1,12 +1,13 @@
 <?php
 /**
-    * Admin users
+    * Admin: list of items
     *
-    * Shows all the items
+    * Displays a list of items and their details
     *
     * @author Tritens
     * @package admin
     */
+    
 
 /**
     * Redirects to home page if user hasn't logged in
@@ -76,6 +77,6 @@
          $scripts = new admin();
          $toggle->scripts();
      ?>
-     
+
 </body>
 </html>

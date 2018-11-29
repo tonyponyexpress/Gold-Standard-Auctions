@@ -1,8 +1,8 @@
 <?php
 /**
-    * Admin users
+    * Admin: list of messages
     *
-    * Shows all the messages by order
+    * Displays all messages from the users
     *
     * @author Tritens
     * @package admin
@@ -75,6 +75,6 @@
          $scripts = new admin();
          $toggle->scripts();
      ?>
-     
+
 </body>
 </html>

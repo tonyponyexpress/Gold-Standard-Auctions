@@ -1,8 +1,8 @@
 <?php
 /**
-    * Admin dashboard
+    * Admin: dashboard
     *
-    * First page for the admin. Shows the basic information about users
+    * Default page for the admin panel
     *
     * @author Tritens
     * @package admin

@@ -1,12 +1,13 @@
 <?php
 /**
-    * Admin users
+    * Admin: answer message
     *
-    * Shows all the messages by order
+    * Allows the admin to answer a message from the user
     *
     * @author Tritens
     * @package admin
     */
+
 
 /**
     * Redirects to home page if user hasn't logged in

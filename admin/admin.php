@@ -1,8 +1,8 @@
 <?php
 /**
-    * Admin
+    * Admin: login
     *
-    * Login page for the admin. Only allows to login admins
+    * Login page for the admin
     *
     * @author Tritens
     * @package admin

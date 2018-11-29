@@ -1,8 +1,8 @@
 <?php
 /**
-    * Admin problems
+    * Admin: list of issues
     *
-    * Shows the problems submitted by the users.
+    * Displays a list of issues and their details
     *
     * @author Tritens
     * @package admin
@@ -75,6 +75,6 @@
          $scripts = new admin();
          $toggle->scripts();
      ?>
-     
+
 </body>
 </html>

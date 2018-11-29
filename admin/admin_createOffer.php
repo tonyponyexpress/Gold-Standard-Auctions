@@ -2,12 +2,11 @@
 /**
     * Admin: create offer
     *
-    * Creates an offer for the item
+    * Allows the admin to create an offer for a submitted item
     *
     * @author Tritens
     * @package admin
     */
-
 
 
 
@@ -135,6 +134,6 @@
          $scripts = new admin();
          $toggle->scripts();
      ?>
-     
+
 </body>
 </html>

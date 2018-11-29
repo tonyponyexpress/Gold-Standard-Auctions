@@ -1,13 +1,13 @@
 <?php
 /**
-    * Admin users
+    * Admin: list of users
     *
-    * Shows all the users and their basic information (name, number of items, link to profile)
+    * Displays a list of all users
     *
     * @author Tritens
     * @package admin
     */
-
+    
 /**
     * Redirects to home page if user hasn't logged in
     *

@@ -1,12 +1,13 @@
 <?php
 /**
-    * Admin users profile
+    * Admin: user profile
     *
-    * Shows the items and problems of a specific user
+    * Displays the profile of a user, including its items and messages
     *
     * @author Tritens
     * @package admin
     */
+
 
 
 
@@ -104,6 +105,6 @@
          $scripts = new admin();
          $toggle->scripts();
      ?>
-     
+
 </body>
 </html>
