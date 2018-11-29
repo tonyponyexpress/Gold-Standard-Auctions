@@ -1,13 +1,11 @@
 <?php
 /**
-    *User header_login
-    *Handles the header for user log in
+    * User Header Login
     *
+    * Header for the website for the user to log in
     *
-    *
-    *@author Tritens
-    *@package users
-    *
+    * @author Tritens
+    * @package user
     */
 ?>
 

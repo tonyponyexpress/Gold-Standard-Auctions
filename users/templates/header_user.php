@@ -1,13 +1,11 @@
 <?php
 /**
-    *User header_user
-    *handles the header for user logout
+    * User Header
     *
+    * Header for the User Panel after user succesfully logged in
     *
-    *
-    *@author Tritens
-    *@package users
-    *
+    * @author Tritens
+    * @package user
     */
 
 ?>

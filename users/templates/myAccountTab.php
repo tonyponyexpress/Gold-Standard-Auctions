@@ -1,3 +1,15 @@
+<?php
+/**
+    * My Account Tab
+    *
+    * My Account Tab with the items status (pending offers, offers and accepted offers) and message board
+    *
+    * @author Tritens
+    * @package user
+    */
+?>
+
+
 <div class="row">
     <div class="col-md-8">
         <h2> Items </h2>

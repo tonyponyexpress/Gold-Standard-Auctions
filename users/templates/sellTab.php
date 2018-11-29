@@ -1,3 +1,14 @@
+<?php
+/**
+    * Sell Tab
+    *
+    * Sell Tab with a form to submit an item
+    *
+    * @author Tritens
+    * @package user
+    */
+?>
+
 <div class="row">
   <form class="form-sell" action="backEnd/soldItem.php" method="post" enctype="multipart/form-data">
       <div class="form-group row">

@@ -1,3 +1,14 @@
+<?php
+/**
+    * User How It Works Tab
+    *
+    * How It Works Tab with the 3 steps of how the website works 
+    *
+    * @author Tritens
+    * @package user
+    */
+?>
+
 <div class="row">
     <div class="col-md-6" style="text-align: center; margin-top: 50px;">
       <h1><u>1) Submit Your Item</u></h1>

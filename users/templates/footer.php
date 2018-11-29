@@ -1,13 +1,11 @@
 <?php
 /**
-    *User footer
-    *handles the footer on the homeScreen
+    * User footer
     *
+    * Footer for the website (user panel and home screen tabs)
     *
-    *
-    *@author Tritens
-    *@package users
-    *
+    * @author Tritens
+    * @package user
     */
 
 ?>
