@@ -11,7 +11,7 @@
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/prism.css" rel="stylesheet" media="all"/>
     <link href="../css/template.css" rel="stylesheet" media="all"/>
-    
+
     <!--[if lt IE 9]>
     <script src="../js/html5.js"></script>
     <![endif]-->
@@ -20,6 +20,7 @@
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/jquery.smooth-scroll.js"></script>
     <script src="../js/prism.min.js"></script>
+    <script src="../js/script.js"></script>
     <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
         <script type="text/javascript">
         function loadExternalCodeSnippets() {
@@ -142,14 +143,76 @@
             <div id="namespace-513793840" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
-                    
+
                     <ul>
-                                                                                                    <li class="class"><a href="../classes/admin.html">admin</a></li>
-                                                    <li class="class"><a href="../classes/database.html">database</a></li>
-                                                    <li class="class"><a href="../classes/functionsAdmin.html">functionsAdmin</a></li>
-                                                    <li class="class"><a href="../classes/TestSuiteUsers.html">TestSuiteUsers</a></li>
-                                                    <li class="class"><a href="../classes/users.html">users</a></li>
-                                            </ul>
+                            <li class="class"><a href="../classes/admin.html">admin</a></li>
+                            <li class="class"><a href="../classes/database.html">database</a></li>
+                            <li class="class"><a href="../classes/functionsAdmin.html">functionsAdmin</a></li>
+                            <li class="class"><a href="../classes/TestSuiteUsers.html">TestSuiteUsers</a></li>
+                            <li class="class"><a href="../classes/users.html">users</a></li>
+                    </ul>
+
+                    <button class="button-sidebar" onclick="toggle('admin')">> admin</button>
+                    </br>
+                    <div id="admin" style="display:none">
+                        <ul>
+                            <li class="class"><a href="admin.admin_answer.html">admin_answer</a></li>
+                            <li class="class"><a href="admin.admin_createOffer.html">admin_createOffer</a></li>
+                            <li class="class"><a href="admin.admin_dashboard.html">admin_dashboard</a></li>
+                            <li class="class"><a href="admin.admin_items.html">admin_items</a></li>
+                            <li class="class"><a href="admin.admin_messageboard.html">admin_messageboard</a></li>
+                            <li class="class"><a href="admin.admin_problems.html">admin.admin_problems</a></li>
+                            <li class="class"><a href="admin.admin_users_profile.html">dmin_users_profile</a></li>
+                            <li class="class"><a href="admin.admin_users.html">admin_users</a></li>
+                            <li class="class"><a href="admin.backEnd.admin_delete_issue.html">backEnd.admin_delete_issue</a></li>
+                            <li class="class"><a href="admin.backEnd.admin_delete_items.html">backEnd.admin_delete_items</a></li>
+                            <li class="class"><a href="admin.backEnd.admin_delete_user.html">backEnd.admin_delete_user</a></li>
+                            <li class="class"><a href="admin.backEnd.admin_login.html">backEnd.admin_login</a></li>
+                            <li class="class"><a href="admin.backEnd.createOffer.html">backEnd.createOffer</a></li>
+                            <li class="class"><a href="admin.backEnd.logoutAdmin.html">backEnd.logoutAdmin</a></li>
+                            <li class="class"><a href="admin.backEnd.sendMessage.html">backEnd.sendMessage</a></li>
+                            <li class="class"><a href="admin.templates.sidebar.html">templates.sidebar</a></li>
+                            <li class="class"><a href="admin.templates.toggleSidebar.html">templates.toggleSidebar</a></li>
+                            <li class="class"><a href="admin.testButtonAdmin.html">testButtonAdmin</a></li>
+                        </ul>
+                    </div>
+
+                    <button class="button-sidebar" onclick="toggle('cms')">> cms</button>
+                    </br>
+                    <div id="cms" style="display:none">
+                        <ul>
+                            <li class="class"><a href="cms.sql_credentials.html">sql_credentials</a></li>
+                        </ul>
+                    </div>
+
+                    <button class="button-sidebar" onclick="toggle('users')">> users</button>
+                    </br>
+                    <div id="users" style="display:none">
+                        <ul>
+                            <li class="class"><a href="users.backEnd.changeEmail.html">backEnd.changeEmail</a></li>
+                            <li class="class"><a href="users.backEnd.changePassword.html">backEnd.changePassword</a></li>
+                            <li class="class"><a href="users.backEnd.contact.html">backEnd.contact</a></li>
+                            <li class="class"><a href="users.backEnd.CreateUsers.html">backEnd.CreateUsers</a></li>
+                            <li class="class"><a href="users.backEnd.Login.html">backEnd.Login</a></li>
+                            <li class="class"><a href="users.backEnd.Logout.html">backEnd.Logout</a></li>
+                            <li class="class"><a href="users.backEnd.sendMessage.html">backEnd.sendMessage</a></li>
+                            <li class="class"><a href="users.backEnd.soldItem.html">backEnd.soldItem</a></li>
+                            <li class="class"><a href="users.backEnd.user_delete_item.html">backEnd.user_delete_item</a></li>
+                            <li class="class"><a href="users.contactUs.html">contactUs</a></li>
+                            <li class="class"><a href="users.faq.html">faq</a></li>
+                            <li class="class"><a href="users.homeScreen.html">homeScreen</a></li>
+                            <li class="class"><a href="users.returnPolicy.html">returnPolicy</a></li>
+                            <li class="class"><a href="users.settings.html">settings</a></li>
+                            <li class="class"><a href="users.templates.footer.html">templates.footer</a></li>
+                            <li class="class"><a href="users.templates.header_login.html">templates.header_login</a></li>
+                            <li class="class"><a href="users.templates.header_user.html">templates.header_user</a></li>
+                            <li class="class"><a href="users.templates.howItWorksTab.html">templates.howItWorksTab</a></li>
+                            <li class="class"><a href="users.templates.myAccountTab.html">templates.myAccountTab</a></li>
+                            <li class="class"><a href="users.templates.sellTab.html">templates.sellTab</a></li>
+                            <li class="class"><a href="testButton.html">testButton</a></li>
+                            <li class="class"><a href="users.userPanel.html">userPanel</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -169,16 +232,16 @@
                     <p><em>Admin: list of items</em></p>
                     <p>Displays a list of items and their details</p>
 
-                    
-                    
+
+
                                     </div>
 
                 <aside class="span4 detailsbar">
                     <dl>
                                                     <dt>Package</dt>
                             <dd><div class="namespace-wrapper">\admin</div></dd>
-                        
-                        
+
+
                     </dl>
                     <h2>Tags</h2>
                     <table class="table table-condensed">
@@ -195,8 +258,8 @@
                 </aside>
             </div>
 
-            
-            
+
+
         </div>
     </section>
 
